@@ -20,7 +20,8 @@ describe('Mission 5 · 1. Filtre des challenges', () => {
     it(`choix explicite « ${choice} » : bloquant pour tous les programmes réels`, () => {
       for (const id of realIds) {
         const p = real(id)
-        const e = evaluateProgram(p, profile({ markets: [ANY_MARKET(p)], steps: choice, residence: { country: 'FR', region: null } }), fullCtx)
+        const a = profile({ markets: [ANY_MARKET(p)], steps: choice, residence: { country: 'FR', region: null } })
+        const e = evaluateProgram(p, a, fullCtx)
         const c = crit(e, 'steps')
         expect(c, id).toBeDefined()
         const n = p.evaluation.steps.value
@@ -28,7 +29,10 @@ describe('Mission 5 · 1. Filtre des challenges', () => {
         else if (n === want[choice]) expect(c!.state, id).toBe('ok')
         else {
           expect(c!.state, id).toBe('fail')
-          expect(e.status, id).toBe('INCOMPATIBLE')
+          // préférence par défaut → alternative proche ; jamais « compatible »
+          expect(e.status, id).toBe('PARTIEL')
+          const locked = evaluateProgram(p, { ...a, locks: { steps: 'required' } }, fullCtx)
+          expect(locked.status, id).toBe('INCOMPATIBLE')
         }
       }
     })
@@ -41,7 +45,7 @@ describe('Mission 5 · 1. Filtre des challenges', () => {
     }
   })
   it('exemples concrets', () => {
-    const f = (id: string, steps: 'one' | 'two' | 'none') => evaluateProgram(real(id), profile({ markets: ['forex'], steps }), fullCtx).status
+    const f = (id: string, steps: 'one' | 'two' | 'none') => evaluateProgram(real(id), profile({ markets: ['forex'], steps, locks: { steps: 'required' } }), fullCtx).status
     expect(f('ftmo-2step-standard', 'one')).toBe('INCOMPATIBLE')
     expect(f('ftmo-1step-standard', 'one')).not.toBe('INCOMPATIBLE')
     expect(f('ftmo-instant', 'none')).not.toBe('INCOMPATIBLE')
@@ -50,8 +54,9 @@ describe('Mission 5 · 1. Filtre des challenges', () => {
   })
   it('le choix peut être assoupli explicitement (statut partiel), jamais silencieusement', () => {
     const a = profile({ markets: ['forex'], steps: 'one' })
-    const e = evaluateProgram(real('ftmo-2step-standard'), a, fullCtx, ['steps'])
-    expect(e.status).not.toBe('COMPATIBLE')
+    const e = evaluateProgram(real('ftmo-2step-standard'), a, fullCtx)
+    expect(e.status).toBe('PARTIEL')
+    expect(e.adjustments.map((x) => x.key)).toContain('steps')
   })
 })
 
@@ -82,8 +87,9 @@ describe('Mission 5 · 2. Prix observés', () => {
       const c = crit(e, 'budget')
       expect(c, id).toBeDefined()
       expect(c!.state, id).not.toBe('ok')
-      expect(c!.state, id).not.toBe('fail')
-      expect(['A_VERIFIER', 'INCOMPATIBLE']).toContain(e.status)
+      expect(c!.state, id).not.toBe('fail') // un prix seulement observé ne confirme ni n'infirme jamais le budget
+      expect(['A_VERIFIER', 'INCOMPATIBLE', 'PARTIEL']).toContain(e.status)
+      expect(e.status === 'COMPATIBLE').toBe(false)
     }
   })
   it('la page de détail affiche montant, date, « Prix à vérifier » et un lien officiel', () => {

@@ -6,13 +6,14 @@ import { ObservedPriceLine } from './ObservedPrices'
 import { cheapestVariant, computeVariantCosts } from '../engine/evaluate'
 import { MAX_COMPARE, useApp } from '../state/AppState'
 import { EvidenceLine } from './Evidence'
+import { Why } from './Why'
 import { DRAWDOWN_LABEL, NOT_CONFIRMED, contractLabel, withdrawalBlockers, fmtDate, fmtUsd, marketLabelsOf, restrictionSummary, sv, variantName } from './format'
 
 export const STATUS_META: Record<Status, { label: string; icon: string; cls: string; blurb: string }> = {
   COMPATIBLE: { label: 'COMPATIBLE', icon: '✓', cls: 'ok', blurb: 'Les critères obligatoires sont satisfaits selon les informations vérifiées.' },
   A_VERIFIER: { label: 'À VÉRIFIER', icon: '!', cls: 'warn', blurb: 'Une ou plusieurs informations nécessaires sont manquantes, conditionnelles ou à revérifier.' },
   INCOMPATIBLE: { label: 'INCOMPATIBLE', icon: '✕', cls: 'bad', blurb: 'Au moins une incompatibilité bloquante est confirmée.' },
-  PARTIEL: { label: 'PARTIELLEMENT COMPATIBLE', icon: '◐', cls: 'partial', blurb: "Seuls des critères que tu as assouplis ne sont pas satisfaits. Ce n'est pas une compatibilité complète." },
+  PARTIEL: { label: 'ALTERNATIVE PROCHE', icon: '◐', cls: 'partial', blurb: "Aucune contrainte indispensable n'est en échec, mais au moins une préférence n'est pas satisfaite. Ce n'est pas une compatibilité complète." },
 }
 
 export function StatusBadge({ status }: { status: Status }) {
@@ -130,6 +131,7 @@ export function ProgramCard({ program, evaluation, ds }: { program: Program; eva
 
       {evaluation && (
         <>
+          <Why evaluation={evaluation} />
           {evaluation.variants.length > 1 && (
             <div className="variants" aria-label="Statut par taille de compte">
               <p className="variants-title">Par taille de compte (chaque taille avec ses propres frais) :</p>
@@ -145,13 +147,15 @@ export function ProgramCard({ program, evaluation, ds }: { program: Program; eva
               </ul>
             </div>
           )}
+          <details className="reasons-details">
+          <summary>Voir le détail de chaque critère</summary>
           <ul className="reasons" aria-label="Raisons du statut">
             {evaluation.criteria.map((c) => (
               <li key={`${c.key}`} className={`r-${c.state}${c.relaxed ? ' relaxed' : ''}`}>
                 <span className="r-icon" aria-hidden="true">{c.state === 'ok' ? '✓' : c.state === 'fail' ? '✕' : '!'}</span>
                 <span>
                   <strong>{c.label}.</strong> {c.message}
-                  {c.relaxed && <em> (critère assoupli)</em>}
+                  {c.relaxed && <em> (préférence non satisfaite)</em>}
                   {c.evidence.length > 0 && (
                     <>
                       <br />
@@ -162,6 +166,7 @@ export function ProgramCard({ program, evaluation, ds }: { program: Program; eva
               </li>
             ))}
           </ul>
+          </details>
           {evaluation.status !== 'INCOMPATIBLE' && (
             <div className="score">
               <p className="score-line">

@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Contract } from '../data/schema'
-import type { Answers, DrawdownPref } from '../engine/answers'
+import type { Answers, CriterionKey, DrawdownPref } from '../engine/answers'
+import { RESTRICTION_KEYS, weightOf } from '../engine/answers'
+import { budgetBrackets } from '../engine/budget'
+import { activeCriteria, funnelCounts, trail as funnelTrail } from '../engine/funnel'
 import { BASIS_TEXT } from '../engine/evaluate'
 import {
   BUDGET_OPTIONS,
@@ -20,10 +23,12 @@ import { useApp } from '../state/AppState'
 import { CONTRACT_LABEL } from '../ui/format'
 import { GlossaryBody, Info } from '../ui/Glossary'
 import { Option } from '../ui/Options'
+import { FunnelBar, LockSwitch } from '../ui/FunnelBar'
+import { fmtUsd } from '../ui/format'
 import { ResidencePicker } from '../ui/ResidencePicker'
 
 export default function Quiz() {
-  const { dataset, answers, setAnswers } = useApp()
+  const { dataset, ctx, answers, setAnswers } = useApp()
   const navigate = useNavigate()
   const steps = useMemo(() => activeSteps(answers, dataset), [answers, dataset])
   const [current, setCurrent] = useState<StepId>('markets')
@@ -37,6 +42,70 @@ export default function Quiz() {
 
   const set = (patch: Partial<Answers>) => setAnswers((a) => ({ ...a, ...patch }))
   const toggle = <T,>(list: T[], v: T) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v])
+
+  const setWeight = (k: CriterionKey, w: 'required' | 'preferred') => set({ locks: { ...answers.locks, [k]: w } })
+  const flip = (k: CriterionKey) => setWeight(k, weightOf(k, answers) === 'required' ? 'preferred' : 'required')
+  const activeRestrictions = activeCriteria(answers).filter((k) => RESTRICTION_KEYS.includes(k))
+  const restrictionsRequired = activeRestrictions.every((k) => weightOf(k, answers) === 'required')
+
+  // Aperçu : nombre de programmes possibles si l'étudiant retient chaque option de la question courante.
+  const preview = useMemo(() => {
+    const c = (patch: Partial<Answers>) => funnelCounts(dataset, { ...answers, ...patch }, ctx.now).a
+    const addTo = <T,>(list: T[], v: T) => (list.includes(v) ? list : [...list, v])
+    const out: Record<string, number> = {}
+    switch (current) {
+      case 'markets':
+        for (const m of dataset.markets) out[m.id] = c({ markets: addTo(answers.markets, m.id) })
+        break
+      case 'instruments':
+        for (const i of dataset.instruments) if (answers.markets.includes(i.market)) out[i.id] = c({ instruments: addTo(answers.instruments, i.id) })
+        break
+      case 'style':
+        for (const o of STYLE_OPTIONS) out[o.id] = c({ style: o.id })
+        break
+      case 'when':
+        for (const o of WHEN_OPTIONS) out[o.id] = o.id === 'none' ? c({ when: ['none'] }) : c({ when: addTo(answers.when.filter((w) => w !== 'none'), o.id) })
+        break
+      case 'budget':
+        for (const o of BUDGET_OPTIONS) out[o.id] = c({ budget: o.id })
+        break
+      case 'steps':
+        for (const o of STEPS_OPTIONS) out[o.id] = c({ steps: o.id })
+        break
+      case 'drawdown':
+        for (const o of DRAWDOWN_OPTIONS) out[o.id] = c({ drawdown: o.id as DrawdownPref })
+        break
+      case 'platform':
+        for (const p of dataset.platforms) out[p.id] = c({ platforms: addTo(answers.platforms, p.id) })
+        break
+    }
+    return out
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [current, answers, dataset, ctx.now])
+
+  const stagePatches = useMemo(() => {
+    const patchOf: Record<StepId, Partial<Answers>> = {
+      markets: { markets: answers.markets },
+      forms: { marketForms: answers.marketForms },
+      residence: { residence: answers.residence },
+      instruments: { instruments: answers.instruments },
+      style: { style: answers.style },
+      when: { when: answers.when },
+      budget: { budget: answers.budget },
+      steps: { steps: answers.steps },
+      drawdown: { drawdown: answers.drawdown },
+      priority: { priority: answers.priority },
+      platform: { platforms: answers.platforms },
+    }
+    const upto = steps.slice(0, index + 1).filter((id) => id === current || stepIsValid(id, answers, dataset))
+    return upto.map((id) => patchOf[id])
+  }, [steps, index, current, answers, dataset])
+  const trailValues = useMemo(() => {
+    const start = funnelTrail(dataset, answers, [{}], ctx.now)
+    return [...start, ...funnelTrail(dataset, answers, stagePatches, ctx.now)]
+  }, [dataset, answers, stagePatches, ctx.now])
+
+  const budgetView = useMemo(() => (current === 'budget' ? budgetBrackets(dataset, answers, ctx.now) : null), [current, dataset, answers, ctx.now])
 
   const next = () => {
     if (!valid) return
@@ -54,6 +123,7 @@ export default function Quiz() {
       <p className="step-count">
         Question {index + 1} sur {steps.length}
       </p>
+      <FunnelBar ds={dataset} answers={answers} now={ctx.now} trail={trailValues} onSoften={(k) => setWeight(k, 'preferred')} />
       <h1 className="q-title">{STEP_TITLES[current]}</h1>
 
       {current === 'markets' && (
@@ -67,6 +137,7 @@ export default function Quiz() {
                 selected={answers.markets.includes(m.id)}
                 label={m.label}
                 help={m.help}
+                count={preview[m.id]}
                 onClick={() => set({ markets: toggle(answers.markets, m.id) })}
               />
             ))}
@@ -118,6 +189,7 @@ export default function Quiz() {
                         multi
                         selected={answers.instruments.includes(i.id)}
                         label={i.label}
+                        count={preview[i.id]}
                         help={`${CONTRACT_LABEL[i.contract]} — sous-jacent : ${i.underlying}`}
                         onClick={() => set({ instruments: toggle(answers.instruments, i.id) })}
                       />
@@ -132,7 +204,7 @@ export default function Quiz() {
       {current === 'style' && (
         <div className="options" role="radiogroup">
           {STYLE_OPTIONS.map((o) => (
-            <Option key={o.id} selected={answers.style === o.id} label={o.label} help={o.help} onClick={() => set({ style: o.id })} />
+            <Option key={o.id} selected={answers.style === o.id} label={o.label} help={o.help} count={preview[o.id]} onClick={() => set({ style: o.id })} />
           ))}
         </div>
       )}
@@ -151,6 +223,7 @@ export default function Quiz() {
                 selected={answers.when.includes(o.id)}
                 label={o.label}
                 help={o.help}
+                count={preview[o.id]}
                 onClick={() =>
                   set({
                     when: o.id === 'none' ? (answers.when.includes('none') ? [] : ['none']) : toggle(answers.when.filter((w) => w !== 'none'), o.id),
@@ -159,6 +232,14 @@ export default function Quiz() {
               />
             ))}
           </div>
+          {activeRestrictions.length > 0 && (
+            <p className="lock-line">
+              Ces choix sont traités comme <strong>indispensables</strong> : un programme qui les interdit sera écarté.{' '}
+              <button type="button" className="linklike" onClick={() => activeRestrictions.forEach((k) => setWeight(k, restrictionsRequired ? 'preferred' : 'required'))}>
+                {restrictionsRequired ? 'Les traiter comme souhaitables' : 'Les rendre indispensables'}
+              </button>
+            </p>
+          )}
         </>
       )}
 
@@ -167,9 +248,12 @@ export default function Quiz() {
           <p className="q-hint">Le drawdown est la perte maximale que ton compte peut subir avant d'être fermé.</p>
           <div className="options" role="radiogroup">
             {DRAWDOWN_OPTIONS.map((o) => (
-              <Option key={o.id} selected={answers.drawdown === o.id} label={o.label} gloss={o.gloss} onClick={() => set({ drawdown: o.id as DrawdownPref })} />
+              <Option key={o.id} selected={answers.drawdown === o.id} label={o.label} gloss={o.gloss} count={preview[o.id]} onClick={() => set({ drawdown: o.id as DrawdownPref })} />
             ))}
           </div>
+          {answers.drawdown && ['static', 'eod_trailing', 'intraday_trailing'].includes(answers.drawdown) && (
+            <LockSwitch checked={weightOf('drawdown', answers) === 'required'} onChange={() => flip('drawdown')}>Indispensable pour moi</LockSwitch>
+          )}
           <details className="explain" open={answers.drawdown === 'unknown'}>
             <summary>Comprendre les trois modèles (avec un exemple chiffré)</summary>
             {['static_drawdown', 'eod_trailing', 'intraday_trailing'].map((id) => {
@@ -182,29 +266,68 @@ export default function Quiz() {
 
       {current === 'budget' && (
         <>
+          <p className="q-hint">Un budget n’élimine pas un programme au hasard : si son prix dépasse ton plafond, il passe simplement en « alternative proche ». Un prix inconnu n’est jamais considéré comme « sous ton budget ».</p>
           <div className="options" role="radiogroup">
             {BUDGET_OPTIONS.map((o) => (
-              <Option key={o.id} selected={answers.budget === o.id} label={o.label} onClick={() => set({ budget: o.id })} />
+              <Option key={o.id} selected={answers.budget === o.id} label={o.label} count={preview[o.id]} onClick={() => set({ budget: o.id })} />
             ))}
           </div>
-          <p className="note">Montants en USD. {BASIS_TEXT}</p>
+          {answers.budget && ['lt50', '50_100', '100_200'].includes(answers.budget) && (
+            <LockSwitch checked={weightOf('budget', answers) === 'required'} onChange={() => flip('budget')}>Indispensable pour moi</LockSwitch>
+          )}
+          {budgetView && budgetView.brackets.length > 0 && (
+            <div className="panel info budget-view" data-testid="budget-view">
+              <strong>Où se situent les {budgetView.possible} programmes encore possibles</strong>
+              <table className="mini">
+                <thead><tr><th>Prix de départ (plus petit compte)</th><th>Programmes</th></tr></thead>
+                <tbody>
+                  {budgetView.brackets.map((b) => (
+                    <tr key={b.id}>
+                      <td>
+                        {b.label}
+                        <details>
+                          <summary className="muted">voir les programmes</summary>
+                          <ul>
+                            {b.programs.map((x) => (
+                              <li key={x.id}>
+                                {x.name}
+                                {x.price ? ` — ${x.price.currency === 'EUR' ? `${x.price.amount} €` : fmtUsd(x.price.amount)}${x.price.basis === 'observed' ? ' (prix observé, à vérifier)' : ' (prix confirmé)'}${x.price.partial ? ' · certaines tailles de compte sans prix relevé (le vrai prix de départ peut être plus bas)' : ''}` : ' — prix non confirmé'}
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      </td>
+                      <td>{b.count}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="note">
+                Chaque programme est compté une seule fois, à son prix de départ le plus bas : les comptes plus grands coûtent plus cher. Prix observés sur les sites officiels, indicatifs : <strong>Prix à vérifier</strong>. Les prix en euros ne sont pas convertis. {BASIS_TEXT}
+              </p>
+            </div>
+          )}
         </>
       )}
 
       {current === 'steps' && (
         <>
-        <p className="q-hint">Si tu choisis un type précis, les programmes d'un autre type seront exclus. Choisis « Peu importe » pour tout voir.</p>
+        <p className="q-hint">C’est une préférence : les programmes d’un autre type restent visibles comme « alternatives proches ». Coche « indispensable » seulement si tu ne veux vraiment pas d’autre type.</p>
         <div className="options" role="radiogroup">
           {STEPS_OPTIONS.map((o) => (
             <Option
               key={o.id}
               selected={answers.steps === o.id}
               label={o.label}
+              count={preview[o.id]}
               gloss={o.id === 'none' ? 'instant_funding' : null}
               onClick={() => set({ steps: o.id })}
             />
           ))}
         </div>
+        {answers.steps && ['one', 'two', 'none'].includes(answers.steps) && (
+          <LockSwitch checked={weightOf('steps', answers) === 'required'} onChange={() => flip('steps')}>Indispensable pour moi</LockSwitch>
+        )}
         </>
       )}
 
@@ -229,10 +352,14 @@ export default function Quiz() {
                 multi
                 selected={answers.platforms.includes(p.id)}
                 label={p.label}
+                count={preview[p.id]}
                 onClick={() => set({ platforms: toggle(answers.platforms, p.id) })}
               />
             ))}
           </div>
+          {answers.platforms.length > 0 && (
+            <LockSwitch checked={weightOf('platform', answers) === 'required'} onChange={() => flip('platform')}>Indispensable pour moi</LockSwitch>
+          )}
         </>
       )}
 

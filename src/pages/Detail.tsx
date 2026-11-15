@@ -14,7 +14,7 @@ import { formatters } from '../ui/rows'
 
 export default function Detail() {
   const { id } = useParams()
-  const { dataset, ctx, answers, relaxed, favorites, toggleFavorite, compare, toggleCompare, isCompared } = useApp()
+  const { dataset, ctx, answers, favorites, toggleFavorite, compare, toggleCompare, isCompared } = useApp()
   const p = dataset.programs.find((x) => x.id === id)
   if (!p) {
     return (
@@ -27,7 +27,7 @@ export default function Detail() {
   const firm = dataset.firms.find((f) => f.id === p.firm_id)
   const F = formatters(ctx)
   const o = { now: ctx.now, staleDays: ctx.scoring.stale_after_days }
-  const ev = answers.markets.length > 0 ? evaluateProgram(p, answers, ctx, relaxed) : null
+  const ev = answers.markets.length > 0 ? evaluateProgram(p, answers, ctx) : null
   const wd = ev?.withdrawal ?? withdrawalDisclosure(p, p.variants[0])
   const variants = [...p.variants].sort((a, b) => a.account_size_usd - b.account_size_usd)
 

@@ -67,7 +67,10 @@ describe('Mission 6 · profil 1 — débutant québécois, budget < 100 $', () =
   })
   it('un prix confirmé au-dessus du budget exclut ; un prix confirmé dans le budget ne suffit pas à rendre « compatible » le Québec', () => {
     const e = run({ ...P.debutant, budget: 'lt50' }).find((r) => r.p.id === 'topstep-trading-combine')!.e
-    expect(e.status).toBe('INCOMPATIBLE')
+    expect(e.category).toBe('B') // préférence : alternative proche
+    const locked = run({ ...P.debutant, budget: 'lt50', locks: { budget: 'required' } }).find((r) => r.p.id === 'topstep-trading-combine')!.e
+    expect(locked.category).toBe('C')
+    expect(locked.status).toBe('INCOMPATIBLE')
     const e2 = run(P.debutant).find((r) => r.p.id === 'topstep-trading-combine')!.e
     expect(crit(e2, 'budget')?.state).toBe('ok')
     expect(e2.status).toBe('A_VERIFIER')
@@ -114,8 +117,13 @@ describe('Mission 6 · profils 6, 7, 8 — deux étapes, retraits, sans préfér
   it('deux étapes : seuls les programmes à deux étapes survivent', () => {
     for (const { p, e } of run(P.deux)) {
       const n = p.evaluation.steps.value
+      if (n === 2) expect(e.category, p.id).toBe('A')
+      else expect(e.category, p.id).toBe('B') // préférence : les autres types restent visibles comme alternatives
+    }
+    for (const { p, e } of run({ ...P.deux, locks: { steps: 'required' } })) {
+      const n = p.evaluation.steps.value
       if (n === 2) expect(e.status, p.id).not.toBe('INCOMPATIBLE')
-      else expect(e.status, p.id).toBe('INCOMPATIBLE')
+      else if (p.evaluation.steps.status === 'confirmed') expect(e.status, p.id).toBe('INCOMPATIBLE')
     }
   })
   it('retraits : un programme avec des conditions de retrait incomplètes affiche toujours l’avertissement', () => {

@@ -1,13 +1,12 @@
 import type { Contract } from '../data/schema'
-import { emptyAnswers, type Answers, type CriterionKey } from './answers'
-import { RELAXABLE } from './answers'
+import { ADJUSTABLE, emptyAnswers, type Answers, type CriterionKey } from './answers'
 
 /**
  * LIEN DE PARTAGE
  * Contient uniquement les critères du questionnaire. La résidence (pays, région)
  * n'est JAMAIS incluse : celui qui ouvre le lien indique la sienne.
  */
-export type ShareState = { answers: Answers; relaxed: CriterionKey[] }
+export type ShareState = { answers: Answers }
 
 const enc = (s: string) => btoa(s).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
 const dec = (s: string) => atob(s.replace(/-/g, '+').replace(/_/g, '/'))
@@ -25,7 +24,7 @@ export function encodeShare(state: ShareState): string {
     e: a.steps,
     p: a.priority,
     pl: a.platforms,
-    x: state.relaxed,
+    l: a.locks,
   }
   return enc(JSON.stringify(payload))
 }
@@ -64,8 +63,14 @@ export function decodeShare(token: string): ShareState | null {
     a.steps = pick(raw.e, STEPS)
     a.priority = pick(raw.p, PRIORITY)
     a.platforms = strArr(raw.pl)
-    const relaxed = strArr(raw.x).filter((x): x is CriterionKey => (RELAXABLE as string[]).includes(x))
-    return { answers: a, relaxed }
+    const locks: Answers['locks'] = {}
+    if (typeof raw.l === 'object' && raw.l !== null) {
+      for (const [k, v] of Object.entries(raw.l as Record<string, unknown>)) {
+        if ((ADJUSTABLE as string[]).includes(k) && (v === 'required' || v === 'preferred')) locks[k as CriterionKey] = v
+      }
+    }
+    a.locks = locks
+    return { answers: a }
   } catch {
     return null
   }

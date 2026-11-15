@@ -26,11 +26,12 @@ export function multiFormMarkets(ds: Dataset, selected: string[]): { market: str
 
 /** Étapes actives selon les réponses : les sous-questions n'apparaissent que si elles sont utiles. */
 export function activeSteps(a: Answers, ds: Dataset): StepId[] {
+  // Ordre pensé pour guider : d'abord ce qui élimine de façon certaine (marché, forme, résidence), puis le style de trading,
+  // puis les préférences. La résidence est en 3ᵉ position : c'est la contrainte la moins négociable.
   const s: StepId[] = ['markets']
   if (multiFormMarkets(ds, a.markets).length > 0) s.push('forms')
-  s.push('instruments', 'style', 'when', 'drawdown', 'budget', 'steps', 'priority')
+  s.push('residence', 'instruments', 'style', 'when', 'budget', 'steps', 'drawdown', 'priority')
   if (a.priority === 'platform') s.push('platform')
-  s.push('residence')
   return s
 }
 
@@ -68,7 +69,7 @@ export const STEP_TITLES: Record<StepId, string> = {
   style: 'Quel est ton style de trading ?',
   when: 'Quand souhaites-tu trader ?',
   drawdown: 'Quel type de drawdown préfères-tu ?',
-  budget: 'Quel est ton budget ?',
+  budget: 'Quel budget veux-tu y consacrer ?',
   steps: "Quel type d'évaluation veux-tu ?",
   priority: 'Quelle est ta priorité ?',
   platform: 'Quelle plateforme utilises-tu ?',
@@ -100,10 +101,10 @@ export const DRAWDOWN_OPTIONS = [
 ] as const
 
 export const BUDGET_OPTIONS = [
-  { id: 'lt50', label: 'Moins de 50 $' },
-  { id: '50_100', label: '50 à 100 $' },
-  { id: '100_200', label: '100 à 200 $' },
-  { id: 'gt200', label: 'Plus de 200 $' },
+  { id: 'lt50', label: "Jusqu'à 50 $" },
+  { id: '50_100', label: "Jusqu'à 100 $" },
+  { id: '100_200', label: "Jusqu'à 200 $" },
+  { id: 'gt200', label: 'Plus de 200 $ (pas de plafond)' },
   { id: 'none', label: 'Aucun budget défini' },
 ] as const
 

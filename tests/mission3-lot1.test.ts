@@ -207,8 +207,9 @@ describe('Lot 1 · critère « instruments précis » dans le moteur', () => {
     expect(e.status).toBe('INCOMPATIBLE')
     expect(e.criteria.find((c) => c.key === 'instruments')?.state).toBe('fail')
     expect(e.instrumentChecks[0].state).toBe('unavailable')
-    const relaxed = evaluateProgram(real(TOPSTEP), a, fullCtx, ['markets', 'instruments'])
-    expect(relaxed.status).toBe('PARTIEL')
+    // Mission 7 : l'instrument est toujours indispensable, aucun cadenas ne peut l'assouplir.
+    const forced = evaluateProgram(real(TOPSTEP), { ...a, locks: { instruments: 'preferred' } as never }, fullCtx)
+    expect(forced.status).toBe('INCOMPATIBLE')
   })
 
   it('un instrument « à vérifier » donne A_VERIFIER au mieux, jamais COMPATIBLE', () => {
@@ -235,10 +236,9 @@ describe('Lot 1 · critère « instruments précis » dans le moteur', () => {
 
   it('le lien de partage conserve les instruments et n’inclut toujours pas la résidence', () => {
     const a = { ...emptyAnswers(), markets: ['futures_index'], instruments: ['NQ', 'MNQ', 'MBT'], residence: { country: 'CA' as const, region: 'QC' } }
-    const token = encodeShare({ answers: a, relaxed: ['instruments'] })
+    const token = encodeShare({ answers: a })
     const back = decodeShare(token)!
     expect(back.answers.instruments).toEqual(['NQ', 'MNQ', 'MBT'])
-    expect(back.relaxed).toEqual(['instruments'])
     expect(back.answers.residence.country).toBeNull()
     expect(atob(token.replace(/-/g, '+').replace(/_/g, '/'))).not.toMatch(/QC|CA/)
   })

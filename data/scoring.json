@@ -35,7 +35,6 @@
     "platform": 10
   },
   "priority_multiplier": 2,
-  "steps_is_blocking": true,
   "drawdown_simplicity": {
     "static": 1,
     "eod_trailing": 0.6,

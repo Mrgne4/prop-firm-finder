@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
 import type { Dataset } from '../data/schema'
-import { emptyAnswers, type Answers, type CriterionKey } from '../engine/answers'
+import { emptyAnswers, type Answers } from '../engine/answers'
 import { makeContext, type EngineContext } from '../engine/evaluate'
 
 const K_ANSWERS = 'pff.answers.v1'
@@ -29,8 +29,6 @@ type State = {
   setAnswers: (update: (a: Answers) => Answers) => void
   replaceAnswers: (a: Answers) => void
   resetAnswers: () => void
-  relaxed: CriterionKey[]
-  setRelaxed: (r: CriterionKey[]) => void
   favorites: string[]
   toggleFavorite: (id: string) => void
   /** Colonnes du comparateur : « programme:variante » (une variante = une taille de compte). */
@@ -51,7 +49,6 @@ export const parseColKey = (k: string): { programId: string; variantId: string |
 
 export function AppStateProvider({ dataset, now, children }: { dataset: Dataset; now?: Date; children: ReactNode }) {
   const [answers, setAnswersState] = useState<Answers>(() => ({ ...emptyAnswers(), ...load<Partial<Answers>>(K_ANSWERS, {}) }))
-  const [relaxed, setRelaxed] = useState<CriterionKey[]>([])
   const [favorites, setFavorites] = useState<string[]>(() => {
     const f = load<{ ids: string[] }>(K_FAVS, { ids: [] })
     return Array.isArray(f.ids) ? f.ids.filter((id) => dataset.programs.some((p) => p.id === id)) : []
@@ -69,7 +66,6 @@ export function AppStateProvider({ dataset, now, children }: { dataset: Dataset;
   const replaceAnswers = useCallback((a: Answers) => setAnswersState(a), [])
   const resetAnswers = useCallback(() => {
     setAnswersState(emptyAnswers())
-    setRelaxed([])
   }, [])
   const toggleFavorite = useCallback((id: string) => setFavorites((f) => (f.includes(id) ? f.filter((x) => x !== id) : [...f, id])), [])
   const setCompare = useCallback((keys: string[]) => setCompareState([...new Set(keys)].slice(0, MAX_COMPARE)), [])
@@ -92,8 +88,6 @@ export function AppStateProvider({ dataset, now, children }: { dataset: Dataset;
     setAnswers,
     replaceAnswers,
     resetAnswers,
-    relaxed,
-    setRelaxed,
     favorites,
     toggleFavorite,
     compare,

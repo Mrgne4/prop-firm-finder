@@ -9,11 +9,13 @@ type Props = {
   /** Glossaire : ouvre une fenêtre explicative. */
   gloss?: string | null
   multi?: boolean
+  /** Nombre de programmes possibles si ce choix est retenu (aperçu). */
+  count?: number | null
   children?: ReactNode
 }
 
 /** Grand bouton de choix (radio ou case à cocher), adapté au tactile. */
-export function Option({ selected, onClick, label, help, gloss, multi, children }: Props) {
+export function Option({ selected, onClick, label, help, gloss, multi, count, children }: Props) {
   return (
     <div className={`opt${selected ? ' selected' : ''}`}>
       <button type="button" className="opt-main" role={multi ? 'checkbox' : 'radio'} aria-checked={selected} onClick={onClick}>
@@ -25,6 +27,11 @@ export function Option({ selected, onClick, label, help, gloss, multi, children 
           {help && <span className="opt-help">{help}</span>}
         </span>
       </button>
+      {count != null && (
+        <span className={`opt-count${count === 0 ? ' zero' : ''}`} title={count === 0 ? 'Avec ce choix, aucun programme ne correspond à tout ce que tu as indiqué.' : undefined}>
+          {count === 0 ? '⚠ 0 programme' : `${count} programme${count > 1 ? 's' : ''}`}
+        </span>
+      )}
       {gloss && <Info ids={[gloss]} label={`Explication : ${label}`} />}
       {children}
     </div>

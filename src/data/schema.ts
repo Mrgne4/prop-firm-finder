@@ -350,8 +350,6 @@ export const ScoringConfigSchema = z.object({
   }),
   /** Multiplicateur appliqué au critère choisi comme priorité (Q7). */
   priority_multiplier: z.number().positive(),
-  /** Le nombre d'étapes est-il bloquant (true) ou seulement une préférence (false) ? */
-  steps_is_blocking: z.boolean(),
   drawdown_simplicity: z.object({
     static: z.number().min(0).max(1),
     eod_trailing: z.number().min(0).max(1),

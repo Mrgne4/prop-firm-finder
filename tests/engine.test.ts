@@ -107,8 +107,9 @@ describe('Résidence (critère d’admissibilité)', () => {
     expect(r('CA')).toBe('unknown') // absence d'exclusion ≠ admissibilité confirmée
   })
   it("la résidence n'est jamais assouplissable", () => {
-    const e = evaluateProgram(demo(GAMMA), profile({ markets: ['forex'], residence: { country: 'US', region: null } }), ctx, ['residence' as never])
+    const e = evaluateProgram(demo(GAMMA), profile({ markets: ['forex'], residence: { country: 'US', region: null }, locks: { residence: 'preferred' } as never }), ctx)
     expect(e.status).toBe('INCOMPATIBLE')
+    expect(e.category).toBe('C')
   })
 })
 
@@ -231,9 +232,14 @@ describe('Budget et coûts', () => {
 
 describe('Type d’évaluation', () => {
   it('choix explicite : critère bloquant', () => {
-    const e = evaluateProgram(demo(ALPHA), profile({ steps: 'two' }), ctx)
-    expect(crit(e, 'steps')?.state).toBe('fail')
-    expect(e.status).toBe('INCOMPATIBLE')
+    // Mission 7 : le type d'évaluation est une PRÉFÉRENCE par défaut (alternative proche) ; il devient bloquant avec le cadenas.
+    const soft = evaluateProgram(demo(ALPHA), profile({ steps: 'two' }), ctx)
+    expect(crit(soft, 'steps')?.state).toBe('fail')
+    expect(soft.category).toBe('B')
+    expect(soft.status).toBe('PARTIEL')
+    const hard = evaluateProgram(demo(ALPHA), profile({ steps: 'two', locks: { steps: 'required' } }), ctx)
+    expect(hard.category).toBe('C')
+    expect(hard.status).toBe('INCOMPATIBLE')
   })
   it('« Peu importe » : aucune exclusion', () => {
     const e = evaluateProgram(demo(ALPHA), profile({ steps: 'any' }), ctx)
@@ -268,19 +274,26 @@ describe('Données anciennes', () => {
 })
 
 describe('Assouplissement des critères', () => {
-  const answers = profile({ markets: ['futures_index', 'metals', 'crypto_major'] })
-  it('un échec assoupli donne PARTIEL, jamais COMPATIBLE', () => {
-    const e = evaluateProgram(demo(ALPHA), answers, ctx, ['markets'])
+  const answers = profile({ when: ['overnight'] })
+  it('une restriction passée en « souhaitable » donne PARTIEL (alternative), jamais COMPATIBLE', () => {
+    const e = evaluateProgram(demo(ALPHA), { ...answers, locks: { overnight: 'preferred' } }, ctx)
     expect(e.status).toBe('PARTIEL')
-    expect(crit(e, 'markets')?.relaxed).toBe(true)
+    expect(e.category).toBe('B')
+    expect(crit(e, 'overnight')?.relaxed).toBe(true)
+    expect(e.adjustments.map((x) => x.key)).toEqual(['overnight'])
   })
-  it("un autre échec non assoupli reste bloquant", () => {
-    const e = evaluateProgram(demo(ALPHA), { ...answers, when: ['overnight'] }, ctx, ['markets'])
+  it('par défaut la restriction est indispensable : INCOMPATIBLE', () => {
+    const e = evaluateProgram(demo(ALPHA), answers, ctx)
     expect(e.status).toBe('INCOMPATIBLE')
+    expect(e.category).toBe('C')
   })
-  it('sans assouplissement, aucun statut PARTIEL n’existe', () => {
+  it('un marché non proposé reste bloquant, même si l’étudiant a assoupli autre chose', () => {
+    const e = evaluateProgram(demo(ALPHA), profile({ markets: ['stocks'], marketForms: { stocks: 'spot' }, when: ['overnight'], locks: { overnight: 'preferred' } }), ctx)
+    expect(e.category).toBe('C')
+  })
+  it('sans aucun cadenas modifié, aucune alternative B n’apparaît pour des critères déjà indispensables', () => {
     const all = evaluateAll(ds, answers, { now: NOW })
-    expect(all.some((r) => r.status === 'PARTIEL')).toBe(false)
+    expect(all.some((r) => r.category === 'B')).toBe(false)
   })
 })
 

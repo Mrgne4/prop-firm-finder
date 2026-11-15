@@ -20,7 +20,10 @@ describe('2B-1 · variantes évaluées individuellement', () => {
     const dearest = e.variants.reduce((a, b) => ((a.cost.lowerBound ?? 0) >= (b.cost.lowerBound ?? 0) ? a : b))
     if ((dearest.cost.lowerBound ?? 0) > 49.99) {
       expect(dearest.criteria.find((c) => c.key === 'budget')?.state).toBe('fail')
-      expect(dearest.status).toBe('INCOMPATIBLE')
+      // budget = préférence par défaut → alternative proche ; indispensable → incompatible
+      expect(dearest.status).toBe('PARTIEL')
+      const locked = evaluateProgram(p, profile({ budget: 'lt50', locks: { budget: 'required' } }), ctx)
+      expect(locked.variants.find((v) => v.variantId === dearest.variantId)?.status).toBe('INCOMPATIBLE')
     }
     expect(cheapest.variantId).toBeTruthy()
   })

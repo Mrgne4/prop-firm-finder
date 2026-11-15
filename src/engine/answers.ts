@@ -19,8 +19,28 @@ export type CriterionKey =
   | 'weekend'
   | 'asian_session'
   | 'scalping'
+  | 'drawdown'
+  | 'platform'
 
-export const RELAXABLE: CriterionKey[] = ['markets', 'instruments', 'budget', 'steps', 'news', 'overnight', 'weekend', 'asian_session', 'scalping']
+/** Poids d'un critère : « required » = indispensable (jamais assoupli par l'outil), « preferred » = souhaitable. */
+export type Weight = 'required' | 'preferred'
+
+/** Critères dont le poids ne peut pas être modifié : marché, instruments, résidence. */
+export const FIXED_REQUIRED: CriterionKey[] = ['markets', 'instruments', 'residence']
+/** Restrictions de trading : indispensables par défaut, passables en « souhaitable ». */
+export const RESTRICTION_KEYS: CriterionKey[] = ['news', 'overnight', 'weekend', 'asian_session', 'scalping']
+/** Préférences : souhaitables par défaut, passables en « indispensable » (cadenas). */
+export const PREFERENCE_KEYS: CriterionKey[] = ['budget', 'steps', 'drawdown', 'platform']
+/** Critères dont le poids est modifiable par l'étudiant. */
+export const ADJUSTABLE: CriterionKey[] = [...RESTRICTION_KEYS, ...PREFERENCE_KEYS]
+
+/** Poids effectif d'un critère : choix explicite de l'étudiant, sinon valeur par défaut. */
+export function weightOf(key: string, a: Pick<Answers, 'locks'>): Weight {
+  if (FIXED_REQUIRED.includes(key as CriterionKey)) return 'required'
+  const set = a.locks?.[key as CriterionKey]
+  if (set) return set
+  return RESTRICTION_KEYS.includes(key as CriterionKey) ? 'required' : 'preferred'
+}
 
 export type Residence = {
   country: string | null
@@ -44,6 +64,8 @@ export type Answers = {
   priority: PriorityKey | null
   platforms: string[]
   residence: Residence
+  /** Poids choisis par l'étudiant (cadenas). Absent = valeur par défaut. */
+  locks: Partial<Record<CriterionKey, Weight>>
 }
 
 export const emptyAnswers = (): Answers => ({
@@ -58,4 +80,5 @@ export const emptyAnswers = (): Answers => ({
   priority: null,
   platforms: [],
   residence: { country: null, region: null },
+  locks: {},
 })

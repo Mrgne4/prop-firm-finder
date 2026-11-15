@@ -7,7 +7,7 @@ import { Info } from '../ui/Glossary'
 import { compareSections, type Col } from '../ui/rows'
 
 export default function Compare() {
-  const { dataset, ctx, answers, relaxed, compare, setCompare } = useApp()
+  const { dataset, ctx, answers, compare, setCompare } = useApp()
   const [params] = useSearchParams()
 
   // Lien direct ?p=programme:variante,… (ou programme seul) : on initialise la sélection si elle est vide.
@@ -31,7 +31,7 @@ export default function Compare() {
     const { programId, variantId } = parseColKey(key)
     const p = dataset.programs.find((x) => x.id === programId)
     if (!p) return []
-    const evaluation = evaluateProgram(p, answers, ctx, relaxed)
+    const evaluation = evaluateProgram(p, answers, ctx)
     const ev = evaluation.variants.find((x) => x.variantId === (variantId ?? evaluation.recommendedVariantId)) ?? evaluation.variants[0]
     const v = p.variants.find((x) => x.id === ev.variantId)!
     return [{ key: colKey(p.id, v.id), p, firm: dataset.firms.find((f) => f.id === p.firm_id), v, cost: ev.cost, ev }]

@@ -165,7 +165,7 @@ describe('Lien de partage', () => {
   }
 
   it("n'inclut jamais la résidence", () => {
-    const token = encodeShare({ answers, relaxed: ['markets'] })
+    const token = encodeShare({ answers })
     const json = atob(token.replace(/-/g, '+').replace(/_/g, '/'))
     expect(json).not.toContain('QC')
     expect(json).not.toContain('"CA"')
@@ -175,21 +175,22 @@ describe('Lien de partage', () => {
   })
 
   it('restitue les critères', () => {
-    const back = decodeShare(encodeShare({ answers, relaxed: ['markets', 'budget'] }))!
+    const back = decodeShare(encodeShare({ answers: { ...answers, locks: { budget: 'required', overnight: 'preferred' } } }))!
     expect(back.answers.markets).toEqual(['futures_index', 'metals'])
     expect(back.answers.marketForms).toEqual({ metals: 'futures' })
     expect(back.answers.when).toEqual(['regular', 'overnight'])
     expect(back.answers.budget).toBe('50_100')
-    expect(back.relaxed).toEqual(['markets', 'budget'])
+    expect(back.answers.locks).toEqual({ budget: 'required', overnight: 'preferred' })
   })
 
   it('ignore les valeurs inattendues et les liens corrompus', () => {
     expect(decodeShare('!!pas-du-base64!!')).toBeNull()
-    const evil = btoa(JSON.stringify({ b: 'gratuit', d: '<script>', w: ['x'], x: ['residence', 'markets'] }))
+    const evil = btoa(JSON.stringify({ b: 'gratuit', d: '<script>', w: ['x'], l: { residence: 'preferred', markets: 'preferred', budget: 'required', steps: 'bizarre' } }))
     const back = decodeShare(evil)!
     expect(back.answers.budget).toBeNull()
     expect(back.answers.drawdown).toBeNull()
     expect(back.answers.when).toEqual([])
-    expect(back.relaxed).toEqual(['markets'])
+    // résidence et marchés ne sont jamais modifiables ; les valeurs inconnues sont ignorées
+    expect(back.answers.locks).toEqual({ budget: 'required' })
   })
 })

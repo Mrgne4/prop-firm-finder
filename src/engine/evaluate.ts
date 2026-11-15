@@ -10,7 +10,7 @@ import type {
   Variant,
 } from '../data/schema'
 import { daysBetween, isStale } from '../data/sourced'
-import type { Answers, CriterionKey, Residence } from './answers'
+import { weightOf, type Answers, type CriterionKey, type Residence } from './answers'
 import { computeCoverage, type Coverage } from './coverage'
 import { withdrawalDisclosure, type WithdrawalDisclosure } from './withdrawals'
 
@@ -23,7 +23,7 @@ import { withdrawalDisclosure, type WithdrawalDisclosure } from './withdrawals'
  *                et aucune information essentielle ne manque.
  * A_VERIFIER   : aucune incompatibilité confirmée, mais au moins une information manquante, conditionnelle ou périmée.
  * INCOMPATIBLE : au moins une incompatibilité bloquante confirmée (sur une donnée récente).
- * PARTIEL      : n'existe QUE si l'étudiant a assoupli des critères.
+ * PARTIEL      : alternative proche (catégorie B) : aucune incompatibilité sur un critère indispensable, mais une préférence n'est pas satisfaite.
  */
 export type Status = 'COMPATIBLE' | 'A_VERIFIER' | 'INCOMPATIBLE' | 'PARTIEL'
 
@@ -56,9 +56,26 @@ export type CriterionResult = {
   label: string
   state: CriterionState
   message: string
-  /** true si l'échec existe mais l'étudiant a choisi d'assouplir ce critère. */
+  /** true si l'échec porte sur une PRÉFÉRENCE (souhaitable) : un ajustement est possible. Jamais vrai pour un critère indispensable. */
   relaxed: boolean
+  /** Poids choisi (ou par défaut) : indispensable, souhaitable, ou information (fraîcheur, lacunes). */
+  weight?: 'required' | 'preferred' | 'info'
+  /** Budget : prix seulement OBSERVÉ (non confirmé) et supérieur au plafond. Jamais un échec confirmé. */
+  observedOver?: boolean
+  /** Budget : le verdict repose sur un prix confirmé ou sur un prix observé (à vérifier). */
+  basis?: 'confirmed' | 'observed'
   evidence: Evidence[]
+}
+
+/** A = correspondance potentielle ; B = alternative proche ; C = incompatible. */
+export type Category = 'A' | 'B' | 'C'
+
+export type Adjustment = {
+  key: CriterionKey
+  label: string
+  text: string
+  /** true si ce critère est indispensable : le changement est une suggestion de stratégie, pas un ajustement. */
+  locked: boolean
 }
 
 export type VariantCost = {
@@ -102,6 +119,7 @@ export type VariantEvaluation = {
   variantId: string
   accountSizeUsd: number
   status: Status
+  category: Category
   criteria: CriterionResult[]
   cost: VariantCost
   score: ScoreResult
@@ -110,6 +128,16 @@ export type VariantEvaluation = {
 
 export type Evaluation = {
   programId: string
+  /** Catégorie de la variante recommandée : A potentielle, B alternative proche, C incompatible. */
+  category: Category
+  /** Critères respectés / non respectés (confirmés) / non confirmés, pour expliquer la catégorie. */
+  met: CriterionResult[]
+  missed: CriterionResult[]
+  unconfirmed: CriterionResult[]
+  /** Préférences non satisfaites : ce que l'étudiant devrait ajuster (catégorie B). */
+  adjustments: Adjustment[]
+  /** Catégorie A mais budget indispensable avec prix seulement observé, au-dessus du plafond : à confirmer. */
+  uncertainBudget: boolean
   /** Statut, critères, score et couverture de la variante RECOMMANDÉE (la mieux placée). */
   status: Status
   criteria: CriterionResult[]
@@ -210,6 +238,8 @@ const CRITERION_LABELS: Record<CriterionKeyAll, string> = {
   instruments: 'Instruments précis',
   residence: 'Pays de résidence',
   budget: 'Budget',
+  drawdown: 'Type de drawdown',
+  platform: 'Plateforme',
   steps: "Type d'évaluation",
   news: 'Annonces économiques',
   overnight: 'Positions overnight',
@@ -578,8 +608,30 @@ export function cheapestVariant(costs: VariantCost[]): VariantCost | null {
   return [...known].sort((x, y) => (x.lowerBound as number) - (y.lowerBound as number) || x.accountSizeUsd - y.accountSizeUsd)[0]
 }
 
-/** Budget d'UNE variante, calculé uniquement avec ses propres prix et frais. */
-function checkBudgetVariant(a: Answers, v: Variant, c: VariantCost, ctx: EngineContext): CriterionResult | null {
+export type ObservedRef = { amount: number; currency: 'USD' | 'EUR'; observed_on: string; kind: string; label: string }
+
+/**
+ * Prix OBSERVÉ de référence (jamais confirmé, jamais un code promo) d'une variante :
+ *  1. le plus bas prix observé rattaché à cette variante ;
+ *  2. sinon une BORNE BASSE : le plus bas prix observé pour une taille de compte inférieure ou égale (un compte plus grand
+ *     ne coûte en général pas moins cher), ou un prix « à partir de » non rattaché à une taille.
+ * Ce n'est jamais un prix confirmé.
+ */
+export function observedFor(p: Program, variantId: string | null): ObservedRef | null {
+  const list = (p.observed_prices ?? []).filter((x) => x.kind !== 'promo')
+  const pick = (l: typeof list) => (l.length === 0 ? null : l.reduce((m, x) => (x.currency === m.currency ? (x.amount < m.amount ? x : m) : m.currency === 'USD' ? m : x)))
+  const v = p.variants.find((x) => x.id === variantId)
+  const own = variantId ? pick(list.filter((x) => x.variant_id === variantId)) : null
+  const smaller = v
+    ? pick(list.filter((x) => x.variant_id !== null && (p.variants.find((y) => y.id === x.variant_id)?.account_size_usd ?? Infinity) <= v.account_size_usd))
+    : null
+  const unattached = pick(list.filter((x) => x.variant_id === null))
+  const found = own ?? pick([smaller, unattached].filter((x): x is NonNullable<typeof x> => !!x))
+  return found ? { amount: found.amount, currency: found.currency, observed_on: found.observed_on, kind: found.kind, label: found.label } : null
+}
+
+/** Budget d'UNE variante, calculé avec ses propres prix. Un prix seulement observé ne confirme ni n'infirme jamais. */
+function checkBudgetVariant(p: Program, a: Answers, v: Variant, c: VariantCost, ctx: EngineContext): CriterionResult | null {
   if (!a.budget) return null
   const cap = ctx.scoring.budget_caps_usd[a.budget]
   if (cap === null) return null
@@ -588,24 +640,72 @@ function checkBudgetVariant(a: Answers, v: Variant, c: VariantCost, ctx: EngineC
   const base = { key: 'budget' as const, label: CRITERION_LABELS.budget, relaxed: false, evidence: evi }
   if (c.exact !== null) {
     return c.exact <= cap
-      ? { ...base, state: 'ok', message: `Compte de ${size} : ${usd(c.exact)} au départ, dans ton budget. ${c.model === 'monthly' ? 'Abonnement mensuel : premier mois + frais obligatoires.' : 'Paiement unique + frais obligatoires.'}` }
-      : { ...base, state: 'fail', message: `Compte de ${size} : ${usd(c.exact)} au départ, au-dessus de ton budget maximal de ${usd(cap)}.` }
+      ? { ...base, basis: 'confirmed', state: 'ok', message: `Compte de ${size} : ${usd(c.exact)} au départ (prix confirmé), dans ton budget. ${c.model === 'monthly' ? 'Abonnement mensuel : premier mois + frais obligatoires.' : 'Paiement unique + frais obligatoires.'}` }
+      : { ...base, basis: 'confirmed', state: 'fail', message: `Compte de ${size} : ${usd(c.exact)} au départ (prix confirmé), au-dessus de ton budget maximal de ${usd(cap)}.` }
   }
   if (c.lowerBound !== null && c.lowerBound > cap) {
-    return { ...base, state: 'fail', message: `Compte de ${size} : au moins ${usd(c.lowerBound)} au départ, au-dessus de ton budget maximal de ${usd(cap)}.` }
+    return { ...base, basis: 'confirmed', state: 'fail', message: `Compte de ${size} : au moins ${usd(c.lowerBound)} au départ (prix confirmé), au-dessus de ton budget maximal de ${usd(cap)}.` }
   }
-  return {
-    ...base,
-    state: 'unknown',
-    message:
-      c.basePrice !== null
-        ? `Compte de ${size} : le prix de base est dans ton budget, mais les frais d'activation ne sont pas confirmés (ou sont périmés) : coût de départ à vérifier.`
-        : `Compte de ${size} : prix non confirmé ou périmé : impossible de vérifier ton budget.`,
+  if (c.basePrice !== null) {
+    return {
+      ...base,
+      basis: 'confirmed',
+      state: 'unknown',
+      message: `Compte de ${size} : le prix de base confirmé est dans ton budget, mais les frais d'activation ne sont pas confirmés (ou sont périmés) : coût de départ à vérifier.`,
+    }
   }
+  // Aucun prix confirmé : on regarde le prix OBSERVÉ, uniquement comme indication à vérifier.
+  const o = observedFor(p, v.id)
+  if (o && o.currency === 'USD') {
+    const over = o.amount > cap
+    return {
+      ...base,
+      basis: 'observed',
+      state: 'unknown',
+      observedOver: over,
+      message: over
+        ? `Compte de ${size} : prix non confirmé. Le prix observé sur le site officiel (${usd(o.amount)}, relevé le ${o.observed_on}) semble au-dessus de ton budget de ${usd(cap)} : à vérifier, ce n'est pas un prix confirmé.`
+        : `Compte de ${size} : prix non confirmé. Le prix observé (${usd(o.amount)}, relevé le ${o.observed_on}) semble dans ton budget : indication seulement, à vérifier sur le site officiel.`,
+    }
+  }
+  if (o) {
+    return { ...base, basis: 'observed', state: 'unknown', message: `Compte de ${size} : prix non confirmé, observé en euros (${o.amount} €, relevé le ${o.observed_on}) : non converti, à comparer à ton budget sur le site officiel.` }
+  }
+  return { ...base, state: 'unknown', message: `Compte de ${size} : prix non confirmé ou périmé : impossible de vérifier ton budget (jamais compté comme sous le budget).` }
+}
+
+function checkDrawdown(p: Program, a: Answers, ctx: EngineContext): CriterionResult | null {
+  if (!a.drawdown || !['static', 'eod_trailing', 'intraday_trailing'].includes(a.drawdown)) return null
+  const want = a.drawdown
+  const scopes = ([['évaluation', p.evaluation.drawdown_type], ['compte funded', p.funded.drawdown_type]] as const)
+    .map(([name, sv]) => ({ name, sv, r: read(sv, ctx) }))
+    .filter((x) => x.r.kind !== 'na')
+  const evi = scopes.map((x) => evidence(x.name === 'évaluation' ? 'evaluation.drawdown_type' : 'funded.drawdown_type', x.sv, ctx))
+  const base = { key: 'drawdown' as const, label: CRITERION_LABELS.drawdown, relaxed: false, evidence: evi }
+  if (scopes.length === 0) return null
+  const diff = scopes.filter((x) => x.r.kind === 'value' && x.r.value !== want)
+  if (diff.length > 0) {
+    const d = diff[0]
+    return { ...base, state: 'fail', message: `Drawdown ${d.name} : ${DD_LABEL[(d.r as { value: string }).value]} (tu préfères ${DD_LABEL[want]}).` }
+  }
+  const unk = scopes.filter((x) => x.r.kind === 'unknown')
+  if (unk.length > 0) return { ...base, state: 'unknown', message: `Type de drawdown ${unk.map((x) => `(${x.name} : ${unknownWhy(x.r as { reason: 'unconfirmed' | 'stale'; verified_at: string | null })})`).join(' ')} : à vérifier.` }
+  return { ...base, state: 'ok', message: `Drawdown ${DD_LABEL[want]}, comme souhaité.` }
+}
+
+function checkPlatform(p: Program, a: Answers, ctx: EngineContext): CriterionResult | null {
+  if (a.platforms.length === 0) return null
+  const r = read(p.platforms, ctx)
+  const base = { key: 'platform' as const, label: CRITERION_LABELS.platform, relaxed: false, evidence: [evidence('platforms', p.platforms, ctx)] }
+  const labels = a.platforms.map((id) => ctx.platformLabels.get(id) ?? id).join(', ')
+  if (r.kind !== 'value') return { ...base, state: 'unknown', message: `Plateformes ${r.kind === 'unknown' ? unknownWhy(r) : 'non applicables'} : à vérifier.` }
+  return a.platforms.some((id) => (r.value as string[]).includes(id))
+    ? { ...base, state: 'ok', message: `Compatible avec ${labels}.` }
+    : { ...base, state: 'fail', message: `Ne propose pas ${labels}.` }
 }
 
 function checkSteps(p: Program, a: Answers, ctx: EngineContext): CriterionResult | null {
-  if (!ctx.scoring.steps_is_blocking || !a.steps || a.steps === 'any') return null
+  if (!a.steps || a.steps === 'any') return null
   const want = a.steps === 'one' ? 1 : a.steps === 'two' ? 2 : 0
   const base = { key: 'steps' as const, label: CRITERION_LABELS.steps, relaxed: false, evidence: [evidence('evaluation.steps', p.evaluation.steps, ctx)] }
   const r = read(p.evaluation.steps, ctx)
@@ -775,6 +875,36 @@ export function computeScore(p: Program, a: Answers, cost: VariantCost | null, c
 /* ------------------------------------------------------------------ */
 
 const STATUS_ORDER: Record<Status, number> = { COMPATIBLE: 0, A_VERIFIER: 1, PARTIEL: 2, INCOMPATIBLE: 3 }
+const CATEGORY_ORDER: Record<Category, number> = { A: 0, B: 1, C: 2 }
+
+const ADJUST_TEXT: Partial<Record<CriterionKey, string>> = {
+  budget: 'Prévoir un budget plus élevé.',
+  steps: "Accepter un autre type d'évaluation.",
+  drawdown: 'Accepter un autre type de drawdown.',
+  platform: 'Utiliser une autre plateforme.',
+  news: `Renoncer à ${RESTRICTION_PHRASE.news}.`,
+  overnight: `Renoncer à ${RESTRICTION_PHRASE.overnight}.`,
+  weekend: `Renoncer à ${RESTRICTION_PHRASE.weekend}.`,
+  asian_session: `Renoncer à ${RESTRICTION_PHRASE.asian_session}.`,
+  scalping: `Renoncer à ${RESTRICTION_PHRASE.scalping}.`,
+}
+
+/** Catégorie d'une liste de critères. Un échec CONFIRMÉ sur un critère indispensable donne toujours C. */
+export function categorize(criteria: CriterionResult[]): { category: Category; uncertainBudget: boolean } {
+  const requiredFail = criteria.some((c) => c.state === 'fail' && c.weight === 'required')
+  if (requiredFail) return { category: 'C', uncertainBudget: false }
+  const preferredMiss = criteria.some((c) => (c.state === 'fail' || c.observedOver) && c.weight === 'preferred')
+  if (preferredMiss) return { category: 'B', uncertainBudget: false }
+  // Budget indispensable avec prix seulement observé au-dessus du plafond : reste incertain, jamais « confirmé ».
+  const uncertainBudget = criteria.some((c) => c.key === 'budget' && c.observedOver && c.weight === 'required')
+  return { category: 'A', uncertainBudget }
+}
+
+function statusOf(category: Category, criteria: CriterionResult[], uncertainBudget: boolean): Status {
+  if (category === 'C') return 'INCOMPATIBLE'
+  if (category === 'B') return 'PARTIEL'
+  return criteria.some((c) => c.state === 'unknown') || uncertainBudget ? 'A_VERIFIER' : 'COMPATIBLE'
+}
 
 function evaluateVariant(
   p: Program,
@@ -782,19 +912,19 @@ function evaluateVariant(
   index: number,
   a: Answers,
   ctx: EngineContext,
-  relaxed: CriterionKey[],
   shared: CriterionResult[],
   stepsCrit: CriterionResult | null,
 ): VariantEvaluation {
   const cost = computeVariantCost(v, ctx)
   const criteria: CriterionResult[] = shared.map((c) => ({ ...c }))
-  const b = checkBudgetVariant(a, v, cost, ctx)
+  const b = checkBudgetVariant(p, a, v, cost, ctx)
   if (b) criteria.push(b)
   if (stepsCrit) criteria.push({ ...stepsCrit })
 
-  // Assouplissement : seule une incompatibilité CONFIRMÉE peut être assouplie ; la résidence jamais.
+  // Poids : indispensable (jamais assoupli par l'outil) ou souhaitable (ajustable). La résidence est toujours indispensable.
   for (const c of criteria) {
-    if (c.state === 'fail' && c.key !== 'residence' && relaxed.includes(c.key as CriterionKey)) c.relaxed = true
+    c.weight = weightOf(c.key, a)
+    c.relaxed = c.state === 'fail' && c.weight === 'preferred'
   }
 
   const coverage = computeCoverage(p, index, ctx.scoring, ctx.now)
@@ -807,6 +937,7 @@ function evaluateVariant(
       label: CRITERION_LABELS.freshness,
       state: 'unknown',
       relaxed: false,
+      weight: 'info',
       message:
         `Vérification nécessaire : ${coverage.staleEssential.length} information(s) essentielle(s) datent de plus de ${ctx.scoring.stale_after_days} jours ` +
         `(la plus ancienne : ${oldest} jours) : ${coverage.staleEssential.slice(0, 4).map((x) => `${x.label} (vérifié le ${x.verified_at})`).join(', ')}${coverage.staleEssential.length > 4 ? '…' : ''}. ` +
@@ -821,20 +952,18 @@ function evaluateVariant(
       label: CRITERION_LABELS.essential_info,
       state: 'unknown',
       relaxed: false,
+      weight: 'info',
       message: `Informations critiques manquantes (${coverage.gaps.length}) : ${coverage.gaps.slice(0, 5).map((x) => x.label).join(', ')}${coverage.gaps.length > 5 ? '…' : ''}.`,
       evidence: [],
     })
   }
 
-  const hardFail = criteria.some((c) => c.state === 'fail' && !c.relaxed)
-  const relaxedFail = criteria.some((c) => c.state === 'fail' && c.relaxed)
-  const anyUnknown = criteria.some((c) => c.state === 'unknown')
-  const status: Status = hardFail ? 'INCOMPATIBLE' : relaxedFail ? 'PARTIEL' : anyUnknown ? 'A_VERIFIER' : 'COMPATIBLE'
-
-  return { variantId: v.id, accountSizeUsd: v.account_size_usd, status, criteria, cost, score: computeScore(p, a, cost, ctx), coverage }
+  const { category, uncertainBudget } = categorize(criteria)
+  const status = statusOf(category, criteria, uncertainBudget)
+  return { variantId: v.id, accountSizeUsd: v.account_size_usd, status, category, criteria, cost, score: computeScore(p, a, cost, ctx), coverage }
 }
 
-export function evaluateProgram(p: Program, a: Answers, ctx: EngineContext, relaxed: CriterionKey[] = []): Evaluation {
+export function evaluateProgram(p: Program, a: Answers, ctx: EngineContext): Evaluation {
   // Critères propres au programme (communs à toutes les tailles de compte).
   const shared: CriterionResult[] = []
   let marketsMatched: string[] = []
@@ -864,14 +993,19 @@ export function evaluateProgram(p: Program, a: Answers, ctx: EngineContext, rela
     const r = checkRestriction(p, key, ctx)
     if (r) shared.push(r)
   }
+  const dd = checkDrawdown(p, a, ctx)
+  if (dd) shared.push(dd)
+  const pf = checkPlatform(p, a, ctx)
+  if (pf) shared.push(pf)
   const stepsCrit = checkSteps(p, a, ctx)
 
   // Chaque variante est évaluée individuellement, avec ses propres frais et règles.
-  const variants = p.variants.map((v, i) => evaluateVariant(p, v, i, a, ctx, relaxed, shared, stepsCrit))
+  const variants = p.variants.map((v, i) => evaluateVariant(p, v, i, a, ctx, shared, stepsCrit))
 
-  // Variante recommandée : meilleur statut, puis meilleur score, puis moins chère (de SES propres frais), puis plus petite.
+  // Variante recommandée : meilleure catégorie, meilleur statut, meilleur score, moins chère (de SES propres frais), plus petite.
   const rec = [...variants].sort(
     (x, y) =>
+      CATEGORY_ORDER[x.category] - CATEGORY_ORDER[y.category] ||
       STATUS_ORDER[x.status] - STATUS_ORDER[y.status] ||
       y.score.rank - x.score.rank ||
       (x.cost.lowerBound ?? Infinity) - (y.cost.lowerBound ?? Infinity) ||
@@ -882,8 +1016,20 @@ export function evaluateProgram(p: Program, a: Answers, ctx: EngineContext, rela
   // Dates de vérification de tout le programme (traçabilité).
   const allDates = collectDates(p)
 
+  const active = rec.criteria.filter((c) => c.weight !== 'info')
+  const adjustments: Adjustment[] = active
+    .filter((c) => c.weight === 'preferred' && (c.state === 'fail' || c.observedOver))
+    .map((c) => ({ key: c.key as CriterionKey, label: c.label, text: ADJUST_TEXT[c.key as CriterionKey] ?? 'Ajuster ce critère.', locked: false }))
+  const { uncertainBudget } = categorize(rec.criteria)
+
   return {
     programId: p.id,
+    category: rec.category,
+    met: active.filter((c) => c.state === 'ok'),
+    missed: active.filter((c) => c.state === 'fail'),
+    unconfirmed: rec.criteria.filter((c) => c.state === 'unknown'),
+    adjustments,
+    uncertainBudget,
     status: rec.status,
     criteria: rec.criteria,
     score: rec.score,
@@ -921,9 +1067,12 @@ function collectDates(p: Program): string[] {
   return out.sort()
 }
 
-/** Tri : statut, puis score de classement (inconnu = 0 point), puis couverture essentielle, puis couverture globale, puis nom. */
+/** Tri : catégorie, puis nombre d'écarts, puis budget incertain en dernier, puis statut, score, couverture, nom. */
 export function compareEvaluations(x: Evaluation, y: Evaluation, nameOf: (id: string) => string): number {
   return (
+    CATEGORY_ORDER[x.category] - CATEGORY_ORDER[y.category] ||
+    x.adjustments.length - y.adjustments.length ||
+    Number(x.uncertainBudget) - Number(y.uncertainBudget) ||
     STATUS_ORDER[x.status] - STATUS_ORDER[y.status] ||
     y.score.rank - x.score.rank ||
     y.coverage.essential.pct - x.coverage.essential.pct ||
@@ -932,10 +1081,10 @@ export function compareEvaluations(x: Evaluation, y: Evaluation, nameOf: (id: st
   )
 }
 
-export function evaluateAll(ds: Dataset, a: Answers, opts: { now?: Date; relaxed?: CriterionKey[] } = {}): Evaluation[] {
+export function evaluateAll(ds: Dataset, a: Answers, opts: { now?: Date } = {}): Evaluation[] {
   const ctx = makeContext(ds, opts.now ?? new Date())
   const names = new Map(ds.programs.map((p) => [p.id, p.name]))
   return ds.programs
-    .map((p) => evaluateProgram(p, a, ctx, opts.relaxed ?? []))
+    .map((p) => evaluateProgram(p, a, ctx))
     .sort((x, y) => compareEvaluations(x, y, (id) => names.get(id) ?? id))
 }
