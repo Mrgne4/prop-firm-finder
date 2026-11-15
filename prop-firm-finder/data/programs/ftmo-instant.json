@@ -1,0 +1,1086 @@
+{
+  "id": "ftmo-instant",
+  "firm_id": "ftmo",
+  "name": "Instant Account (FTMO)",
+  "demo": false,
+  "official_url": "https://ftmo.com/en/instant-account/",
+  "summary": "Compte financé direct (5 000 $ à 100 000 $), perte quotidienne 3 %, perte maximale 10 % intraday, consistance 30 %, partage 90 %. CFD simulés, pas des futures.",
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "FOREX"
+    ],
+    "sources": [
+      "ft-instr"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex confirmé ; la page cite aussi indices, matières premières, actions et crypto mais sans liste par symbole : non confirmés individuellement."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Liste par symbole non lue."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "cfd",
+      "spot"
+    ],
+    "sources": [
+      "ft-how",
+      "ft-instr"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "CFD (simulés) sur Forex, indices, matières premières, actions et crypto ; aucun futures dans ces programmes."
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Limites par instrument non lues."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "metatrader4",
+      "metatrader5",
+      "ctrader",
+      "tradingview"
+    ],
+    "sources": [
+      "ft-platforms"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 0,
+      "sources": [
+        "ft-instant",
+        "ft-trial"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Compte financé direct, sans Challenge."
+    },
+    "drawdown_type": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune évaluation."
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune évaluation."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Aucune évaluation : le compte FTMO s'active à l'achat ; règles plus strictes que le Challenge (perte quotidienne 3 %, perte maximale 10 % intraday trailing, consistance 30 %).",
+      "sources": [
+        "ft-instant",
+        "ft-trial"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Voir le compte funded : consistance de 30 % sur le compte Instant."
+    },
+    "daily_loss_behavior": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune évaluation."
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "ft-how"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Compte FTMO simulé."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "intraday_trailing",
+      "sources": [
+        "ft-instant",
+        "ft-trial"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "10 % trailing intraday, basé sur le solde."
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 90,
+      "sources": [
+        "ft-instant"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "90 % dès le premier paiement."
+    },
+    "min_withdrawal_usd": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "payout_cap": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "max_payouts": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_effect_of_payout": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "ftmo-instant",
+          "label": "Demande de récompense",
+          "min_days": 14,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": 30,
+          "request_limit_pct_of_balance": null,
+          "note": "Première demande 14 jours après le premier trade ; consistance de 30 % ; un seul compte Instant à la fois ; hors plan de croissance."
+        }
+      ],
+      "sources": [
+        "ft-instant",
+        "ft-promo1"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "ft-instant"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Première demande 14 jours après le premier trade ; 90 % ; consistance de 30 % ; non éligible au Scaling Plan ni au Premium Programme.",
+      "sources": [
+        "ft-instant"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "ft-news"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Standard : à partir du compte FTMO (pas pendant le Challenge / la Vérification), restrictions sur des annonces macroéconomiques choisies et les instruments concernés (ex. paires avec le CAD lors d'annonces canadiennes) ; le tableau complet n'a pas été reproduit ici. Swing : aucune restriction."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "ft-hold"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "FTMO Account Standard : toutes les positions doivent être fermées avant une pause de marché de plus de 2 heures (donc surtout les positions d'actions overnight et de fin de semaine)."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ft-hold"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "FTMO Account Standard : positions à fermer avant la pause du week-end (violation = résiliation possible du compte)."
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "ft-instr"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Trading algorithmique et EA non limités tant que les pratiques interdites sont évitées."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "not_applicable",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Programme sans challenge : aucune évaluation."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [],
+      "excluded": [
+        "AF",
+        "AI",
+        "AQ",
+        "AG",
+        "BY",
+        "BZ",
+        "BT",
+        "BV",
+        "BI",
+        "CV",
+        "CF",
+        "TD",
+        "KM",
+        "CG",
+        "CK",
+        "CU",
+        "DJ",
+        "DM",
+        "GQ",
+        "ER",
+        "SZ",
+        "FJ",
+        "GA",
+        "GM",
+        "GD",
+        "GN",
+        "GW",
+        "VA",
+        "ID",
+        "IQ",
+        "KZ",
+        "KI",
+        "XK",
+        "KG",
+        "LS",
+        "LR",
+        "MW",
+        "ML",
+        "MH",
+        "MR",
+        "FM",
+        "NR",
+        "NE",
+        "NU",
+        "PG",
+        "RU",
+        "BL",
+        "KN",
+        "LC",
+        "VC",
+        "WS",
+        "SM",
+        "ST",
+        "SC",
+        "SL",
+        "SB",
+        "SO",
+        "SS",
+        "SD",
+        "SR",
+        "TJ",
+        "TL",
+        "TK",
+        "TO",
+        "TM",
+        "TV",
+        "UZ",
+        "VU",
+        "VE",
+        "EH",
+        "IR",
+        "SY",
+        "MM",
+        "KP"
+      ],
+      "unconfirmed": [],
+      "unlisted": "eligible"
+    },
+    "sources": [
+      "ft-who"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "« Apart from the exceptions listed below, FTMO CFDs is available to clients globally » : les pays absents de la liste sont donc admis pour les CFD. Non codés : l'Ukraine (régions Crimée, Sébastopol, Donetsk, Kherson, Louhansk, Zaporijjia seulement), les moins de 18 ans, les personnes sous sanctions. Les restrictions de FTMO Futures sont plus étendues et ne s'appliquent pas à ce programme CFD. L'accès au programme ne garantit pas l'admissibilité aux paiements."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "FTMO déclare servir les clients du monde entier hors liste ; le Canada n'est pas dans la liste CFD. Aucune règle ne mentionne le Québec. Statut laissé « à vérifier » pour le Québec : aucune page ne tranche expressément.",
+      "sources": [
+        "ft-who"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Compte FTMO simulé : paiements soumis à la vérification d'identité ; admissibilité du Québec aux paiements non confirmée.",
+      "sources": [
+        "ft-who"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Aucun compte réel (« live ») décrit pour ce programme : les comptes sont simulés ; non confirmé pour le Québec.",
+      "sources": []
+    }
+  ],
+  "dynamic_observations": [
+    {
+      "label": "Prix Instant affichés",
+      "source": "ft-price-inst",
+      "parameters": {
+        "devise": "USD"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "prix_5k_usd": 189,
+        "prix_10k_usd": 379,
+        "prix_25k_usd": 849,
+        "prix_50k_usd": 1699,
+        "prix_100k_usd": 3399
+      },
+      "note": "Devise : euros pour les Challenges, dollars pour l'Instant. Prix du type Swing non lus. Valeur observée, NON confirmée comme prix : tarif dynamique (promotion, devise, date)."
+    }
+  ],
+  "variants": [
+    {
+      "id": "5k",
+      "account_size_usd": 5000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (devise EUR / USD selon la page, promotions) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun objectif de profit : compte financé direct."
+        },
+        "max_drawdown_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 5 000 $ (calcul à partir du pourcentage officiel). Trailing intraday, basée sur le solde."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 150,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun plafond de retrait énoncé dans les pages lues."
+        }
+      }
+    },
+    {
+      "id": "10k",
+      "account_size_usd": 10000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (devise EUR / USD selon la page, promotions) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun objectif de profit : compte financé direct."
+        },
+        "max_drawdown_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 10 000 $ (calcul à partir du pourcentage officiel). Trailing intraday, basée sur le solde."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun plafond de retrait énoncé dans les pages lues."
+        }
+      }
+    },
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (devise EUR / USD selon la page, promotions) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun objectif de profit : compte financé direct."
+        },
+        "max_drawdown_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 25 000 $ (calcul à partir du pourcentage officiel). Trailing intraday, basée sur le solde."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 750,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun plafond de retrait énoncé dans les pages lues."
+        }
+      }
+    },
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (devise EUR / USD selon la page, promotions) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun objectif de profit : compte financé direct."
+        },
+        "max_drawdown_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 50 000 $ (calcul à partir du pourcentage officiel). Trailing intraday, basée sur le solde."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun plafond de retrait énoncé dans les pages lues."
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (devise EUR / USD selon la page, promotions) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun objectif de profit : compte financé direct."
+        },
+        "max_drawdown_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune évaluation."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 100 000 $ (calcul à partir du pourcentage officiel). Trailing intraday, basée sur le solde."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ft-instant",
+            "ft-trial"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun plafond de retrait énoncé dans les pages lues."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Restrictions Standard (fermeture avant une pause de marché de plus de 2 heures, nouvelles) : elles s'appliquent seulement sur le compte FTMO, pas pendant le Challenge.",
+      "Les conditions du type Swing (levier réduit à 1:30) ne s'appliquent pas à l'achat Standard : on ne peut pas passer de Standard à Swing après l'achat.",
+      "Prix : observations datées en euros ou en dollars ; aucun prix confirmé.",
+      "Le dollar des objectifs est calculé à partir de pourcentages officiels (10 % / 5 % / 3 % / 5 %).",
+      "Les produits FTMO Futures (restrictions de pays plus étendues) ne sont pas modélisés ici."
+    ],
+    "sources": [
+      "ft-instant",
+      "ft-trial"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "observed_prices": [
+    {
+      "variant_id": "5k",
+      "label": "Prix Instant affichés",
+      "amount": 189,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "ft-price-inst",
+      "note": null
+    },
+    {
+      "variant_id": "10k",
+      "label": "Prix Instant affichés",
+      "amount": 379,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "ft-price-inst",
+      "note": null
+    },
+    {
+      "variant_id": "25k",
+      "label": "Prix Instant affichés",
+      "amount": 849,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "ft-price-inst",
+      "note": null
+    },
+    {
+      "variant_id": "50k",
+      "label": "Prix Instant affichés",
+      "amount": 1699,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "ft-price-inst",
+      "note": null
+    },
+    {
+      "variant_id": "100k",
+      "label": "Prix Instant affichés",
+      "amount": 3399,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "ft-price-inst",
+      "note": null
+    }
+  ]
+}

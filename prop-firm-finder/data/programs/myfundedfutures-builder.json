@@ -1,0 +1,966 @@
+{
+  "id": "myfundedfutures-builder",
+  "firm_id": "myfundedfutures",
+  "name": "Builder (MyFundedFutures)",
+  "demo": false,
+  "official_url": "https://help.myfundedfutures.com/en/articles/14290805-builder-plan-50k-a-comprehensive-guide",
+  "summary": "Évaluation à paiement unique d'un jour minimum, sans consistance, avec une limite quotidienne « soft » (pause) ; Sim Funded à 80/20 : 5 retraits maximum puis passage au Live (compte réel, 1 maximum). Nouvelles permises ; aucune position overnight.",
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "NQ",
+      "MNQ",
+      "ES",
+      "MES",
+      "YM",
+      "MYM",
+      "RTY",
+      "M2K",
+      "6E",
+      "M6E",
+      "GC",
+      "MGC",
+      "CL",
+      "MCL",
+      "MBT",
+      "MET"
+    ],
+    "sources": [
+      "mf-instruments"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Liste officielle complète (CME, COMEX, CBOT, NYMEX) : les 16 futures du catalogue de l'outil y figurent."
+  },
+  "instruments_scope": "exhaustive",
+  "instruments_excluded": {
+    "status": "confirmed",
+    "value": [],
+    "sources": [
+      "mf-instruments"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Tous les futures du catalogue figurent dans la liste officielle. Les CFD, le comptant et les perpétuels du catalogue sont écartés par le type de contrat."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "futures"
+    ],
+    "sources": [
+      "mf-platform-blog"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Contrats à terme standardisés des bourses américaines réglementées (CME Group) seulement ; actions, options sur actions, cryptomonnaies au comptant, CFD et OTC interdits."
+  },
+  "instrument_limits": {
+    "status": "confirmed",
+    "value": [
+      {
+        "instrument": "MGC",
+        "state": "limited",
+        "note": "Limite de micros sur les métaux (depuis le 17 avril) : 3 / 5 / 10 / 15 micros pour les comptes 25K / 50K / 100K / 150K. Restriction annoncée comme temporaire."
+      },
+      {
+        "instrument": "MBT",
+        "state": "limited",
+        "note": "Traité comme un contrat mini en raison de la volatilité : avec 3 minis maximum, 3 MBT maximum. Temporaire."
+      },
+      {
+        "instrument": "MET",
+        "state": "limited",
+        "note": "Micro Ethereum : aucune limite propre énoncée sur la page ; limites générales du plan."
+      }
+    ],
+    "sources": [
+      "mf-instruments"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Page lue le 2026-11-15 (datée du 24 août 2026). Restrictions TEMPORAIRES depuis le 7 février sur l'argent (SI), le cuivre (HG), le platine (PL), le gaz naturel (NG) et le E-mini gaz naturel (QG), hors catalogue de l'outil. Horaires MFFU : 18 h à 16 h 10 (heure de l'Est). Relire la page avant de trader."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "ninjatrader",
+      "tradovate",
+      "tradingview"
+    ],
+    "sources": [
+      "mf-platforms",
+      "mf-platform-blog"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "NinjaTrader, Tradovate (et TradingView via Tradovate) ; Quantower, Volumetrica, ATAS et autres également supportées mais hors catalogue de l'outil."
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [],
+      "excluded": [
+        "AF",
+        "AL",
+        "DZ",
+        "AO",
+        "BS",
+        "BB",
+        "BY",
+        "BA",
+        "BW",
+        "BF",
+        "BG",
+        "MM",
+        "BI",
+        "KH",
+        "CM",
+        "CF",
+        "CN",
+        "CG",
+        "CD",
+        "CI",
+        "HR",
+        "CU",
+        "EC",
+        "ET",
+        "GH",
+        "GI",
+        "GY",
+        "HT",
+        "HK",
+        "IS",
+        "ID",
+        "IR",
+        "IQ",
+        "JM",
+        "JO",
+        "KZ",
+        "KE",
+        "XK",
+        "KG",
+        "LA",
+        "LB",
+        "LR",
+        "LY",
+        "MK",
+        "MY",
+        "ML",
+        "MT",
+        "MU",
+        "MN",
+        "ME",
+        "MA",
+        "MZ",
+        "NA",
+        "NR",
+        "NI",
+        "NG",
+        "KP",
+        "PK",
+        "PA",
+        "PG",
+        "PH",
+        "QA",
+        "RO",
+        "RU",
+        "RW",
+        "SN",
+        "RS",
+        "SI",
+        "SO",
+        "ZA",
+        "SS",
+        "LK",
+        "SD",
+        "SY",
+        "TW",
+        "TZ",
+        "TT",
+        "TN",
+        "TR",
+        "TM",
+        "UG",
+        "UA",
+        "AE",
+        "UZ",
+        "VE",
+        "VN",
+        "YE",
+        "ZW"
+      ],
+      "unconfirmed": [],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "mf-countries"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Liste officielle des pays non acceptés (France métropolitaine hors Corse et îles, Crimée et d'autres entrées non codées ne sont pas reprises). Le Canada ne figure PAS dans la liste, mais aucune phrase ne déclare expressément les Canadiens admissibles : les pays absents restent « non confirmés »."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "Le Canada ne figure pas dans la liste officielle des pays restreints et aucune règle ne mentionne le Québec ; aucune déclaration expresse d'admissibilité. Distinct : le programme de points MyFundedClub exclut l'Ontario et le Québec (programme promotionnel, ne s'applique pas à l'évaluation). L'accès ne garantit pas l'admissibilité aux paiements.",
+      "sources": [
+        "mf-countries",
+        "mf-club"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Sim Funded : les « participants restreints » n'ont accès qu'aux comptes simulés avec paiements limités (Terms, art. 24) ; le Québec n'est pas mentionné : non confirmé. Les paiements exigent KYC/AML.",
+      "sources": [
+        "mf-terms",
+        "mf-countries"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Live (compte réel chez un partenaire) : conditions géographiques non lues ; le Québec n'est pas confirmé.",
+      "sources": [
+        "mf-live-faq"
+      ]
+    }
+  ],
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 1,
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "eod_trailing",
+      "sources": [
+        "mf-builder50",
+        "mf-builder25"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "time_limit_days": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune limite de temps énoncée dans les articles lus."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Atteindre l'objectif de profit avec au moins 1 jour de trading sans toucher la perte maximale EOD ; aucune règle de consistance ; limite quotidienne « soft ».",
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucune consistance en évaluation ; une règle de 50 % s'applique aux retraits Sim Funded."
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "mf-pro"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "« All MFFU accounts operate in a simulated environment » ; le Live est un compte réel."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "eod_trailing",
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 80,
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Lu sur l'article Builder 50K ; non confirmé pour le 25K."
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 500,
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Lu sur l'article Builder 50K ; non confirmé pour le 25K."
+    },
+    "payout_cap": {
+      "status": "confirmed",
+      "value": {
+        "has_cap": true,
+        "amount_usd": 2000
+      },
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Maximum 2 000 $ par cycle (article 50K)."
+    },
+    "max_payouts": {
+      "status": "confirmed",
+      "value": 5,
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "5 retraits sim maximum ; Live possible après le 5e retrait approuvé."
+    },
+    "drawdown_effect_of_payout": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Effet d'un retrait sur la perte maximale non précisé dans l'article lu (Live : verrouillage à 0 $ de MLL)."
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "builder",
+          "label": "Sim Funded : cycles de 2 jours qualifiants",
+          "min_days": 2,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": 50,
+          "request_limit_pct_of_balance": null,
+          "note": "2 jours qualifiants par cycle ; buffer à dépasser (2 100 $ / 1 600 $ selon la version MLL), 500 $ de profit net net au-dessus du buffer pour le premier retrait puis 500 $ depuis le précédent ; meilleur jour ≤ 50 % du profit du cycle ; premier retrait 48 h après le premier trade."
+        }
+      ],
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Lu sur l'article Builder 50K."
+    },
+    "safety_net": {
+      "status": "confirmed",
+      "value": {
+        "exists": true,
+        "detail": "Buffer à dépasser avant le premier retrait : 2 100 $ (MLL par défaut) / 1 600 $ (Add-On) sur le 50K."
+      },
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Sim Funded (50K) : 2 jours qualifiants par cycle, buffer dépassé, 500 $ de profit net au-dessus du buffer au premier retrait puis 500 $ depuis le dernier, minimum 500 $, maximum 2 000 $ par cycle, consistance 50 % du meilleur jour, 5 retraits maximum, 80/20 ; Live après le 5e retrait (80/20, minimum 250 $, 1 compte maximum). Valeurs du 25K non lues.",
+      "sources": [
+        "mf-builder50"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "mf-builder50",
+          "mf-news"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Trading de nouvelles non restreint en évaluation et en Sim Funded (les stratégies de type straddle restent interdites)."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "mf-builder50",
+          "mf-news"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Trading de nouvelles non restreint en évaluation et en Sim Funded (les stratégies de type straddle restent interdites)."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "mf-builder50"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Toutes les positions doivent être fermées avant la fin de la session ; fermeture automatique par la plateforme."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "mf-builder50"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Toutes les positions doivent être fermées avant la fin de la session ; fermeture automatique par la plateforme."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "mf-builder50"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune position conservée après la fermeture de session."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "mf-builder50"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune position conservée après la fermeture de session."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "dynamic_observations": [
+    {
+      "label": "Prix affichés du Builder 50K",
+      "source": "mf-price-builder",
+      "parameters": {
+        "page": "builder-plan-50k"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "mll_defaut_liste_usd": 153,
+        "mll_defaut_30pct_usd": 107,
+        "mll_defaut_40pct_usd": 92,
+        "mll_add_on_liste_usd": 125,
+        "mll_add_on_30pct_usd": 87,
+        "mll_add_on_40pct_usd": 75
+      },
+      "note": "Rabais 30 % / 40 % à nombre d'utilisations limité (2). Valeur observée, NON confirmée comme prix : tarif dynamique (promotion, code, date)."
+    }
+  ],
+  "variants": [
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Prix du Builder 25K non lu."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Réponse à « activation fee » non lue pour le 25K."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun prix ni condition de réinitialisation indiqués dans l'article lu."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Perte maximale EOD (MLL) ; se verrouille à +100 $ au-dessus du solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne « SOFT » : pause jusqu'à la prochaine session, pas un échec du compte."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "2 minis / 20 micros."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "EOD trailing ; le solde de départ du compte Sim Funded est 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite « soft » (pause, pas un échec)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "mf-builder25"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond du Builder 25K non lu."
+        }
+      }
+    },
+    {
+      "id": "50k-mll-defaut",
+      "account_size_usd": 50000,
+      "option": "MLL par défaut (2 000 $)",
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (rabais de 30 % / 40 % en nombre d'utilisations limité) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Frais d'activation de 0 $ (article Builder 50K)."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun prix ni condition de réinitialisation indiqués dans l'article lu."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Perte maximale EOD (MLL) ; se verrouille à +100 $ au-dessus du solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne « SOFT » : pause jusqu'à la prochaine session, pas un échec du compte."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 minis / 40 micros."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "EOD trailing ; le solde de départ du compte Sim Funded est 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite « soft » (pause, pas un échec)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum par cycle de retrait (article Builder 50K)."
+        }
+      }
+    },
+    {
+      "id": "50k-mll-add-on",
+      "account_size_usd": 50000,
+      "option": "MLL « Add-On » (1 500 $)",
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE (rabais de 30 % / 40 % en nombre d'utilisations limité) : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Frais d'activation de 0 $ (article Builder 50K)."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun prix ni condition de réinitialisation indiqués dans l'article lu."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Perte maximale EOD (MLL) ; se verrouille à +100 $ au-dessus du solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne « SOFT » : pause jusqu'à la prochaine session, pas un échec du compte."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 minis / 40 micros."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "EOD trailing ; le solde de départ du compte Sim Funded est 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite « soft » (pause, pas un échec)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "mf-builder50"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum par cycle de retrait (article Builder 50K)."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Seules les tailles 25K et 50K du Builder ont été lues ; d'autres tailles éventuelles ne sont pas modélisées.",
+      "Limite quotidienne « soft » : pause jusqu'à la prochaine session, ce n'est pas un échec du compte.",
+      "Retraits maximum 5 en Sim Funded ; compte inactif fermé après 7 jours calendaires sans trade.",
+      "Les règles de retrait détaillées proviennent de l'article 50K ; non confirmées pour le 25K.",
+      "Prix : observations promotionnelles seulement."
+    ],
+    "sources": [
+      "mf-builder50",
+      "mf-builder25"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "observed_prices": [
+    {
+      "variant_id": "50k-mll-defaut",
+      "label": "Prix affichés du Builder 50K — prix de liste",
+      "amount": 153,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "mf-price-builder",
+      "note": null
+    },
+    {
+      "variant_id": "50k-mll-defaut",
+      "label": "Prix affichés du Builder 50K — rabais 30 %",
+      "amount": 107,
+      "currency": "USD",
+      "kind": "promo",
+      "observed_on": "2026-11-15",
+      "source": "mf-price-builder",
+      "note": "Rabais à nombre d'utilisations limité : jamais inclus dans le coût de départ."
+    },
+    {
+      "variant_id": "50k-mll-defaut",
+      "label": "Prix affichés du Builder 50K — rabais 40 %",
+      "amount": 92,
+      "currency": "USD",
+      "kind": "promo",
+      "observed_on": "2026-11-15",
+      "source": "mf-price-builder",
+      "note": "Rabais à nombre d'utilisations limité : jamais inclus dans le coût de départ."
+    },
+    {
+      "variant_id": "50k-mll-add-on",
+      "label": "Prix affichés du Builder 50K — prix de liste",
+      "amount": 125,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "mf-price-builder",
+      "note": null
+    },
+    {
+      "variant_id": "50k-mll-add-on",
+      "label": "Prix affichés du Builder 50K — rabais 30 %",
+      "amount": 87,
+      "currency": "USD",
+      "kind": "promo",
+      "observed_on": "2026-11-15",
+      "source": "mf-price-builder",
+      "note": "Rabais à nombre d'utilisations limité : jamais inclus dans le coût de départ."
+    },
+    {
+      "variant_id": "50k-mll-add-on",
+      "label": "Prix affichés du Builder 50K — rabais 40 %",
+      "amount": 75,
+      "currency": "USD",
+      "kind": "promo",
+      "observed_on": "2026-11-15",
+      "source": "mf-price-builder",
+      "note": "Rabais à nombre d'utilisations limité : jamais inclus dans le coût de départ."
+    }
+  ]
+}

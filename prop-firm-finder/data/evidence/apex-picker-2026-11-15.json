@@ -1,0 +1,18 @@
+{
+  "id": "apex-picker-2026-11-15",
+  "description": "Relevé du sélecteur de comptes du site officiel d'Apex Trader Funding (tarifs DYNAMIQUES). Preuve textuelle (texte de la page lu par le navigateur intégré) ; aucune capture d'écran conservée dans le dépôt. Ces valeurs ne sont PAS des prix confirmés : elles dépendent de la date, des promotions et du code de réduction.",
+  "consulted_at": "2026-11-15",
+  "consulted_via": "navigateur intégré de Claude (lecture du texte de la page, après chargement complet)",
+  "base_url": "https://apextraderfunding.com/",
+  "durable": false,
+  "page_notes": ["Chaque carte affiche un prix barré (prix de liste affiché) puis un prix « with Coupon Code » (10 % du prix affiché). Le code n'est pas connu : seul le prix affiché est relevé.", "Mentions de la carte : « ONE-TIME FEE. NO REBILL. EVAL ACTIVE FOR 30 DAYS. WILL EXPIRE AFTER 30 DAYS. NO RESETS. » ; Reset Fee : N/A ; Min. Days To Pass : 1.", "Les frais d'activation du Performance Account sont dans un volet replié de la carte (non lu en direct)."],
+  "observations": [
+    {"parameters": {"picker_balance": "25k", "picker_fee": "standard", "picker_type": "trail-eod"}, "observed": {"displayed_price_usd": 490, "coupon_price_usd": 49, "max_contracts": "4 mini / 40 micro", "profit_target_usd": 1500, "max_drawdown_usd": 1000, "daily_loss_limit_usd": 500}},
+    {"parameters": {"picker_balance": "50k", "picker_fee": "standard", "picker_type": "trail-eod"}, "observed": {"displayed_price_usd": 590, "coupon_price_usd": 59, "max_contracts": "6 mini / 60 micro", "profit_target_usd": 3000, "max_drawdown_usd": 2000, "daily_loss_limit_usd": 1000}},
+    {"parameters": {"picker_balance": "100k", "picker_fee": "standard", "picker_type": "trail-eod"}, "observed": {"displayed_price_usd": 1190, "coupon_price_usd": 119, "max_contracts": "8 mini / 80 micro", "profit_target_usd": 6000, "max_drawdown_usd": 3000, "daily_loss_limit_usd": 1500}},
+    {"parameters": {"picker_balance": "150k", "picker_fee": "standard", "picker_type": "trail-eod"}, "observed": {"displayed_price_usd": 2190, "coupon_price_usd": 219, "max_contracts": "12 mini / 120 micro", "profit_target_usd": 9000, "max_drawdown_usd": 4000, "daily_loss_limit_usd": 2000}},
+    {"parameters": {"picker_balance": "25k", "picker_fee": "standard", "picker_type": "trail-intraday"}, "observed": {"displayed_price_usd": 167, "coupon_price_usd": 16.7, "max_contracts": "4 mini / 40 micro", "profit_target_usd": 1500, "max_drawdown_usd": 1000, "daily_loss_limit_usd": null}}
+  ],
+  "not_captured": ["Intraday 50K / 100K / 150K (option Standard)", "Toutes les combinaisons picker_fee=nofee", "Frais d'activation du PA par taille (volet replié)", "Packs de 5 comptes : relevés seulement à titre informatif (non modélisés)"],
+  "contradiction_noted": "Lors de la mission 3A, une valeur de 1 190 $ avait été notée pour un 50K EOD « No Activation Fee » à partir d'un extrait de moteur de recherche. La lecture directe du 2026-11-15 donne 1 190 $ pour le 100K EOD Standard et 590 $ pour le 50K EOD Standard : l'attribution de 3A est considérée comme erronée et n'est utilisée nulle part."
+}

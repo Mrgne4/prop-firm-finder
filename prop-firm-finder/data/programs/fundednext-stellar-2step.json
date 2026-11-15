@@ -1,0 +1,1278 @@
+{
+  "firm_id": "fundednext",
+  "demo": false,
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "FOREX",
+      "EURUSD",
+      "XAUUSD",
+      "XAGUSD",
+      "US30",
+      "NAS100",
+      "BTCUSD_CFD",
+      "ETHUSD_CFD",
+      "STOCK_CFD"
+    ],
+    "sources": [
+      "fn-whatis",
+      "fn-stocks"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex (EURUSD…), or / argent, indices (US30, NDX100 = Nasdaq 100), crypto (BTCUSD, ETHUSD) selon un blog officiel ancien (465 jours) ; 20 actions CFD selon le blog actions récent. Liste complète par symbole non lue."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Liste par symbole non lue."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "cfd",
+      "spot"
+    ],
+    "sources": [
+      "fn-whatis",
+      "fn-stocks"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "CFD : Forex, matières premières, indices, crypto, actions ; aucun futures dans ces programmes (FundedNext Futures est un produit distinct)."
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Limites par instrument non lues (levier : Forex 1:30, indices 1:10, matières 1:15, crypto 1:1, actions 1:2)."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "metatrader4",
+      "metatrader5",
+      "ctrader",
+      "matchtrader"
+    ],
+    "sources": [
+      "fn-platforms",
+      "fn-platblog"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "MT4 et MT5 pour tous les comptes ; cTrader et Match-Trader jusqu'à 50K seulement (blog ancien) ; clients américains : Match-Trader seulement ; cTrader / Match-Trader : frais de 25 $ ; plateforme verrouillée au premier trade. Stellar Instant : MT4 / MT5 seulement."
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [],
+      "excluded": [
+        "BD",
+        "MM",
+        "BY",
+        "KP",
+        "SY",
+        "GD",
+        "TD",
+        "MY",
+        "BZ",
+        "AG",
+        "CV",
+        "TV",
+        "VN",
+        "BV",
+        "BI",
+        "CK",
+        "ER",
+        "KM",
+        "LK",
+        "FJ",
+        "IR",
+        "RU"
+      ],
+      "unconfirmed": [],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "fn-countries",
+      "fn-terms"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Liste officielle « as of now » (CFD) : Bangladesh, Myanmar, Biélorussie, Corée du Nord, Syrie, Grenade, Tchad, Malaisie, Belize, Antigua-et-Barbuda, Cap-Vert, Tuvalu, Vietnam, île Bouvet, Burundi, îles Cook, Érythrée, Comores, Sri Lanka, Fidji ; les Terms ajoutent l'Iran et la Russie (« including countries on the FATF high-risk and EU/UN sanctions lists » : liste non précisée), donc un pays absent n'est PAS déclaré admissible. Les restrictions de FundedNext Futures sont différentes (Canada hors Ontario cité pour l'accès live futures) et ne s'appliquent pas à ces CFD. L'accès au programme ne garantit pas l'admissibilité aux paiements."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "Aucune page officielle CFD ne mentionne le Québec ni ne déclare le Canada admissible ; l'entreprise est régie par les Émirats arabes unis. Les restrictions de FundedNext Futures (Canada sauf Ontario) ne s'appliquent pas aux CFD et ne sont pas extrapolées.",
+      "sources": [
+        "fn-countries",
+        "fn-uae"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Compte financé simulé : admissibilité du Québec aux paiements non confirmée.",
+      "sources": [
+        "fn-terms"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Aucun compte réel (« live ») décrit pour ce programme : les comptes sont simulés ; non confirmé pour le Québec.",
+      "sources": []
+    }
+  ],
+  "id": "fundednext-stellar-2step",
+  "name": "Stellar 2-Step (FundedNext)",
+  "official_url": "https://fundednext.com/cfds/stellar-2-step",
+  "summary": "Deux phases (8 % puis 5 %), perte quotidienne 5 % et perte maximale 10 % statique, 5 jours minimum par phase ; première récompense à 21 jours puis toutes les 2 semaines (partage 80 %). CFD simulés, pas des futures.",
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 2,
+      "sources": [
+        "fn-2",
+        "fn-blog2",
+        "fn-vs"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "fn-2",
+        "fn-blog2",
+        "fn-vs"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Calculé depuis le solde initial (statique), ne suit pas le profit."
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune limite de temps (politique d'inactivité de 60 jours)."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Deux phases sans limite de temps : 8 % puis 5 % (la cible de la phase 2 repart du solde initial), 5 jours de trading minimum par phase, perte quotidienne 5 % et perte maximale 10 % statiques.",
+      "sources": [
+        "fn-2",
+        "fn-blog2",
+        "fn-vs"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "fn-2",
+        "fn-blog2",
+        "fn-vs"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucune règle de consistance sur les comptes CFD (« Consistency N/A »). Une règle « Quick Strike » (< 30 %) figure dans le centre d'aide du 1-Step."
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "fn-2",
+        "fn-blog2",
+        "fn-vs"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Un dépassement est une violation : le compte est considéré violé."
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "fn-1"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Compte FundedNext simulé."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "fn-1"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Statique depuis le solde initial."
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 80,
+      "sources": [
+        "fn-2",
+        "fn-vs"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "80 % ; la page indique « jusqu'à 95 % » avec des options."
+    },
+    "min_withdrawal_usd": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Minimum annoncé à 100 $ par un blog ancien ; non confirmé."
+    },
+    "payout_cap": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "max_payouts": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_effect_of_payout": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "fn-reward",
+          "label": "Récompense",
+          "min_days": null,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": null,
+          "request_limit_pct_of_balance": null,
+          "note": "Première récompense 21 jours après le début."
+        }
+      ],
+      "sources": [
+        "fn-1"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "fn-1"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucun buffer mentionné."
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "fn-1"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Première récompense 21 jours après le début. Récompenses suivantes toutes les 2 semaines. Frais remboursés avec la 1re récompense ; 15 % de l'objectif du Challenge versés au premier palier de mise à l'échelle.",
+      "sources": [
+        "fn-1",
+        "fn-2",
+        "fn-lite"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-1",
+          "fn-2"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Nouvelles permises (la page indique que 40 % du profit réalisé pendant les nouvelles est pris en compte pour la récompense : règle non détaillée)."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-1",
+          "fn-2"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Nouvelles permises (la page indique que 40 % du profit réalisé pendant les nouvelles est pris en compte pour la récompense : règle non détaillée)."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-hold"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises ; les swaps s'ajoutent à la perte quotidienne."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-hold"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises ; les swaps s'ajoutent à la perte quotidienne."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-hold",
+          "fn-1"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises en Challenge et sur le compte financé."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-hold",
+          "fn-1"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises en Challenge et sur le compte financé."
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fn-2"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "EA et indicateurs permis (FAQ du 2-Step)."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "dynamic_observations": [
+    {
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "source": "fn-price-2",
+      "parameters": {
+        "page": "cfds/stellar-2-step"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "prix_6k_usd": 59.99,
+        "prix_15k_usd": 119.99,
+        "prix_25k_usd": 199.99,
+        "prix_50k_usd": 299.99,
+        "prix_100k_usd": 549.99,
+        "prix_200k_usd": 1099.99
+      },
+      "note": "Pages du site officiel ; promotions affichées. Valeur observée, NON confirmée comme prix : tarif dynamique (promotion, devise, date)."
+    }
+  ],
+  "variants": [
+    {
+      "id": "6k",
+      "account_size_usd": 6000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 480,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 6 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 6 000 $ (calcul à partir du pourcentage officiel). Statique depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 6 000 $ (calcul à partir du pourcentage officiel). Depuis le solde initial ; remise à zéro à 00:00 heure du serveur ; inclut flottant, swaps et commissions."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 6 000 $ (calcul à partir du pourcentage officiel). Phase 2."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 6 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 6 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "15k",
+      "account_size_usd": 15000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 1200,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 15 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 15 000 $ (calcul à partir du pourcentage officiel). Statique depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 750,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 15 000 $ (calcul à partir du pourcentage officiel). Depuis le solde initial ; remise à zéro à 00:00 heure du serveur ; inclut flottant, swaps et commissions."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 750,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 15 000 $ (calcul à partir du pourcentage officiel). Phase 2."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 15 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 750,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 15 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 25 000 $ (calcul à partir du pourcentage officiel). Statique depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 25 000 $ (calcul à partir du pourcentage officiel). Depuis le solde initial ; remise à zéro à 00:00 heure du serveur ; inclut flottant, swaps et commissions."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 25 000 $ (calcul à partir du pourcentage officiel). Phase 2."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 50 000 $ (calcul à partir du pourcentage officiel). Statique depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 50 000 $ (calcul à partir du pourcentage officiel). Depuis le solde initial ; remise à zéro à 00:00 heure du serveur ; inclut flottant, swaps et commissions."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 50 000 $ (calcul à partir du pourcentage officiel). Phase 2."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 8000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 100 000 $ (calcul à partir du pourcentage officiel). Statique depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 100 000 $ (calcul à partir du pourcentage officiel). Depuis le solde initial ; remise à zéro à 00:00 heure du serveur ; inclut flottant, swaps et commissions."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 100 000 $ (calcul à partir du pourcentage officiel). Phase 2."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "200k",
+      "account_size_usd": 200000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 16000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 200 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 20000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 200 000 $ (calcul à partir du pourcentage officiel). Statique depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 200 000 $ (calcul à partir du pourcentage officiel). Depuis le solde initial ; remise à zéro à 00:00 heure du serveur ; inclut flottant, swaps et commissions."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 200 000 $ (calcul à partir du pourcentage officiel). Phase 2."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 20000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 200 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "fn-1"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 200 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Perte quotidienne de 5 % depuis le solde initial (pas depuis l'équité du jour) ; le profit du jour étend la marge de ce jour seulement.",
+      "5 jours de trading minimum dans chaque phase.",
+      "Récompenses selon trois structures (Standard 80 %, 3 jours 60 %, À la demande 90 %) : structure choisie à l'achat, non modifiable ensuite.",
+      "Prix : observations affichées avec promotions."
+    ],
+    "sources": [
+      "fn-2",
+      "fn-blog2",
+      "fn-vs"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "observed_prices": [
+    {
+      "variant_id": "6k",
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "amount": 59.99,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "fn-price-2",
+      "note": null
+    },
+    {
+      "variant_id": "15k",
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "amount": 119.99,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "fn-price-2",
+      "note": null
+    },
+    {
+      "variant_id": "25k",
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "amount": 199.99,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "fn-price-2",
+      "note": null
+    },
+    {
+      "variant_id": "50k",
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "amount": 299.99,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "fn-price-2",
+      "note": null
+    },
+    {
+      "variant_id": "100k",
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "amount": 549.99,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "fn-price-2",
+      "note": null
+    },
+    {
+      "variant_id": "200k",
+      "label": "Prix affichés Stellar 2-Step (FundedNext)",
+      "amount": 1099.99,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "fn-price-2",
+      "note": null
+    }
+  ]
+}

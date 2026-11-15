@@ -1,0 +1,619 @@
+{
+  "id": "demo-gamma-cfd-forex",
+  "firm_id": "demo-gamma",
+  "name": "DÉMO Gamma — Forex & CFD",
+  "demo": true,
+  "official_url": null,
+  "summary": "Programme FICTIF de forex et de CFD, à deux étapes, avec drawdown statique. Il ne propose aucun contrat future et exclut le Québec et les États-Unis : il sert à tester le statut INCOMPATIBLE.",
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "FOREX",
+      "NAS100",
+      "US30",
+      "SPX500",
+      "XAUUSD",
+      "USOIL",
+      "BTCUSD_CFD",
+      "ETHUSD_CFD"
+    ],
+    "sources": [
+      "demo-fiction"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "instruments_scope": "exhaustive",
+  "instruments_excluded": {
+    "status": "confirmed",
+    "value": [
+      "NQ",
+      "MNQ",
+      "ES",
+      "MES",
+      "YM",
+      "MYM",
+      "RTY",
+      "M2K",
+      "EURUSD",
+      "6E",
+      "M6E",
+      "GC",
+      "MGC",
+      "XAGUSD",
+      "CL",
+      "MCL",
+      "UKOIL",
+      "MBT",
+      "MET",
+      "BTC_PERP",
+      "ETH_PERP",
+      "ALT_CFD",
+      "ALT_PERP",
+      "STOCK_CFD",
+      "STOCK_SPOT"
+    ],
+    "sources": [
+      "demo-fiction"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "contract_types": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "instrument_limits": {
+    "status": "confirmed",
+    "value": [],
+    "sources": [
+      "demo-fiction"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "metatrader5",
+      "ctrader"
+    ],
+    "sources": [
+      "demo-fiction"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 2,
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "(Démo) Deux étapes avec objectif de profit et limite de perte quotidienne.",
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 80,
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 50,
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_cap": {
+      "status": "confirmed",
+      "value": {
+        "has_cap": false,
+        "amount_usd": null
+      },
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "(Démo) Retraits possibles à intervalles réguliers après le premier profit.",
+      "sources": [
+        "demo-fiction"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "demo-fiction"
+        ],
+        "verified_at": "2026-11-15"
+      }
+    }
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [
+        "CA",
+        "FR",
+        "BE",
+        "CH",
+        "GB"
+      ],
+      "excluded": [
+        "US",
+        "CA-QC",
+        "IR",
+        "KP"
+      ],
+      "unconfirmed": [
+        "CN"
+      ],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "demo-fiction"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "variants": [
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "confirmed",
+          "value": 155,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 155,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 30,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 30,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "confirmed",
+          "value": 540,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 540,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 100,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 100,
+          "sources": [
+            "demo-fiction"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "(Démo) Résidents du Québec et des États-Unis exclus."
+    ],
+    "sources": [
+      "demo-fiction"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "admis",
+      "note": "Donnée fictive de démonstration.",
+      "sources": [
+        "demo-fiction"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "admis",
+      "note": "Donnée fictive de démonstration.",
+      "sources": [
+        "demo-fiction"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "admis",
+      "note": "Donnée fictive de démonstration.",
+      "sources": [
+        "demo-fiction"
+      ]
+    }
+  ]
+}

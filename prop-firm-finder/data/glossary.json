@@ -1,0 +1,72 @@
+[
+  {
+    "id": "static_drawdown",
+    "title": "Drawdown statique (Static)",
+    "short": "La limite de perte est un seuil fixe, calculé une seule fois à partir du solde de départ. Il ne bouge pas, même quand tu gagnes.",
+    "example": "Compte de 50 000 $ avec un drawdown de 2 000 $ : ton seuil reste à 48 000 $ pendant toute la vie du compte, même si ton solde monte à 53 000 $.",
+    "caution": "Certaines firmes appliquent un mécanisme particulier au-delà d'un certain profit. Lis toujours les règles exactes du programme."
+  },
+  {
+    "id": "eod_trailing",
+    "title": "Drawdown trailing de fin de journée (End-of-Day)",
+    "short": "Le seuil de perte suit tes gains, mais il n'est recalculé qu'à la clôture de la journée, à partir du solde de fin de journée.",
+    "example": "Compte de 50 000 $, drawdown de 2 000 $ : seuil de départ à 48 000 $. Tu termines la journée à 51 000 $ → le seuil est relevé à 49 000 $ pour le lendemain. Ce seuil, une fois fixé, reste à ce niveau jusqu'à la prochaine clôture.",
+    "caution": "« Fin de journée » désigne le moment où le seuil est recalculé. Cela ne t'autorise pas à dépasser la limite pendant la séance : en règle générale, le seuil du jour s'applique en continu, et le compte peut être fermé dès qu'il est touché. Vérifie la règle exacte de la firme."
+  },
+  {
+    "id": "intraday_trailing",
+    "title": "Drawdown trailing intraday (Intraday)",
+    "short": "Le seuil de perte suit en temps réel le plus haut niveau atteint par ton compte, souvent en incluant les gains non réalisés (positions encore ouvertes).",
+    "example": "Compte de 50 000 $, drawdown de 2 000 $ : seuil de départ à 48 000 $. En séance, ton compte monte à 51 000 $ (positions ouvertes) puis redescend : le seuil est déjà à 49 000 $, même si tu n'as rien encaissé.",
+    "caution": "C'est le modèle le plus serré pour beaucoup de débutants : un gain latent qui disparaît peut te rapprocher du seuil. Vérifie comment la firme calcule le plus haut niveau."
+  },
+  {
+    "id": "daily_loss_limit",
+    "title": "Limite de perte quotidienne (Daily Loss Limit)",
+    "short": "Montant maximal que tu peux perdre en une seule journée. Si tu l'atteins, tu perds l'accès au compte ou tu dois cesser de trader jusqu'au lendemain, selon la firme.",
+    "example": "Limite quotidienne de 1 000 $ : après −1 000 $ dans la journée, la règle de la firme s'applique (blocage temporaire ou échec du compte).",
+    "caution": "La conséquence exacte (pause ou échec) varie d'un programme à l'autre."
+  },
+  {
+    "id": "consistency_rule",
+    "title": "Règle de consistance (Consistency Rule)",
+    "short": "Règle qui limite la part d'un seul jour de trading dans ton profit total, pour éviter qu'un coup de chance unique valide le compte.",
+    "example": "Exemple fictif : si la règle impose qu'aucun jour ne dépasse 30 % du profit total et que tu as gagné 3 000 $ au total, ton meilleur jour ne doit pas dépasser 900 $.",
+    "caution": "Le pourcentage, la période et l'application (évaluation, retraits ou les deux) changent selon les programmes."
+  },
+  {
+    "id": "safety_net",
+    "title": "Safety Net (filet de sécurité)",
+    "short": "Montant de profit à atteindre ou à garder en réserve sur le compte funded avant qu'un retrait soit possible ou pour protéger le seuil de drawdown.",
+    "example": "Exemple fictif : un programme demande un solde minimum de 52 000 $ sur un compte de 50 000 $ avant de permettre un retrait.",
+    "caution": "Le terme n'a pas le même sens chez toutes les firmes. Regarde la définition précise dans la fiche du programme."
+  },
+  {
+    "id": "profit_split",
+    "title": "Partage des profits (Profit Split)",
+    "short": "Pourcentage des profits du compte funded qui te revient lors d'un retrait. Le reste revient à la firme.",
+    "example": "Partage 90/10 : si tu retires un profit de 1 000 $, tu reçois 900 $.",
+    "caution": "Le pourcentage peut évoluer avec le nombre de retraits ou selon le programme."
+  },
+  {
+    "id": "cfd_vs_futures",
+    "title": "CFD, futures et autres instruments",
+    "short": "Un contrat future est un contrat standardisé échangé sur une bourse. Un CFD est un produit dérivé proposé par un courtier, qui suit le prix d'un actif sans le posséder. Ce sont deux instruments distincts.",
+    "example": "NQ (futures sur le Nasdaq 100) et NAS100 (CFD sur le Nasdaq 100) suivent le même indice, mais leurs règles, horaires, coûts et fonctionnement diffèrent. Un programme qui propose l'un ne propose pas forcément l'autre.",
+    "caution": null
+  },
+  {
+    "id": "instant_funding",
+    "title": "Sans challenge (financement direct)",
+    "short": "Le programme te donne accès à un compte funded sans passer d'évaluation à réussir. Les frais et les règles du compte funded sont alors particulièrement importants à lire.",
+    "example": null,
+    "caution": "Ne pas confondre « sans challenge » et « sans règles » : les règles de drawdown s'appliquent aussi."
+  },
+  {
+    "id": "activation_fee",
+    "title": "Frais d'activation",
+    "short": "Frais à payer, en plus du prix de l'évaluation, pour activer le compte funded après avoir réussi le challenge.",
+    "example": null,
+    "caution": "Ils comptent dans le coût de départ lorsqu'ils sont obligatoires et confirmés."
+  }
+]

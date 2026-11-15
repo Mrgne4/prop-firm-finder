@@ -1,0 +1,844 @@
+[
+  {
+    "id": "demo-fiction",
+    "label": "Donnée fictive de démonstration (aucune source réelle)",
+    "url": null,
+    "type": "demo"
+  },
+  {
+    "id": "ts-pricing",
+    "label": "Topstep — Pricing and Payment Questions (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/14289835-topstep-pricing-and-payment-questions",
+    "type": "official"
+  },
+  {
+    "id": "ts-combine",
+    "label": "Topstep — Trading Combine Parameters (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284197-trading-combine-parameters",
+    "type": "official"
+  },
+  {
+    "id": "ts-consistency",
+    "label": "Topstep — Consistency at Topstep (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284208-consistency-at-topstep",
+    "type": "official"
+  },
+  {
+    "id": "ts-xfa",
+    "label": "Topstep — Express Funded Account Parameters (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284215-express-funded-account-parameters",
+    "type": "official"
+  },
+  {
+    "id": "ts-payouts",
+    "label": "Topstep — Payout Policy (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284233-topstep-payout-policy",
+    "type": "official"
+  },
+  {
+    "id": "ts-scaling",
+    "label": "Topstep — What is the Scaling Plan? (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284223-what-is-the-scaling-plan",
+    "type": "official"
+  },
+  {
+    "id": "ts-prohibited",
+    "label": "Topstep — Prohibited Trading Strategies at Topstep (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/10305426-prohibited-trading-strategies-at-topstep",
+    "type": "official"
+  },
+  {
+    "id": "ts-pro",
+    "label": "Topstep — What is a Pro Account? (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/14645398-what-is-a-pro-account",
+    "type": "official"
+  },
+  {
+    "id": "ts-products",
+    "label": "Topstep — When and What Products Can I Trade? (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284206-when-and-what-products-can-i-trade",
+    "type": "official"
+  },
+  {
+    "id": "ts-risk",
+    "label": "Topstep — Risk Adjustments: High Risk/High Volatility (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/13613539-risk-adjustments-high-risk-high-volatility",
+    "type": "official"
+  },
+  {
+    "id": "ts-eligibility",
+    "label": "Topstep — Am I Eligible to Trade with Topstep? (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284116-am-i-eligible-to-trade-with-topstep",
+    "type": "official"
+  },
+  {
+    "id": "ts-site",
+    "label": "Topstep — page des comptes Trading Combine (site officiel)",
+    "url": "https://www.topstep.com/topstep-prop",
+    "type": "official"
+  },
+  {
+    "id": "ts-xfa-rules",
+    "label": "Topstep — Express Funded Account Rules (site officiel)",
+    "url": "https://www.topstep.com/express-funded-account-rules",
+    "type": "official"
+  },
+  {
+    "id": "ts-forex",
+    "label": "Topstep — Can I trade Forex with You? (centre d'aide)",
+    "url": "https://help.topstep.com/en/articles/8284113-can-i-trade-forex-with-you",
+    "type": "official"
+  },
+  {
+    "id": "ts-faq",
+    "label": "Topstep — FAQ plateformes (TopstepX seule plateforme)",
+    "url": "https://intercom.help/topstep-llc/en/articles/8451438-frequently-asked-questions",
+    "type": "official"
+  },
+  {
+    "id": "ax-home",
+    "label": "Apex Trader Funding — page d'accueil et choix des comptes (site officiel)",
+    "url": "https://apextraderfunding.com/",
+    "type": "official"
+  },
+  {
+    "id": "ax-eod-pa",
+    "label": "Apex — EOD Performance Accounts (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/eod-trailing-drawdown-accounts/eod-performance-accounts-pa/",
+    "type": "official"
+  },
+  {
+    "id": "ax-intraday-pa",
+    "label": "Apex — Intraday Trailing Drawdown Performance Accounts (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/intraday-trailing-drawdown-accounts/intraday-trailing-drawdown-performance-accounts-pa/",
+    "type": "official"
+  },
+  {
+    "id": "ax-eod-payouts",
+    "label": "Apex — EOD Payouts (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/eod-trailing-drawdown-accounts/eod-payouts/",
+    "type": "official"
+  },
+  {
+    "id": "ax-intraday-payouts",
+    "label": "Apex — Intraday Trailing Drawdown Payouts (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/intraday-trailing-drawdown-accounts/intraday-trailing-drawdown-payouts/",
+    "type": "official"
+  },
+  {
+    "id": "ax-prohibited",
+    "label": "Apex — Prohibited Activities (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/getting-started/prohibited-activities/",
+    "type": "official"
+  },
+  {
+    "id": "ax-pa-compliance",
+    "label": "Apex — Performance Account (PA) and Compliance (centre d'aide)",
+    "url": "https://support.apextraderfunding.com/hc/en-us/articles/31519788944411-Performance-Account-PA-and-Compliance",
+    "type": "official"
+  },
+  {
+    "id": "ax-times",
+    "label": "Apex — Futures Trading Times (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/getting-started/futures-trading-times/",
+    "type": "official"
+  },
+  {
+    "id": "ax-restricted",
+    "label": "Apex — Restricted Countries (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/getting-started/restricted-countries/",
+    "type": "official"
+  },
+  {
+    "id": "ax-eval-fees",
+    "label": "Apex — Evaluation Plan Fees and Access Explained (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/billing/evaluation-plan-fees-and-access-explained/",
+    "type": "official"
+  },
+  {
+    "id": "ax-pa-activation",
+    "label": "Apex — PA Activation Process & Deadline Explained (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/billing/pa-activation-process-deadline-explained/",
+    "type": "official"
+  },
+  {
+    "id": "ax-picker",
+    "label": "Apex — sélecteur de comptes du site officiel (tarifs dynamiques, paramètres d'URL picker_*)",
+    "url": "https://apextraderfunding.com/?picker_balance=100k&picker_fee=nofee&picker_type=trail-eod",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/apex-picker-2026-11-15.json",
+    "parameters": {
+      "picker_balance": "25k|50k|100k|150k",
+      "picker_fee": "standard|nofee",
+      "picker_type": "trail-eod|trail-intraday"
+    }
+  },
+  {
+    "id": "ax-live-faq",
+    "label": "Apex — Live Prop Trading Program FAQ (centre d'aide)",
+    "url": "https://apextraderfunding.com/help-center/getting-started/apex-live-prop-trading-program-faq/",
+    "type": "official"
+  },
+  {
+    "id": "tp-site",
+    "label": "Take Profit Trader — page d'accueil (produits permis, bourses)",
+    "url": "https://takeprofittrader.com/",
+    "type": "official"
+  },
+  {
+    "id": "tp-faq",
+    "label": "Take Profit Trader — FAQ officielle (étapes, règles PRO / PRO+)",
+    "url": "https://try.takeprofittrader.com/TPT-FAQs-nf30r2-0526",
+    "type": "official"
+  },
+  {
+    "id": "tp-lp",
+    "label": "Take Profit Trader — page « Trade Futures » (règles test / PRO, 5 comptes)",
+    "url": "https://try.takeprofittrader.com/futures-traders-tab1-0725",
+    "type": "official"
+  },
+  {
+    "id": "tp-news",
+    "label": "Take Profit Trader — blog officiel : How to Trade News in Futures (restrictions de nouvelles)",
+    "url": "https://takeprofittrader.com/blog/how-to-trade-news",
+    "type": "official"
+  },
+  {
+    "id": "tp-5pm",
+    "label": "Take Profit Trader — blog officiel : règle de 17 h (fermeture automatique 16 h 55 ET)",
+    "url": "https://takeprofittrader.com/blog/the-prop-firm-5-pm-rule-explained-what-changed-at-take-profit-trader",
+    "type": "official"
+  },
+  {
+    "id": "tp-vs-topstep",
+    "label": "Take Profit Trader — blog officiel : comparatif (paramètres du programme, page éditoriale à fiabilité moindre)",
+    "url": "https://takeprofittrader.com/blog/take-profit-trader-vs-topstep",
+    "type": "official"
+  },
+  {
+    "id": "tp-vs-apex",
+    "label": "Take Profit Trader — blog officiel : comparatif (buffer PRO, frais de retrait, page éditoriale à fiabilité moindre)",
+    "url": "https://takeprofittrader.com/blog/take-profit-trader-vs-apex-trader-funding",
+    "type": "official"
+  },
+  {
+    "id": "tp-contracts",
+    "label": "Take Profit Trader — blog officiel : contrats maximaux par taille (page éditoriale datée)",
+    "url": "https://takeprofittrader.com/blog/what-is-a-funded-trading-account",
+    "type": "official"
+  },
+  {
+    "id": "tp-promo",
+    "label": "Take Profit Trader — tarifs et code promo (observation datée, page éditoriale)",
+    "url": "https://takeprofittrader.com/blog/take-profit-trader-vs-topstep",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+    "parameters": {
+      "code_promo": "NOFEE40"
+    }
+  },
+  {
+    "id": "mf-rapid",
+    "label": "MyFundedFutures — plan Rapid (site officiel)",
+    "url": "https://myfundedfutures.com/plans/rapid",
+    "type": "official"
+  },
+  {
+    "id": "mf-pro",
+    "label": "MyFundedFutures — plan Pro (site officiel)",
+    "url": "https://myfundedfutures.com/plans/pro",
+    "type": "official"
+  },
+  {
+    "id": "mf-builder50",
+    "label": "MyFundedFutures — Builder Plan 50K (centre d'aide)",
+    "url": "https://help.myfundedfutures.com/en/articles/14290805-builder-plan-50k-a-comprehensive-guide",
+    "type": "official"
+  },
+  {
+    "id": "mf-builder25",
+    "label": "MyFundedFutures — Builder Plan 25K (centre d'aide)",
+    "url": "https://help.myfundedfutures.com/en/articles/17036130-builder-plan-25k-a-comprehensive-look",
+    "type": "official"
+  },
+  {
+    "id": "mf-news",
+    "label": "MyFundedFutures — News Trading Policy (centre d'aide)",
+    "url": "https://help.myfundedfutures.com/en/articles/8230009-news-trading-policy",
+    "type": "official"
+  },
+  {
+    "id": "mf-instruments",
+    "label": "MyFundedFutures — Futures Instrument List (centre d'aide, daté du 24 août 2026)",
+    "url": "https://help.myfundedfutures.com/en/articles/9735811-futures-instrument-list",
+    "type": "official"
+  },
+  {
+    "id": "mf-countries",
+    "label": "MyFundedFutures — Restricted Countries Policy (centre d'aide)",
+    "url": "https://help.myfundedfutures.com/en/articles/8229993-restricted-countries-policy",
+    "type": "official"
+  },
+  {
+    "id": "mf-terms",
+    "label": "MyFundedFutures — Terms and Conditions (art. 24 Geographical Restrictions)",
+    "url": "https://myfundedfutures.com/terms",
+    "type": "official"
+  },
+  {
+    "id": "mf-club",
+    "label": "MyFundedFutures — MyFundedClub (programme de points ; exclut l'Ontario et le Québec)",
+    "url": "https://myfundedfutures.com/myfundedclub",
+    "type": "official"
+  },
+  {
+    "id": "mf-platforms",
+    "label": "MyFundedFutures — Overview of Supported Platforms (centre d'aide)",
+    "url": "https://help.myfundedfutures.com/en/articles/8528335-overview-of-supported-platforms-at-mffu",
+    "type": "official"
+  },
+  {
+    "id": "mf-platform-blog",
+    "label": "MyFundedFutures — blog officiel : plateformes et produits permis",
+    "url": "https://myfundedfutures.com/blog/trading-platform-to-use-funded-futures-account",
+    "type": "official"
+  },
+  {
+    "id": "mf-live-faq",
+    "label": "MyFundedFutures — FAQ des comptes Live (centre d'aide)",
+    "url": "https://help.myfundedfutures.com/en/articles/12109396-comprehensive-faq-live-accounts-at-myfunded-futures",
+    "type": "official"
+  },
+  {
+    "id": "mf-price-rapid",
+    "label": "MyFundedFutures — plan Rapid : prix affichés (observation datée)",
+    "url": "https://myfundedfutures.com/plans/rapid",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+    "parameters": {
+      "page": "plans/rapid",
+      "code_promo_affiche": "CLUB"
+    }
+  },
+  {
+    "id": "mf-price-builder",
+    "label": "MyFundedFutures — Builder 50K : prix affichés (observation datée)",
+    "url": "https://help.myfundedfutures.com/en/articles/14290805-builder-plan-50k-a-comprehensive-guide",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+    "parameters": {
+      "page": "builder-plan-50k"
+    }
+  },
+  {
+    "id": "td-home",
+    "label": "TradeDay 2.0 — page d'accueil : comptes Quick Pay / Fast Pass (site officiel)",
+    "url": "https://www.tradeday.com/",
+    "type": "official"
+  },
+  {
+    "id": "td-terms",
+    "label": "TradeDay — Terms & Conditions (mis à jour le 11 août 2026)",
+    "url": "https://www.tradeday.com/terms-and-conditions",
+    "type": "official"
+  },
+  {
+    "id": "td-products",
+    "label": "TradeDay — produits permis (bourses CME, CBOT, NYMEX, COMEX ; aucun CFD)",
+    "url": "https://www.tradeday.com/es/weekly-update",
+    "type": "official"
+  },
+  {
+    "id": "td-blog20",
+    "label": "TradeDay — blog officiel : TradeDay 2.0",
+    "url": "https://www.tradeday.com/blog-posts/tradeday-2-0---the-next-evolution-of-prop-trading",
+    "type": "official"
+  },
+  {
+    "id": "td-price-home",
+    "label": "TradeDay — page d'accueil : prix affichés (observation datée)",
+    "url": "https://www.tradeday.com/",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+    "parameters": {
+      "page": "accueil",
+      "codes_affiches": "TDNEW / SALE60"
+    }
+  },
+  {
+    "id": "td-price-mit",
+    "label": "TradeDay — page Make It Take It : prix affichés « par mois » (observation datée)",
+    "url": "https://www.tradeday.com/make-it-take-it",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+    "parameters": {
+      "page": "make-it-take-it"
+    }
+  },
+  {
+    "id": "ft-how",
+    "label": "FTMO — How it works (produits, tailles)",
+    "url": "https://ftmo.com/en/how-it-works/",
+    "type": "official"
+  },
+  {
+    "id": "ft-2step",
+    "label": "FTMO — Challenge 2-Step (objectifs de trading)",
+    "url": "https://ftmo.com/en/2-step-challenge/",
+    "type": "official"
+  },
+  {
+    "id": "ft-1step",
+    "label": "FTMO — Challenge 1-Step (objectifs de trading)",
+    "url": "https://ftmo.com/en/1-step-challenge/",
+    "type": "official"
+  },
+  {
+    "id": "ft-1blog",
+    "label": "FTMO — blog officiel : Introducing the 1-Step FTMO Challenge (note du 5 octobre 2026)",
+    "url": "https://ftmo.com/en/blog/introducing-the-1-step-ftmo-challenge/",
+    "type": "official"
+  },
+  {
+    "id": "ft-dd",
+    "label": "FTMO — blog officiel : Trading and Drawdowns",
+    "url": "https://ftmo.com/en/blog/drawdowns/",
+    "type": "official"
+  },
+  {
+    "id": "ft-promo1",
+    "label": "FTMO — page promo 1-Step (règles par taille)",
+    "url": "https://promo.ftmo.com/new-1-step-challenge/",
+    "type": "official"
+  },
+  {
+    "id": "ft-instant",
+    "label": "FTMO — blog officiel : Introducing the FTMO Instant Account",
+    "url": "https://ftmo.com/en/blog/introducing-the-ftmo-instant-account/",
+    "type": "official"
+  },
+  {
+    "id": "ft-trial",
+    "label": "FTMO — Free Trial (tableau comparatif des objectifs 1-Step / 2-Step / Instant)",
+    "url": "https://ftmo.com/en/ftmo-free-trial/",
+    "type": "official"
+  },
+  {
+    "id": "ft-who",
+    "label": "FTMO — Who can join FTMO? (pays restreints CFD)",
+    "url": "https://ftmo.com/en/faq/who-can-join-ftmo/",
+    "type": "official"
+  },
+  {
+    "id": "ft-news",
+    "label": "FTMO — Can I trade news?",
+    "url": "https://ftmo.com/en/faq/can-i-trade-news/",
+    "type": "official"
+  },
+  {
+    "id": "ft-hold",
+    "label": "FTMO — Can I hold positions overnight or over the weekend?",
+    "url": "https://ftmo.com/en/faq/do-i-have-to-close-my-positions-overnight-or-before-the-weekend/",
+    "type": "official"
+  },
+  {
+    "id": "ft-swing",
+    "label": "FTMO — What is the Swing account type?",
+    "url": "https://ftmo.com/en/faq/what-is-the-swing-account-type-and-how-does-it-work/",
+    "type": "official"
+  },
+  {
+    "id": "ft-platforms",
+    "label": "FTMO — Which platforms can I use for trading?",
+    "url": "https://ftmo.com/en/faq/which-platforms-can-i-use-for-trading/",
+    "type": "official"
+  },
+  {
+    "id": "ft-instr",
+    "label": "FTMO — Which instruments can I trade? (version AU de la FAQ)",
+    "url": "https://ftmo.com/au/faq/which-instruments-can-i-trade-and-what-strategies-am-i-allowed-to-use/",
+    "type": "official"
+  },
+  {
+    "id": "ft-withdraw",
+    "label": "FTMO — How do I withdraw my profits? (version AU de la FAQ)",
+    "url": "https://ftmo.com/au/faq/how-do-i-withdraw-my-profits/",
+    "type": "official"
+  },
+  {
+    "id": "ft-scaling",
+    "label": "FTMO — Reward Growth and Scaling Plan",
+    "url": "https://ftmo.com/en/reward-growth-and-scaling-plan/",
+    "type": "official"
+  },
+  {
+    "id": "ft-futures-who",
+    "label": "FTMO — Who can join FTMO Futures? (produit futures distinct, non modélisé)",
+    "url": "https://ftmo.com/en/futures/faq/who-can-join-ftmo-futures/",
+    "type": "official"
+  },
+  {
+    "id": "ft-price-2",
+    "label": "FTMO — Challenge 2-Step : prix affichés en euros (observation datée)",
+    "url": "https://ftmo.com/lp/modern-prop-trading-firm-that-you-can-trust/",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "lp/modern-prop-trading-firm",
+      "devise": "EUR"
+    }
+  },
+  {
+    "id": "ft-price-1",
+    "label": "FTMO — Challenge 1-Step : prix affichés en euros (observation datée)",
+    "url": "https://promo.ftmo.com/new-1-step-challenge/",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "promo/new-1-step-challenge",
+      "devise": "EUR"
+    }
+  },
+  {
+    "id": "ft-price-inst",
+    "label": "FTMO — Instant Account : prix affichés en dollars (observation datée)",
+    "url": "https://promo.ftmo.com/instant-account/us/",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "promo/instant-account/us",
+      "devise": "USD"
+    }
+  },
+  {
+    "id": "t5-compare",
+    "label": "The5ers — blog officiel : comparatif des programmes (page éditoriale, contient des contradictions internes)",
+    "url": "https://the5ers.com/challenge-programs-bootcamp-high-stakes-hyper-growth-explained/",
+    "type": "official"
+  },
+  {
+    "id": "t5-high",
+    "label": "The5ers — page programme High Stakes",
+    "url": "https://the5ers.com/high-stakes/",
+    "type": "official"
+  },
+  {
+    "id": "t5-hs-rules",
+    "label": "The5ers — FAQ : règles générales du programme High Stakes",
+    "url": "https://the5ers.com/faqs/what-are-the-general-rules-for-the-high-stakes-program/",
+    "type": "official"
+  },
+  {
+    "id": "t5-hs-news",
+    "label": "The5ers — FAQ : nouvelles dans le programme High Stakes",
+    "url": "https://the5ers.com/faqs/is-news-trading-allowed-in-the-high-stakes-program2024/",
+    "type": "official"
+  },
+  {
+    "id": "t5-hs-pay",
+    "label": "The5ers — FAQ : politique de retrait High Stakes",
+    "url": "https://the5ers.com/faqs/payout-policy-and-hub-credit-in-the-high-stakes-program/",
+    "type": "official"
+  },
+  {
+    "id": "t5-hyper",
+    "label": "The5ers — page programme Hyper Growth",
+    "url": "https://the5ers.com/hyper-growth/",
+    "type": "official"
+  },
+  {
+    "id": "t5-boot",
+    "label": "The5ers — page programme Bootcamp",
+    "url": "https://the5ers.com/bootcamp/",
+    "type": "official"
+  },
+  {
+    "id": "t5-btw",
+    "label": "The5ers — site communautaire officiel (btw.the5ers.com) : tableaux des programmes (page ancienne)",
+    "url": "https://btw.the5ers.com/community/market-structure-assignment/",
+    "type": "official"
+  },
+  {
+    "id": "t5-consist",
+    "label": "The5ers — blog officiel : consistance et drawdown par programme",
+    "url": "https://the5ers.com/fixed-vs-dynamic-profit-targets/",
+    "type": "official"
+  },
+  {
+    "id": "t5-who",
+    "label": "The5ers — Who can join The5ers? (pays non servis)",
+    "url": "https://the5ers.com/faqs/who-can-join-the5ers/",
+    "type": "official"
+  },
+  {
+    "id": "t5-terms",
+    "label": "The5ers — Terms and Conditions (Forbidden Territory)",
+    "url": "https://the5ers.com/terms-and-conditions/",
+    "type": "official"
+  },
+  {
+    "id": "t5-accounts",
+    "label": "The5ers — centre d'aide : nombre de comptes permis",
+    "url": "https://help.the5ers.com/how-many-the5ers-accounts-can-i-have/",
+    "type": "official"
+  },
+  {
+    "id": "t5-price",
+    "label": "The5ers — tarifs affichés sur la page communautaire (observation datée, page ancienne)",
+    "url": "https://btw.the5ers.com/community/market-structure-assignment/",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "btw.the5ers.com",
+      "age_page_jours": "374"
+    }
+  },
+  {
+    "id": "fn-1",
+    "label": "FundedNext — Stellar 1-Step CFD (règles)",
+    "url": "https://fundednext.com/cfds/stellar-1-step",
+    "type": "official"
+  },
+  {
+    "id": "fn-2",
+    "label": "FundedNext — Stellar 2-Step CFD (règles)",
+    "url": "https://fundednext.com/cfds/stellar-2-step",
+    "type": "official"
+  },
+  {
+    "id": "fn-lite",
+    "label": "FundedNext — Stellar Lite CFD (règles)",
+    "url": "https://fundednext.com/cfds/stellar-lite",
+    "type": "official"
+  },
+  {
+    "id": "fn-inst",
+    "label": "FundedNext — Stellar Instant CFD (règles)",
+    "url": "https://fundednext.com/cfds/stellar-instant",
+    "type": "official"
+  },
+  {
+    "id": "fn-help1",
+    "label": "FundedNext — centre d'aide : Stellar 1-Step Account",
+    "url": "https://help.fundednext.com/en/articles/17252927-stellar-1-step-account",
+    "type": "official"
+  },
+  {
+    "id": "fn-blog2",
+    "label": "FundedNext — blog officiel : CFDs Stellar 2-Step expliqué",
+    "url": "https://fundednext.com/blog/fundednext-cfds-stellar-2-step-explained",
+    "type": "official"
+  },
+  {
+    "id": "fn-blog1",
+    "label": "FundedNext — blog officiel : CFDs Stellar 1-Step expliqué",
+    "url": "https://fundednext.com/blog/fundednext-cfds-stellar-1-step-explained",
+    "type": "official"
+  },
+  {
+    "id": "fn-vs",
+    "label": "FundedNext — blog officiel : Stellar 1-Step vs 2-Step",
+    "url": "https://fundednext.com/blog/stellar-1-step-vs-2-step-challenge",
+    "type": "official"
+  },
+  {
+    "id": "fn-hold",
+    "label": "FundedNext — centre d'aide : positions overnight et week-end",
+    "url": "https://help.fundednext.com/en/articles/11982358-does-fundednext-allow-holding-trades-over-the-night-weekend",
+    "type": "official"
+  },
+  {
+    "id": "fn-countries",
+    "label": "FundedNext — centre d'aide : pays restreints pour les CFD",
+    "url": "https://help.fundednext.com/en/articles/8020080-are-any-countries-restricted-on-fundednext-cfds",
+    "type": "official"
+  },
+  {
+    "id": "fn-terms",
+    "label": "FundedNext — Terms of Service (art. 5 Eligibility)",
+    "url": "https://fundednext.com/terms-of-service",
+    "type": "official"
+  },
+  {
+    "id": "fn-platforms",
+    "label": "FundedNext — plateformes CFD (page officielle des règles générales)",
+    "url": "https://fundednext.com/general-rules/cfds/trading-platforms",
+    "type": "official"
+  },
+  {
+    "id": "fn-platblog",
+    "label": "FundedNext — blog officiel : MT4, MT5, cTrader, Match-Trader (page ancienne, accès par taille)",
+    "url": "https://fundednext.com/blog/how-to-trade-on-mt4-mt5-ctrader-and-match-trader",
+    "type": "official"
+  },
+  {
+    "id": "fn-whatis",
+    "label": "FundedNext — blog officiel : What is FundedNext? (liste d'instruments, page ancienne)",
+    "url": "https://fundednext.com/blog/what-is-fundednext",
+    "type": "official"
+  },
+  {
+    "id": "fn-stocks",
+    "label": "FundedNext — blog officiel : actions CFD (20 symboles)",
+    "url": "https://fundednext.com/blog/fundednext-stocks-funded-capital",
+    "type": "official"
+  },
+  {
+    "id": "fn-uae",
+    "label": "FundedNext — centre d'aide : régulation (Émirats arabes unis)",
+    "url": "https://help.fundednext.com/en/articles/8320393-is-fundednext-regulated-under-usa-or-canadian-jurisdiction",
+    "type": "official"
+  },
+  {
+    "id": "fn-price-1",
+    "label": "FundedNext — Stellar 1-Step : prix affichés (observation datée)",
+    "url": "https://fundednext.com/cfds/stellar-1-step",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "cfds/stellar-1-step"
+    }
+  },
+  {
+    "id": "fn-price-2",
+    "label": "FundedNext — Stellar 2-Step : prix affichés (observation datée)",
+    "url": "https://fundednext.com/cfds/stellar-2-step",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "cfds/stellar-2-step"
+    }
+  },
+  {
+    "id": "fn-price-lite",
+    "label": "FundedNext — Stellar Lite : prix affichés (observation datée)",
+    "url": "https://fundednext.com/cfds/stellar-lite",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "cfds/stellar-lite"
+    }
+  },
+  {
+    "id": "fn-price-inst",
+    "label": "FundedNext — Stellar Instant : prix affichés (observation datée)",
+    "url": "https://fundednext.com/cfds/stellar-instant",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "cfds/stellar-instant"
+    }
+  },
+  {
+    "id": "fp-start",
+    "label": "FundingPips — Get Started (modèles, pays restreints, instruments)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/44390730743825-Get-Started",
+    "type": "official"
+  },
+  {
+    "id": "fp-1flex",
+    "label": "FundingPips — 1 Step Flex (centre d'aide)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/34501697434385-1-Step-Flex",
+    "type": "official"
+  },
+  {
+    "id": "fp-1flexsite",
+    "label": "FundingPips — page 1 Step Flex du site",
+    "url": "https://fundingpips.com/1-step-flex",
+    "type": "official"
+  },
+  {
+    "id": "fp-1step",
+    "label": "FundingPips — 1 Step Model (centre d'aide)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/48982278587665-1-Step-Model",
+    "type": "official"
+  },
+  {
+    "id": "fp-2std",
+    "label": "FundingPips — 2 Step Standard (centre d'aide)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/34501809112081-2-Step-Standard",
+    "type": "official"
+  },
+  {
+    "id": "fp-2pro",
+    "label": "FundingPips — 2 Step Pro (centre d'aide)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/34502027344017-2-Step-Pro-Model",
+    "type": "official"
+  },
+  {
+    "id": "fp-zero",
+    "label": "FundingPips — Zero (centre d'aide)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/34502157694865-FundingPips-Zero",
+    "type": "official"
+  },
+  {
+    "id": "fp-obj",
+    "label": "FundingPips — Trading Objectives (2 Step Flex ; page de 180 jours)",
+    "url": "https://fundingpips.com/trading-objectives",
+    "type": "official"
+  },
+  {
+    "id": "fp-terms",
+    "label": "FundingPips — Terms and Conditions (art. 8 : limites par modèle)",
+    "url": "https://fundingpips.com/terms-and-conditions",
+    "type": "official"
+  },
+  {
+    "id": "fp-platform",
+    "label": "FundingPips — Account Workspace (plateformes, restrictions géographiques)",
+    "url": "https://help.fundingpips.com/en/articles/10527988-finding-the-right-trading-platform",
+    "type": "official"
+  },
+  {
+    "id": "fp-legacy",
+    "label": "FundingPips — Legacy Rules (règles historiques ; mise à jour temporaire du 29 janvier 2026)",
+    "url": "https://help.fundingpips.com/hc/en-us/articles/51307058233361-FundingPips-Legacy-Rules",
+    "type": "official"
+  },
+  {
+    "id": "fp-review",
+    "label": "FundingPips — blog officiel : revue 2026 des modèles",
+    "url": "https://fundingpips.com/blog/fundingpips-review-2026",
+    "type": "official"
+  },
+  {
+    "id": "fp-price",
+    "label": "FundingPips — prix d'entrée affichés par modèle (observation datée)",
+    "url": "https://fundingpips.com/blog/fundingpips-review-2026",
+    "type": "official",
+    "durable": false,
+    "consulted_at": "2026-11-15",
+    "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+    "parameters": {
+      "page": "blog/fundingpips-review-2026"
+    }
+  }
+]

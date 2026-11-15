@@ -1,0 +1,1247 @@
+{
+  "id": "topstep-trading-combine",
+  "firm_id": "topstep",
+  "name": "Trading Combine (Topstep)",
+  "demo": false,
+  "official_url": "https://www.topstep.com/topstep-prop",
+  "summary": "Évaluation en une étape par abonnement mensuel (sans limite de temps), avec une seule règle de perte (Maximum Loss Limit de fin de journée) et un objectif de consistance de 55 %. Réussite → compte Express Funded Account (retraits à 90/10). Day trading seulement : positions fermées à 15 h 10 (heure du Centre), pas de Forex ni de CFD.",
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "ES",
+      "MES",
+      "NQ",
+      "MNQ",
+      "RTY",
+      "M2K",
+      "YM",
+      "MYM",
+      "MBT",
+      "MET",
+      "6E",
+      "M6E",
+      "GC",
+      "MGC",
+      "CL",
+      "MCL"
+    ],
+    "sources": [
+      "ts-products"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Liste officielle « Permitted Products » (tous les produits CME Group permis). Parmi le catalogue de l'outil : indices (ES, MES, NQ, MNQ, RTY, M2K, YM, MYM), crypto à terme (MBT, MET), devises à terme (6E, M6E), métaux (GC, MGC), pétrole (CL, MCL)."
+  },
+  "instruments_scope": "exhaustive",
+  "instruments_excluded": {
+    "status": "confirmed",
+    "value": [],
+    "sources": [
+      "ts-products"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Tous les futures de notre catalogue figurent dans la liste officielle ; la liste officielle contient d'autres produits CME (ex. métaux SI, HG, PL, énergies, taux) hors de notre catalogue : leur absence du comparateur ne signifie pas qu'ils sont interdits. Les CFD, le comptant et les perpétuels du catalogue sont écartés par le type de contrat (futures seulement)."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "futures"
+    ],
+    "sources": [
+      "ts-products",
+      "ts-forex"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "« No Forex » : uniquement des contrats à terme CME Group (aucun CFD, aucun marché au comptant)."
+  },
+  "instrument_limits": {
+    "status": "confirmed",
+    "value": [
+      {
+        "instrument": "GC",
+        "state": "limited",
+        "note": "Risk Adjustments : 3 / 6 / 9 contrats (comptes 50K / 100K / 150K) dans le Combine, le XFA et le Live ; limite temporaire tant que la volatilité est élevée. Le Scaling Plan du XFA peut imposer moins."
+      },
+      {
+        "instrument": "MGC",
+        "state": "limited",
+        "note": "Risk Adjustments : 30 / 60 / 90 micros dans le Combine et le XFA ; 5 / 10 / 15 micros sur le compte Live. Limite temporaire."
+      },
+      {
+        "instrument": "CL",
+        "state": "limited",
+        "note": "Risk Adjustments : 3 / 6 / 9 contrats (50K / 100K / 150K), Combine, XFA et Live. Limite temporaire."
+      },
+      {
+        "instrument": "MCL",
+        "state": "limited",
+        "note": "Risk Adjustments : 30 / 60 / 90 micros dans le Combine et le XFA ; 3 / 6 / 9 sur le Live. Limite temporaire."
+      },
+      {
+        "instrument": "MBT",
+        "state": "limited",
+        "note": "Risk Adjustments : 5 / 10 / 15 contrats (Combine, XFA). Limite temporaire."
+      },
+      {
+        "instrument": "ES",
+        "state": "limited",
+        "note": "Annonces Tier 1 (CPI, FOMC, NFP, PPI) : aucune nouvelle ouverture pendant la fenêtre de 10 minutes."
+      },
+      {
+        "instrument": "NQ",
+        "state": "limited",
+        "note": "Annonces Tier 1 (CPI, FOMC, NFP, PPI) : aucune nouvelle ouverture pendant la fenêtre de 10 minutes."
+      },
+      {
+        "instrument": "RTY",
+        "state": "limited",
+        "note": "Annonces Tier 1 : aucune nouvelle ouverture pendant la fenêtre de 10 minutes."
+      },
+      {
+        "instrument": "YM",
+        "state": "limited",
+        "note": "Annonces Tier 1 : aucune nouvelle ouverture pendant la fenêtre de 10 minutes."
+      },
+      {
+        "instrument": "MES",
+        "state": "limited",
+        "note": "Annonces Tier 1 : nouvelles ouvertures plafonnées (1 / 3 / 6 / 9 / 15 contrats selon la taille 25K à 250K)."
+      },
+      {
+        "instrument": "MNQ",
+        "state": "limited",
+        "note": "Annonces Tier 1 : nouvelles ouvertures plafonnées (1 / 3 / 6 / 9 / 15 contrats selon la taille 25K à 250K)."
+      },
+      {
+        "instrument": "M2K",
+        "state": "limited",
+        "note": "Annonces Tier 1 : nouvelles ouvertures plafonnées selon la taille du compte."
+      },
+      {
+        "instrument": "MYM",
+        "state": "limited",
+        "note": "Annonces Tier 1 : nouvelles ouvertures plafonnées selon la taille du compte."
+      }
+    ],
+    "sources": [
+      "ts-risk"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Page « Risk Adjustments » lue le 2026-11-15 : limites temporaires, propres à chaque produit, annoncées par courriel / tableau de bord. SI, HG et PL (hors catalogue) sont à 0 dans tous les comptes. Les valeurs peuvent changer sans préavis : relire la page avant de trader."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "proprietary"
+    ],
+    "sources": [
+      "ts-faq"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "TopstepX est la seule plateforme disponible depuis le 7 juillet 2025."
+  },
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 1,
+      "sources": [
+        "ts-combine"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "eod_trailing",
+      "sources": [
+        "ts-combine",
+        "ts-xfa-rules"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune limite de temps : abonnement mensuel renouvelé jusqu'à la réussite ou l'annulation."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Atteindre l'objectif de profit sans toucher la Maximum Loss Limit (qui suit le solde de fin de journée), en gardant le meilleur jour sous 55 % de l'objectif. Abonnement mensuel.",
+      "sources": [
+        "ts-combine"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": true,
+        "detail": "Le meilleur jour ne doit pas dépasser 55 % de l'objectif de profit (règle stricte, sans marge) ; sinon l'objectif augmente."
+      },
+      "sources": [
+        "ts-consistency"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Page officielle : « les profits sont réels » ; la nature simulée du XFA n'est pas énoncée clairement dans les pages lues."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "eod_trailing",
+      "sources": [
+        "ts-xfa-rules"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 90,
+      "sources": [
+        "ts-payouts"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "90/10 pour les comptes ouverts depuis le 12 janvier 2026 ; les anciens comptes ont un régime transitoire (100 % des premiers 10 000 $) selon des sources tierces."
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 125,
+      "sources": [
+        "ts-payouts"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_cap": {
+      "status": "confirmed",
+      "value": {
+        "has_cap": true,
+        "amount_usd": 5000
+      },
+      "sources": [
+        "ts-payouts",
+        "ts-xfa",
+        "ts-xfa-rules"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "5 000 $ = plafond du chemin Standard pour le compte 150K (6 000 $ en Consistency) : ce sont les maxima des tailles ; les plafonds par taille sont aux comptes (50K : 2 000 / 3 000 $ ; 100K : 3 000 / 4 000 $ ; 150K : 5 000 / 6 000 $). Les « 5 000 $ / 6 000 $ » des pages XFA ne contredisent donc pas la politique de paiement. Compte Live : aucun plafond."
+    },
+    "safety_net": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucun « Safety Net » nommé dans la politique de paiement lue ; aucune formule de solde minimal après le premier retrait n'y figure non plus. Effet connu : la Maximum Loss Limit passe à 0 $ après chaque retrait (voir « effet sur le drawdown »)."
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "standard",
+          "label": "Standard",
+          "min_days": 5,
+          "min_day_profit_usd": 150,
+          "consistency_max_day_pct": null,
+          "request_limit_pct_of_balance": 50,
+          "note": "5 jours gagnants (≥ 150 $ de P&L net, non consécutifs ; journée figée à 16 h CT) ; profit net > 0 $ depuis le dernier retrait (le premier retrait en est exempt) ; demande jusqu'à 50 % du solde, plafonnée par taille : 2 000 / 3 000 / 5 000 $."
+        },
+        {
+          "id": "consistency",
+          "label": "Consistency",
+          "min_days": 3,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": 40,
+          "request_limit_pct_of_balance": 50,
+          "note": "3 jours de trading avec au moins 1 trade ; le plus gros jour ≤ 40 % du profit net total ; jusqu'à 50 % du solde, plafonné par taille : 3 000 / 4 000 / 6 000 $."
+        }
+      ],
+      "sources": [
+        "ts-payouts"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Le chemin se choisit à l'activation du XFA. Après chaque retrait, le décompte des jours gagnants / de consistance repart."
+    },
+    "max_payouts": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Le nombre maximal de retraits par XFA n'est pas énoncé dans la politique de paiement lue (jusqu'à 5 XFA simultanés ; l'appel au compte Live relève de l'équipe de risque)."
+    },
+    "drawdown_effect_of_payout": {
+      "status": "confirmed",
+      "value": "Après chaque retrait XFA, la Maximum Loss Limit passe définitivement à 0 $ ; si le retrait ramène le solde à un palier inférieur du Scaling Plan, le nombre maximal de contrats diminue.",
+      "sources": [
+        "ts-payouts"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Deux chemins au choix à l'activation du XFA : Standard (5 jours gagnants de 150 $ ou plus, non consécutifs ; profit net > 0 $ depuis le dernier retrait) ou Consistency (3 jours de trading, meilleur jour ≤ 40 % du profit). Jusqu'à 50 % du solde, plafonné par taille ; minimum 125 $ ; retraits pendant les heures CME ; jusqu'à 5 XFA simultanés.",
+      "sources": [
+        "ts-payouts",
+        "ts-xfa"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Page « Economic Releases » non lue en détail ; des limites de lots s'appliquent pendant les annonces Tier 1 sur certains produits."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ts-products"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Toutes les positions doivent être fermées à 15 h 10 (heure du Centre) chaque jour de semaine. Reprise à 17 h."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ts-products"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Toutes les positions doivent être fermées à 15 h 10 (heure du Centre) chaque jour de semaine. Reprise à 17 h."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ts-products"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "« Pas de swing trading » : aucune position conservée jusqu'au lendemain ni pendant la fin de semaine."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ts-products"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "« Pas de swing trading » : aucune position conservée jusqu'au lendemain ni pendant la fin de semaine."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "La journée de trading court de 17 h à 15 h 10 (CT) ; règle propre à la session asiatique non lue."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Une FAQ « Can I use automated trading strategies? » existe sur la page Trading Combine Parameters ; la réponse n'a pas pu être lue."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "eligibility": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Page officielle d'éligibilité (ts-eligibility, lue le 2026-11-15) : admissibilité fondée sur la citoyenneté ET la résidence ; liste de pays inéligibles et liste de pays admis au XFA mais sans compte Live. Le Canada ne figure dans aucune des deux listes, mais la page ne déclare pas expressément les Canadiens admissibles (sa FAQ « Je suis Canadien » explique seulement la structure de sous-compte) et ne mentionne pas le Québec : l'absence d'exclusion n'est pas une confirmation."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "Le Canada n'est pas dans la liste des pays inéligibles ; le Québec n'est pas mentionné. Aucune phrase officielle ne confirme l'admissibilité des résidents du Québec au Trading Combine. L'accès ne garantit pas l'admissibilité aux paiements.",
+      "sources": [
+        "ts-eligibility"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Express Funded Account (simulé) : le Canada n'est pas dans la liste « XFA seulement » ni dans les pays inéligibles ; le Québec n'est pas mentionné. Non confirmé. Les paiements sont refusés aux citoyens ou résidents de pays inéligibles ; la politique de paiement liste Wise (1–3 jours ouvrables) comme méthode pour le Canada, sans préciser les provinces : l'accès au XFA ne garantit pas le versement au Québec.",
+      "sources": [
+        "ts-eligibility",
+        "ts-payouts"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Compte Live : des pays sont limités au XFA à cause du courtier ; le Canada n'est pas dans cette liste, mais le Québec n'est pas mentionné. Non confirmé.",
+      "sources": [
+        "ts-eligibility"
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "id": "50k-standard",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel, pas de paiement unique."
+        },
+        "monthly": {
+          "status": "confirmed",
+          "value": 49,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Se renouvelle chaque mois jusqu'à la réussite ou l'annulation. La voie (Standard / Sans frais d'activation) ne peut pas être changée après l'achat."
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 149,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Facturés une seule fois par Express Funded Account obtenu, après la réussite."
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 49,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Prix d'une réinitialisation après avoir touché la Maximum Loss Limit."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réactivation d'un XFA fermé (Back2Funded) : 599 $ / 699 $ / 829 $ selon la taille ; non modélisés ici."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site",
+            "ts-consistency"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-site",
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum Loss Limit : suit le solde de fin de journée (EOD) et se verrouille au solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne OPTIONNELLE dans le Combine (choisie à l'achat) ; obligatoire seulement sur le compte Live."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« Réussir en aussi peu que deux jours » (aucun minimum explicite autre que celui qui découle de la règle des 55 %)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats standard ; micros à 10 pour 1."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Identique à celle du Combine ; après le premier retrait, la limite passe définitivement à 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Optionnelle."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Fixé par le Scaling Plan (progressif selon le solde) : valeurs par taille non lues."
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Chemin Standard. Chemin Consistency : 3000 $ par retrait. Des plafonds doublés sont annoncés pour les nouveaux Combines achetés avec la limite quotidienne optionnelle, dans le cadre d'une offre à durée limitée (début le 2 juin) : non modélisés."
+        }
+      }
+    },
+    {
+      "id": "50k-sans-frais-activation",
+      "account_size_usd": 50000,
+      "option": "Sans frais d'activation",
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel, pas de paiement unique."
+        },
+        "monthly": {
+          "status": "confirmed",
+          "value": 95,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Se renouvelle chaque mois jusqu'à la réussite ou l'annulation. La voie (Standard / Sans frais d'activation) ne peut pas être changée après l'achat."
+        },
+        "activation_fee": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Voie « Sans frais d'activation » : aucun frais à la réussite (mensualité plus élevée)."
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 95,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Prix d'une réinitialisation après avoir touché la Maximum Loss Limit."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réactivation d'un XFA fermé (Back2Funded) : 599 $ / 699 $ / 829 $ selon la taille ; non modélisés ici."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site",
+            "ts-consistency"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-site",
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum Loss Limit : suit le solde de fin de journée (EOD) et se verrouille au solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne OPTIONNELLE dans le Combine (choisie à l'achat) ; obligatoire seulement sur le compte Live."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« Réussir en aussi peu que deux jours » (aucun minimum explicite autre que celui qui découle de la règle des 55 %)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 5,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats standard ; micros à 10 pour 1."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Identique à celle du Combine ; après le premier retrait, la limite passe définitivement à 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Optionnelle."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Fixé par le Scaling Plan (progressif selon le solde) : valeurs par taille non lues."
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Chemin Standard. Chemin Consistency : 3000 $ par retrait. Des plafonds doublés sont annoncés pour les nouveaux Combines achetés avec la limite quotidienne optionnelle, dans le cadre d'une offre à durée limitée (début le 2 juin) : non modélisés."
+        }
+      }
+    },
+    {
+      "id": "100k-standard",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel, pas de paiement unique."
+        },
+        "monthly": {
+          "status": "confirmed",
+          "value": 99,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Se renouvelle chaque mois jusqu'à la réussite ou l'annulation. La voie (Standard / Sans frais d'activation) ne peut pas être changée après l'achat."
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 149,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Facturés une seule fois par Express Funded Account obtenu, après la réussite."
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 99,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Prix d'une réinitialisation après avoir touché la Maximum Loss Limit."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réactivation d'un XFA fermé (Back2Funded) : 599 $ / 699 $ / 829 $ selon la taille ; non modélisés ici."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "ts-site",
+            "ts-consistency"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site",
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum Loss Limit : suit le solde de fin de journée (EOD) et se verrouille au solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne OPTIONNELLE dans le Combine (choisie à l'achat) ; obligatoire seulement sur le compte Live."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« Réussir en aussi peu que deux jours » (aucun minimum explicite autre que celui qui découle de la règle des 55 %)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 10,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats standard ; micros à 10 pour 1."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Identique à celle du Combine ; après le premier retrait, la limite passe définitivement à 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Optionnelle."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Fixé par le Scaling Plan (progressif selon le solde) : valeurs par taille non lues."
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Chemin Standard. Chemin Consistency : 4000 $ par retrait. Des plafonds doublés sont annoncés pour les nouveaux Combines achetés avec la limite quotidienne optionnelle, dans le cadre d'une offre à durée limitée (début le 2 juin) : non modélisés."
+        }
+      }
+    },
+    {
+      "id": "100k-sans-frais-activation",
+      "account_size_usd": 100000,
+      "option": "Sans frais d'activation",
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel, pas de paiement unique."
+        },
+        "monthly": {
+          "status": "confirmed",
+          "value": 149,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Se renouvelle chaque mois jusqu'à la réussite ou l'annulation. La voie (Standard / Sans frais d'activation) ne peut pas être changée après l'achat."
+        },
+        "activation_fee": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Voie « Sans frais d'activation » : aucun frais à la réussite (mensualité plus élevée)."
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 149,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Prix d'une réinitialisation après avoir touché la Maximum Loss Limit."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réactivation d'un XFA fermé (Back2Funded) : 599 $ / 699 $ / 829 $ selon la taille ; non modélisés ici."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "ts-site",
+            "ts-consistency"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site",
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum Loss Limit : suit le solde de fin de journée (EOD) et se verrouille au solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne OPTIONNELLE dans le Combine (choisie à l'achat) ; obligatoire seulement sur le compte Live."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« Réussir en aussi peu que deux jours » (aucun minimum explicite autre que celui qui découle de la règle des 55 %)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 10,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats standard ; micros à 10 pour 1."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Identique à celle du Combine ; après le premier retrait, la limite passe définitivement à 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Optionnelle."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Fixé par le Scaling Plan (progressif selon le solde) : valeurs par taille non lues."
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Chemin Standard. Chemin Consistency : 4000 $ par retrait. Des plafonds doublés sont annoncés pour les nouveaux Combines achetés avec la limite quotidienne optionnelle, dans le cadre d'une offre à durée limitée (début le 2 juin) : non modélisés."
+        }
+      }
+    },
+    {
+      "id": "150k-standard",
+      "account_size_usd": 150000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel, pas de paiement unique."
+        },
+        "monthly": {
+          "status": "confirmed",
+          "value": 199,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Se renouvelle chaque mois jusqu'à la réussite ou l'annulation. La voie (Standard / Sans frais d'activation) ne peut pas être changée après l'achat."
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 149,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Facturés une seule fois par Express Funded Account obtenu, après la réussite."
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 199,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Prix d'une réinitialisation après avoir touché la Maximum Loss Limit."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réactivation d'un XFA fermé (Back2Funded) : 599 $ / 699 $ / 829 $ selon la taille ; non modélisés ici."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 9000,
+          "sources": [
+            "ts-site",
+            "ts-consistency"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 4500,
+          "sources": [
+            "ts-site",
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum Loss Limit : suit le solde de fin de journée (EOD) et se verrouille au solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne OPTIONNELLE dans le Combine (choisie à l'achat) ; obligatoire seulement sur le compte Live."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« Réussir en aussi peu que deux jours » (aucun minimum explicite autre que celui qui découle de la règle des 55 %)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 15,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats standard ; micros à 10 pour 1."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 4500,
+          "sources": [
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Identique à celle du Combine ; après le premier retrait, la limite passe définitivement à 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Optionnelle."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Fixé par le Scaling Plan (progressif selon le solde) : valeurs par taille non lues."
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "ts-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Chemin Standard. Chemin Consistency : 6000 $ par retrait. Des plafonds doublés sont annoncés pour les nouveaux Combines achetés avec la limite quotidienne optionnelle, dans le cadre d'une offre à durée limitée (début le 2 juin) : non modélisés."
+        }
+      }
+    },
+    {
+      "id": "150k-sans-frais-activation",
+      "account_size_usd": 150000,
+      "option": "Sans frais d'activation",
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel, pas de paiement unique."
+        },
+        "monthly": {
+          "status": "confirmed",
+          "value": 229,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Se renouvelle chaque mois jusqu'à la réussite ou l'annulation. La voie (Standard / Sans frais d'activation) ne peut pas être changée après l'achat."
+        },
+        "activation_fee": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Voie « Sans frais d'activation » : aucun frais à la réussite (mensualité plus élevée)."
+        },
+        "reset_fee": {
+          "status": "confirmed",
+          "value": 229,
+          "sources": [
+            "ts-pricing"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Prix d'une réinitialisation après avoir touché la Maximum Loss Limit."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réactivation d'un XFA fermé (Back2Funded) : 599 $ / 699 $ / 829 $ selon la taille ; non modélisés ici."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 9000,
+          "sources": [
+            "ts-site",
+            "ts-consistency"
+          ],
+          "verified_at": "2026-11-15"
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 4500,
+          "sources": [
+            "ts-site",
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Maximum Loss Limit : suit le solde de fin de journée (EOD) et se verrouille au solde de départ."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Limite quotidienne OPTIONNELLE dans le Combine (choisie à l'achat) ; obligatoire seulement sur le compte Live."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« Réussir en aussi peu que deux jours » (aucun minimum explicite autre que celui qui découle de la règle des 55 %)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 15,
+          "sources": [
+            "ts-combine"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats standard ; micros à 10 pour 1."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 4500,
+          "sources": [
+            "ts-xfa-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Identique à celle du Combine ; après le premier retrait, la limite passe définitivement à 0 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ts-site"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Optionnelle."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Fixé par le Scaling Plan (progressif selon le solde) : valeurs par taille non lues."
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "ts-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Chemin Standard. Chemin Consistency : 6000 $ par retrait. Des plafonds doublés sont annoncés pour les nouveaux Combines achetés avec la limite quotidienne optionnelle, dans le cadre d'une offre à durée limitée (début le 2 juin) : non modélisés."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Day trading seulement : positions fermées à 15 h 10 (CT) chaque jour ; aucun Forex ni CFD (futures CME uniquement).",
+      "TopstepX est la seule plateforme.",
+      "Le compte Live (après le XFA) n'est offert que dans certains pays ; le XFA est ouvert à davantage de pays.",
+      "Les produits « Topstep Labs » (défis à paiement unique, drawdown statique, etc.) ne sont pas modélisés dans cette base.",
+      "Les sources officielles consultées ne mentionnent pas le Québec : statut « À VÉRIFIER » par type de compte."
+    ],
+    "sources": [
+      "ts-products",
+      "ts-eligibility"
+    ],
+    "verified_at": "2026-11-15"
+  }
+}

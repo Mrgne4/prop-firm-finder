@@ -1,0 +1,86 @@
+[
+  {
+    "id": "demo-alpha",
+    "name": "DÉMO Alpha",
+    "website": null,
+    "demo": true,
+    "description": "Entreprise FICTIVE créée uniquement pour tester l'outil. Elle n'existe pas et ses programmes ne sont pas une offre réelle."
+  },
+  {
+    "id": "demo-beta",
+    "name": "DÉMO Bêta",
+    "website": null,
+    "demo": true,
+    "description": "Entreprise FICTIVE créée uniquement pour tester l'outil. Elle n'existe pas et ses programmes ne sont pas une offre réelle."
+  },
+  {
+    "id": "demo-gamma",
+    "name": "DÉMO Gamma",
+    "website": null,
+    "demo": true,
+    "description": "Entreprise FICTIVE créée uniquement pour tester l'outil. Elle n'existe pas et ses programmes ne sont pas une offre réelle."
+  },
+  {
+    "id": "topstep",
+    "name": "Topstep",
+    "website": "https://www.topstep.com",
+    "demo": false,
+    "description": "Entreprise américaine de futures (CME). Évaluation « Trading Combine » par abonnement mensuel, puis compte financé « Express Funded Account »."
+  },
+  {
+    "id": "apex-trader-funding",
+    "name": "Apex Trader Funding",
+    "website": "https://apextraderfunding.com",
+    "demo": false,
+    "description": "Entreprise américaine de futures (CME, CBOT, NYMEX, COMEX). Évaluations à paiement unique (version EOD ou Intraday), puis compte « Performance Account »."
+  },
+  {
+    "id": "take-profit-trader",
+    "name": "Take Profit Trader",
+    "website": "https://takeprofittrader.com",
+    "demo": false,
+    "description": "Entreprise américaine de futures (CME, CBOT, NYMEX, COMEX). Évaluation (« test ») par abonnement mensuel, puis compte PRO simulé (retraits dès le jour 1) et invitation possible vers PRO+ (marché réel)."
+  },
+  {
+    "id": "myfundedfutures",
+    "name": "MyFundedFutures",
+    "website": "https://myfundedfutures.com",
+    "demo": false,
+    "description": "Entreprise de futures (CME Group). Plusieurs plans vendus (Rapid, Pro, Builder), évaluation à paiement unique, compte « Sim Funded » puis passage possible au Live selon le plan."
+  },
+  {
+    "id": "tradeday",
+    "name": "TradeDay",
+    "website": "https://www.tradeday.com",
+    "demo": false,
+    "description": "Entreprise américaine de futures (CME Group), fondée en 2020. TradeDay 2.0 (août 2026) : comptes Quick Pay et Fast Pass, drawdown Intraday ou fin de journée."
+  },
+  {
+    "id": "ftmo",
+    "name": "FTMO",
+    "website": "https://ftmo.com",
+    "demo": false,
+    "description": "Entreprise de CFD (Forex, indices, métaux, matières premières, actions, crypto) en compte simulé : Challenge 2-Step, 1-Step et Instant Account ; types Standard et Swing. FTMO Futures est un produit distinct, non modélisé ici."
+  },
+  {
+    "id": "the5ers",
+    "name": "The5ers",
+    "website": "https://the5ers.com",
+    "demo": false,
+    "description": "Entreprise Forex / CFD (société israélienne) : programmes High Stakes (2 étapes), Hyper Growth (1 étape) et Bootcamp (3 étapes), mise à l'échelle jusqu'à 4 M$. The5ers Futures est un produit distinct, non modélisé ici."
+  },
+  {
+    "id": "fundednext",
+    "name": "FundedNext",
+    "website": "https://fundednext.com",
+    "demo": false,
+    "description": "Entreprise (Émirats arabes unis) : CFD Stellar 1-Step, 2-Step, Lite et Instant. FundedNext Futures est un produit distinct, non modélisé ici."
+  },
+  {
+    "id": "fundingpips",
+    "name": "FundingPips",
+    "website": "https://fundingpips.com",
+    "demo": false,
+    "description": "Entreprise Forex / CFD (Dubaï, fondée en 2022) : modèles 1 Step, 1 Step Flex, 2 Step Standard / Flex / Pro et Zero (sans évaluation)."
+  }
+]

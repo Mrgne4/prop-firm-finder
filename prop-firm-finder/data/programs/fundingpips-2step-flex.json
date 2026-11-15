@@ -1,0 +1,1070 @@
+{
+  "firm_id": "fundingpips",
+  "demo": false,
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "FOREX",
+      "EURUSD",
+      "BTCUSD_CFD",
+      "ETHUSD_CFD"
+    ],
+    "sources": [
+      "fp-start"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "41 instruments : 7 majeures Forex (EURUSD, GBPUSD, USDJPY, USDCHF, USDCAD, AUDUSD, NZDUSD), 21 croisements, 2 métaux, 9 indices et énergies, 2 cryptos (BTCUSD, ETHUSD). Les noms des métaux, indices et énergies ne sont pas listés sur la page lue."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Les noms des métaux, des indices et des énergies n'ont pas été lus : aucun produit ne peut être déclaré absent."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "cfd",
+      "spot"
+    ],
+    "sources": [
+      "fp-start"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex, métaux, indices, énergies, crypto en CFD simulés ; aucun futures."
+  },
+  "instrument_limits": {
+    "status": "confirmed",
+    "value": [
+      {
+        "instrument": "BTCUSD_CFD",
+        "state": "limited",
+        "note": "Crypto : 1 lot maximum par clic ; levier 1:2 (Standard), commission 0,04 %."
+      },
+      {
+        "instrument": "ETHUSD_CFD",
+        "state": "limited",
+        "note": "Crypto : 1 lot maximum par clic ; levier 1:2 (Standard), commission 0,04 %."
+      }
+    ],
+    "sources": [
+      "fp-zero"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Page Zero ; limite générale de 20 lots par clic."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "metatrader5",
+      "ctrader",
+      "matchtrader"
+    ],
+    "sources": [
+      "fp-platform"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "MT5 (États-Unis non pris en charge), cTrader, Match-Trader (résidents des États-Unis et du Canada)."
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [
+        "CA"
+      ],
+      "excluded": [
+        "IR",
+        "VN",
+        "AE"
+      ],
+      "unconfirmed": [],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "fp-start"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Pays refusés : Iran, Vietnam, Émirats arabes unis ; « services are not offered to residents of certain jurisdictions, including countries on the FATF and EU/UN sanctions lists » : liste non précisée, donc un pays absent n'est PAS déclaré admissible (hors Canada, voir ci-dessous). Le Canada est déclaré admissible comme pays d'accès à la plateforme Match-Trader (« US and Canada residents can use Match-Trader »). L'accès au programme ne garantit pas l'admissibilité aux paiements."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "canada_general",
+      "note": "L'aide officielle indique que les résidents du Canada peuvent utiliser Match-Trader ; aucune règle ne mentionne le Québec expressément : le Canada est admis en général, le Québec n'est pas confirmé séparément.",
+      "sources": [
+        "fp-platform"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Admissibilité du Québec aux paiements du compte Master non confirmée.",
+      "sources": [
+        "fp-start"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Aucun compte réel (« live ») décrit pour ce programme : les comptes sont simulés ; non confirmé pour le Québec.",
+      "sources": []
+    }
+  ],
+  "id": "fundingpips-2step-flex",
+  "name": "2 Step Flex (FundingPips)",
+  "official_url": "https://fundingpips.com/trading-objectives",
+  "summary": "Deux phases (10 % puis 8 %), perte maximale 12 % et perte quotidienne 4 %, 1 jour minimum par phase ; partage de 85 % ou 95 % choisi à l'achat, cycle de 2 semaines. CFD simulés, pas des futures.",
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 2,
+      "sources": [
+        "fp-obj"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "fp-obj",
+        "fp-review"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "12 % de perte maximale statique (« highest max static loss » selon la revue du site)."
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Période illimitée ; inactivité de 30 jours = violation."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Deux phases : 10 % puis 8 %, perte maximale 12 %, perte quotidienne 4 %, 1 jour minimum ; page de 180 jours : à reconfirmer.",
+      "sources": [
+        "fp-obj"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "fp-obj"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucune consistance en évaluation ; cycles de récompense : minimum de 1 % et 3 jours profitables."
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "fp-obj"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "fp-start"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Capital simulé : « We provide the simulated capital »."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "fp-obj"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "12 % statique."
+    },
+    "profit_split_pct": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "85 % ou 95 % choisis à l'achat, cycle de 2 semaines : aucun pourcentage unique."
+    },
+    "min_withdrawal_usd": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Montant minimal : 1 % de la taille du compte Master (en dollars, selon la taille) ; non converti."
+    },
+    "payout_cap": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "max_payouts": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_effect_of_payout": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "fp-f-ondemand",
+          "label": "À la demande (100 %)",
+          "min_days": null,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": 35,
+          "request_limit_pct_of_balance": null,
+          "note": "Minimum 1 % de profit, 3 jours profitables, consistance 35 %, 7 jours de 0,5 % pour le cycle à la demande selon la page."
+        }
+      ],
+      "sources": [
+        "fp-obj",
+        "fp-review"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "fp-obj",
+        "fp-review"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Récompense minimale de 1 % de la taille ; 3 jours profitables minimum ; à la demande à 100 % avec consistance 35 % et 7 jours de 0,5 % ; 85 % ou 95 % au cycle de 2 semaines.",
+      "sources": [
+        "fp-obj",
+        "fp-review"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fp-obj",
+          "fp-1step"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune restriction de nouvelles ni de week-end pendant l'évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "fp-obj",
+          "fp-1step"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Master : interdit d'ouvrir ou de fermer une position 5 minutes avant/après les annonces à fort impact sur les devises concernées ; les profits de nouvelles sont retirés."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fp-obj",
+          "fp-2pro"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises en évaluation."
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "Master : option « Swing » requise selon certaines pages ; non tranché."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "fp-obj",
+          "fp-1step"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises en évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "fp-obj"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Master : l'option Swing (+10 %) est requise pour garder des positions overnight ou de fin de semaine (page de 180 jours ; une mise à jour temporaire de 2026 interdit les week-ends sur certains modèles) : à reconfirmer."
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "dynamic_observations": [
+    {
+      "label": "Prix d'entrée 2 Step Flex (FundingPips)",
+      "source": "fp-price",
+      "parameters": {
+        "page": "blog/fundingpips-review-2026"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "prix_entree_usd": 32
+      },
+      "note": "Prix d'entrée seulement ; par taille non lus. Valeur observée, NON confirmée comme prix : tarif dynamique (promotion, devise, date)."
+    }
+  ],
+  "variants": [
+    {
+      "id": "5k",
+      "account_size_usd": 5000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 400,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 200,
+          "sources": [
+            "fp-obj",
+            "fp-terms"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "1 jour par phase."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 200,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "10k",
+      "account_size_usd": 10000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 800,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1200,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 400,
+          "sources": [
+            "fp-obj",
+            "fp-terms"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "1 jour par phase."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1200,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 400,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "fp-obj",
+            "fp-terms"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "1 jour par phase."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "fp-obj",
+            "fp-terms"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "1 jour par phase."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : voir observations dynamiques."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 8000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "8 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 12000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "fp-obj",
+            "fp-terms"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "1 jour par phase."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 12000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "12 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "fp-obj"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "4 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "CONTRADICTION : les Terms indiquent une perte maximale de 10 % pour tous les modèles 2 Step alors que la page des objectifs donne 12 % pour 2 Step Flex : valeurs de la page des objectifs retenues, à reconfirmer.",
+      "Page des objectifs de 180 jours (non récente).",
+      "Option Swing (+10 %) requise pour les positions overnight / week-end du Master.",
+      "Prix d'entrée seulement."
+    ],
+    "sources": [
+      "fp-obj",
+      "fp-terms",
+      "fp-review"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "observed_prices": [
+    {
+      "variant_id": null,
+      "label": "Prix d'entrée annoncé (taille la plus petite, non précisée)",
+      "amount": 32,
+      "currency": "USD",
+      "kind": "a_partir_de",
+      "observed_on": "2026-11-15",
+      "source": "fp-price",
+      "note": null
+    }
+  ]
+}

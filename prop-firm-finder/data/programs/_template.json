@@ -1,0 +1,325 @@
+{
+  "id": "identifiant-du-programme",
+  "firm_id": "identifiant-de-lentreprise",
+  "name": "Nom exact du programme",
+  "demo": false,
+  "official_url": "https://site-officiel.exemple",
+  "summary": "Description neutre du programme.",
+  "instruments": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "platforms": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "evaluation": {
+    "steps": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_type": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "description": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "consistency_rule": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "time_limit_days": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_type": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "profit_split_pct": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "min_withdrawal_usd": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "payout_cap": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "safety_net": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "withdrawal_conditions": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "eligibility": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "variants": [
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "monthly": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "daily_loss_limit_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "min_trading_days": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "daily_loss_limit_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "option": null
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "contract_types": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null
+  }
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "futures_index",
+    "label": "Futures sur indices",
+    "help": "NQ, MNQ, ES, MES, YM, MYM : contrats futures standardisés et « micro »."
+  },
+  {
+    "id": "forex",
+    "label": "Forex",
+    "help": "Paires de devises : au comptant (EUR/USD) ou en contrats futures (6E, M6E)."
+  },
+  {
+    "id": "cfd_index",
+    "label": "Indices CFD",
+    "help": "NAS100, US30, SPX500 : produits dérivés (CFD), différents des contrats futures NQ, YM ou ES."
+  },
+  {
+    "id": "metals",
+    "label": "Or et métaux précieux",
+    "help": "Or, argent : en contrats futures (GC, MGC…) ou en CFD (XAUUSD…)."
+  },
+  {
+    "id": "energy",
+    "label": "Pétrole et énergie",
+    "help": "Pétrole brut, gaz naturel : en contrats futures ou en CFD."
+  },
+  {
+    "id": "crypto_major",
+    "label": "Bitcoin et Ethereum",
+    "help": "BTC et ETH : futures, CFD ou contrats perpétuels selon le programme."
+  },
+  {
+    "id": "crypto_other",
+    "label": "Autres cryptomonnaies",
+    "help": "Cryptomonnaies autres que BTC et ETH."
+  },
+  {
+    "id": "stocks",
+    "label": "Actions individuelles",
+    "help": "Actions de sociétés cotées : en CFD ou en actions réelles."
+  }
+]

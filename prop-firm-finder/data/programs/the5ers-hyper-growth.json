@@ -1,0 +1,792 @@
+{
+  "firm_id": "the5ers",
+  "demo": false,
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "FOREX"
+    ],
+    "sources": [
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex confirmé ; métaux, indices, crypto, actions cités sans liste par symbole."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Liste par symbole non lue."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "cfd",
+      "spot"
+    ],
+    "sources": [
+      "t5-high",
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex, métaux, indices, pétrole, crypto (High Stakes) ; aucun futures dans ces programmes (The5ers Futures est un produit distinct)."
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Limites par instrument non lues (les indices ont des frais de swap élevés en fin de semaine)."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "metatrader5"
+    ],
+    "sources": [
+      "t5-high",
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "MetaTrader 5 (compte « hedge » : bureau, web, mobile)."
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [],
+      "excluded": [
+        "AF",
+        "BY",
+        "BI",
+        "CF",
+        "CU",
+        "CG",
+        "CD",
+        "ER",
+        "GN",
+        "GW",
+        "IQ",
+        "IR",
+        "IL",
+        "LA",
+        "LB",
+        "LR",
+        "LY",
+        "MM",
+        "KP",
+        "PS",
+        "PG",
+        "RU",
+        "SS",
+        "SD",
+        "SO",
+        "SY",
+        "VU",
+        "VE",
+        "YE"
+      ],
+      "unconfirmed": [
+        "BA"
+      ],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "t5-who",
+      "t5-terms"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Liste « including but not limited to » (non exhaustive) : un pays absent n'est donc PAS déclaré admissible. La Bosnie-Herzégovine figure dans les Terms mais pas dans la FAQ plus récente : contradiction, laissée « non confirmée ». Non codés : la Crimée, Donetsk, Kherson, Louhansk, Zaporijjia. L'accès au programme ne garantit pas l'admissibilité aux paiements (identification exigée avant le premier retrait)."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "Aucune page officielle ne mentionne le Québec ni ne déclare le Canada admissible ; un blog officiel évoque des résidents du Canada comme bénéficiaires potentiels sans valeur de règle. À vérifier.",
+      "sources": [
+        "t5-who"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Compte financé simulé : admissibilité du Québec aux paiements non confirmée.",
+      "sources": [
+        "t5-who"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Aucun compte réel (« live ») décrit pour ce programme : les comptes sont simulés ; non confirmé pour le Québec.",
+      "sources": []
+    }
+  ],
+  "id": "the5ers-hyper-growth",
+  "name": "Hyper Growth (The5ers)",
+  "official_url": "https://the5ers.com/hyper-growth/",
+  "summary": "Une seule étape (10 %), seuil de sortie de 6 % (trailing avec profit retenu), limite quotidienne de 3 % qui ne fait que suspendre la journée ; partage de 50 % à l'origine (jusqu'à 100 %) ; nouvelles et fins de semaine permises ; capital limité à 40 000 $ en évaluation. CFD simulés, pas des futures.",
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 1,
+      "sources": [
+        "t5-hyper",
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Le drawdown est « trailing avec profit retenu » (blog officiel) : on ne sait pas s'il suit l'équité en continu ou la fin de journée ; non classé."
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Durée illimitée ; un compte inactif plus de 30 jours expire."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Une étape : 10 % de profit, seuil de sortie de 6 %, pause quotidienne de 3 % ; l'étape 1 est réussie dès que l'objectif est atteint ; aucun minimum de jours.",
+      "sources": [
+        "t5-hyper",
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "t5-consist"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucune règle de consistance en pourcentage publiée."
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "pause",
+      "sources": [
+        "t5-compare",
+        "t5-hyper"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "La pause de 3 % suspend la journée ; le compte revient à la séance suivante."
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Voir l'évaluation : type de trailing non précisé."
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 50,
+      "sources": [
+        "t5-compare",
+        "t5-hyper"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "50 % au départ, 75 % au premier palier puis jusqu'à 100 %."
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 150,
+      "sources": [
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Minimum de 150 $ selon un comparatif éditorial."
+    },
+    "payout_cap": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "max_payouts": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_effect_of_payout": {
+      "status": "confirmed",
+      "value": "Le retrait n'est pas déduit de la progression vers le prochain palier de mise à l'échelle.",
+      "sources": [
+        "t5-hyper"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "hg-biweekly",
+          "label": "Retrait toutes les 2 semaines",
+          "min_days": 14,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": null,
+          "request_limit_pct_of_balance": null,
+          "note": "Retrait bi-hebdomadaire ; doublement du compte à chaque palier de 10 % ; limite d'évaluation 40 000 $ cumulés."
+        }
+      ],
+      "sources": [
+        "t5-compare",
+        "t5-hyper"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "pause",
+      "sources": [
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Retrait bi-hebdomadaire sur les profits ; partage de 50 % au départ ; doublement du compte à chaque palier de 10 % jusqu'à 4 M$.",
+      "sources": [
+        "t5-compare",
+        "t5-hyper"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-compare",
+          "t5-hyper"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Nouvelles permises, sauf les stratégies « bracket » autour des événements à fort impact."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-compare",
+          "t5-hyper"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Nouvelles permises, sauf les stratégies « bracket » autour des événements à fort impact."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-hyper"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-hyper"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-hyper"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises ; les indices ont un swap élevé."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-hyper"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises ; les indices ont un swap élevé."
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "EA permis, mais pas d'arbitrage de latence ni de scalping de ticks."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "EA permis, mais pas d'arbitrage de latence ni de scalping de ticks."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "dynamic_observations": [],
+  "variants": [
+    {
+      "id": "5k",
+      "account_size_usd": 5000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif non lu par taille (observation ancienne seulement)."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "6 % × 5 000 $ (calcul à partir du pourcentage officiel). Seuil de sortie (« stop-out ») de 6 %."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 150,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 5 000 $ (calcul à partir du pourcentage officiel). Pause de la journée, pas un échec."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun nombre minimal de jours ou de trades pour l'étape 1."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "6 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 150,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 5 000 $ (calcul à partir du pourcentage officiel). Pause de la journée."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond non lu."
+        }
+      }
+    },
+    {
+      "id": "10k",
+      "account_size_usd": 10000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif non lu par taille (observation ancienne seulement)."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "6 % × 10 000 $ (calcul à partir du pourcentage officiel). Seuil de sortie (« stop-out ») de 6 %."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 10 000 $ (calcul à partir du pourcentage officiel). Pause de la journée, pas un échec."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun nombre minimal de jours ou de trades pour l'étape 1."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "6 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 300,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 10 000 $ (calcul à partir du pourcentage officiel). Pause de la journée."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond non lu."
+        }
+      }
+    },
+    {
+      "id": "20k",
+      "account_size_usd": 20000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif non lu par taille (observation ancienne seulement)."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 20 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1200,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "6 % × 20 000 $ (calcul à partir du pourcentage officiel). Seuil de sortie (« stop-out ») de 6 %."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 20 000 $ (calcul à partir du pourcentage officiel). Pause de la journée, pas un échec."
+        },
+        "min_trading_days": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun nombre minimal de jours ou de trades pour l'étape 1."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1200,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "6 % × 20 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 600,
+          "sources": [
+            "t5-hyper",
+            "t5-compare"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 % × 20 000 $ (calcul à partir du pourcentage officiel). Pause de la journée."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond non lu."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Seuil de sortie de 6 % « trailing avec profit retenu » : type exact non précisé (équité ou fin de journée).",
+      "La limite quotidienne de 3 % suspend seulement la journée.",
+      "Les programmes Pro Growth et Instant Funding sont cités par un blog seulement (tailles et prix non lus) : non modélisés.",
+      "Prix des tailles non lus.",
+      "Capital cumulé en évaluation limité à 40 000 $."
+    ],
+    "sources": [
+      "t5-compare",
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15"
+  }
+}

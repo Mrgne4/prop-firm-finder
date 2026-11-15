@@ -1,0 +1,106 @@
+{
+  "essential_fields": [
+    "instruments",
+    "eligibility",
+    "evaluation.steps",
+    "evaluation.drawdown_type",
+    "funded.drawdown_type",
+    "funded.account_nature",
+    "funded.profit_split_pct",
+    "funded.min_withdrawal_usd",
+    "funded.withdrawal_conditions",
+    "restrictions.news.evaluation",
+    "restrictions.news.funded",
+    "restrictions.overnight.evaluation",
+    "restrictions.overnight.funded",
+    "restrictions.weekend.evaluation",
+    "restrictions.weekend.funded",
+    "variants[].pricing.one_time",
+    "variants[].pricing.monthly",
+    "variants[].pricing.activation_fee",
+    "variants[].evaluation.profit_target_usd",
+    "variants[].evaluation.max_drawdown_usd",
+    "variants[].evaluation.daily_loss_limit_usd",
+    "variants[].funded.max_drawdown_usd",
+    "variants[].funded.daily_loss_limit_usd"
+  ],
+  "critical_gaps_block_compatible": true,
+  "stale_after_days": 60,
+  "weights": {
+    "drawdown": 25,
+    "steps": 15,
+    "cost": 20,
+    "withdrawal": 15,
+    "freedom": 15,
+    "platform": 10
+  },
+  "priority_multiplier": 2,
+  "steps_is_blocking": true,
+  "drawdown_simplicity": {
+    "static": 1,
+    "eod_trailing": 0.6,
+    "intraday_trailing": 0.4
+  },
+  "cost_scale": [
+    {
+      "up_to_usd": 50,
+      "score": 1
+    },
+    {
+      "up_to_usd": 100,
+      "score": 0.75
+    },
+    {
+      "up_to_usd": 200,
+      "score": 0.5
+    },
+    {
+      "up_to_usd": null,
+      "score": 0.25
+    }
+  ],
+  "profit_split_scale": [
+    {
+      "at_least_pct": 90,
+      "score": 1
+    },
+    {
+      "at_least_pct": 80,
+      "score": 0.8
+    },
+    {
+      "at_least_pct": 70,
+      "score": 0.6
+    },
+    {
+      "at_least_pct": 0,
+      "score": 0.4
+    }
+  ],
+  "min_withdrawal_scale": [
+    {
+      "up_to_usd": 100,
+      "score": 1
+    },
+    {
+      "up_to_usd": 500,
+      "score": 0.7
+    },
+    {
+      "up_to_usd": null,
+      "score": 0.4
+    }
+  ],
+  "restriction_scores": {
+    "allowed": 1,
+    "conditional": 0.5,
+    "forbidden": 0
+  },
+  "budget_caps_usd": {
+    "lt50": 49.99,
+    "50_100": 100,
+    "100_200": 200,
+    "gt200": null,
+    "none": null
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "consulted_at": "2026-11-15",
+  "note": "Observations de prix et de promotions lues sur les pages officielles le 2026-11-15. Ce sont des valeurs DYNAMIQUES (promotion, code, date) : jamais confirmées comme prix. Extraits paraphrasés.",
+  "observations": [
+    {
+      "firm": "take-profit-trader",
+      "source": "tp-promo",
+      "observed": "Page comparative du site : mensualité de 90 $ à 216 $ par mois pour les tailles 25K à 150K avec le code NOFEE40 ; frais d'activation 0 $ avec ce code ; réinitialisation PRO d'environ 649 $ (50K).",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "myfundedfutures",
+      "source": "mf-price-rapid",
+      "observed": "Plan Rapid : « Starting at $125 » et « $209 » étiquetés « Based on current promotions » ; non rattachés à une taille ; bandeau « Save 40 % With Code CLUB ».",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "myfundedfutures",
+      "source": "mf-price-builder",
+      "observed": "Builder 50K : MLL par défaut 153 $ au tarif de liste, 107 $ avec 30 % de rabais, 92 $ avec 40 % (2 utilisations) ; MLL « Add-On » 125 $ / 87 $ / 75 $.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "tradeday",
+      "source": "td-price-home",
+      "observed": "Accueil : prix barrés / affichés en paiement unique (« one-time fee ») : Quick Pay Intraday 25K 99→39 $, 50K 124→49 $, 100K 248→99 $, 150K 398→159 $ ; Quick Pay EOD 25K 124→49 $, 50K 174→69 $, 100K 298→119 $ ; Fast Pass EOD 25K ?, 50K 248→99 $, 100K 498→199 $, 150K 725→290 $. Codes TDNEW / SALE60.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "tradeday",
+      "source": "td-price-mit",
+      "observed": "Page Make It Take It : mêmes prix mais étiquetés « per month » avec la mention « No Subscription Required » ; la page ne dit pas clairement mensuel ou unique (contradiction interne). Réinitialisations de 45 $ à 180 $ selon le plan.",
+      "excerpt_policy": "paraphrase"
+    }
+  ]
+}

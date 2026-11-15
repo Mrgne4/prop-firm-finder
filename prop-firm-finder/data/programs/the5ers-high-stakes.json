@@ -1,0 +1,1153 @@
+{
+  "firm_id": "the5ers",
+  "demo": false,
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "FOREX"
+    ],
+    "sources": [
+      "t5-high",
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex confirmé ; métaux, indices, pétrole et crypto cités sans liste par symbole : non confirmés individuellement."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Liste par symbole non lue."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "cfd",
+      "spot"
+    ],
+    "sources": [
+      "t5-high",
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Forex, métaux, indices, pétrole, crypto (High Stakes) ; aucun futures dans ces programmes (The5ers Futures est un produit distinct)."
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Limites par instrument non lues (les indices ont des frais de swap élevés en fin de semaine)."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "metatrader5"
+    ],
+    "sources": [
+      "t5-high",
+      "t5-hyper"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "MetaTrader 5 (compte « hedge » : bureau, web, mobile)."
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [],
+      "excluded": [
+        "AF",
+        "BY",
+        "BI",
+        "CF",
+        "CU",
+        "CG",
+        "CD",
+        "ER",
+        "GN",
+        "GW",
+        "IQ",
+        "IR",
+        "IL",
+        "LA",
+        "LB",
+        "LR",
+        "LY",
+        "MM",
+        "KP",
+        "PS",
+        "PG",
+        "RU",
+        "SS",
+        "SD",
+        "SO",
+        "SY",
+        "VU",
+        "VE",
+        "YE"
+      ],
+      "unconfirmed": [
+        "BA"
+      ],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "t5-who",
+      "t5-terms"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Liste « including but not limited to » (non exhaustive) : un pays absent n'est donc PAS déclaré admissible. La Bosnie-Herzégovine figure dans les Terms mais pas dans la FAQ plus récente : contradiction, laissée « non confirmée ». Non codés : la Crimée, Donetsk, Kherson, Louhansk, Zaporijjia. L'accès au programme ne garantit pas l'admissibilité aux paiements (identification exigée avant le premier retrait)."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "Aucune page officielle ne mentionne le Québec ni ne déclare le Canada admissible ; un blog officiel évoque des résidents du Canada comme bénéficiaires potentiels sans valeur de règle. À vérifier.",
+      "sources": [
+        "t5-who"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Compte financé simulé : admissibilité du Québec aux paiements non confirmée.",
+      "sources": [
+        "t5-who"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "Aucun compte réel (« live ») décrit pour ce programme : les comptes sont simulés ; non confirmé pour le Québec.",
+      "sources": []
+    }
+  ],
+  "id": "the5ers-high-stakes",
+  "name": "High Stakes (The5ers)",
+  "official_url": "https://the5ers.com/high-stakes/",
+  "summary": "Deux étapes (8 % ou 10 % selon la page, puis 5 %), perte quotidienne 5 % qui résilie le compte et perte maximale 10 % fixe, 3 jours profitables par étape ; partage de 80 % dès le financement ; nouvelles : aucun ordre 2 minutes avant et après les annonces à fort impact. CFD simulés, pas des futures.",
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 2,
+      "sources": [
+        "t5-compare",
+        "t5-hs-rules"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "t5-consist"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "10 % fixe depuis le solde initial."
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Durée illimitée ; un compte inactif plus de 30 jours expire."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Deux étapes sans limite de temps, perte quotidienne 5 % (résiliation), perte maximale 10 %, 3 jours profitables par étape ; objectif de l'étape 1 contradictoire (8 % ou 10 %), étape 2 : 5 %.",
+      "sources": [
+        "t5-compare",
+        "t5-hs-rules"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "t5-consist"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucune règle de pourcentage en évaluation ; 50 % seulement une fois le compte financé."
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "La limite quotidienne de 5 % termine immédiatement le compte."
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Compte financé simulé (retraits réels)."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "static",
+      "sources": [
+        "t5-consist"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "10 % fixe depuis le solde initial."
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 80,
+      "sources": [
+        "t5-compare",
+        "t5-high"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "80 % dès le financement, jusqu'à 100 % avec la mise à l'échelle."
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 150,
+      "sources": [
+        "t5-hs-pay"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Minimum de retrait de 150 $, après partage."
+    },
+    "payout_cap": {
+      "status": "confirmed",
+      "value": {
+        "has_cap": true,
+        "amount_usd": null
+      },
+      "sources": [
+        "t5-hs-rules"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Plafond par retrait : 3 000 $ (50K), 4 000 $ (100K) ; autres tailles non lues."
+    },
+    "max_payouts": {
+      "status": "unconfirmed",
+      "value": null,
+      "sources": [],
+      "verified_at": null
+    },
+    "drawdown_effect_of_payout": {
+      "status": "confirmed",
+      "value": "Garder le profit dans le compte augmente le seuil de perte maximale ; l'inverse n'est pas énoncé.",
+      "sources": [
+        "t5-hs-pay"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "hs-biweekly",
+          "label": "Retrait toutes les 2 semaines",
+          "min_days": 14,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": 50,
+          "request_limit_pct_of_balance": null,
+          "note": "Retrait bi-hebdomadaire une fois financé ; profit minimal pour retirer : 300 $ (50K) / 500 $ (100K) ; consistance de 50 % seulement en compte financé ; 70 % des frais remboursés au premier retrait (profit ≥ 150 $, compte actif ≥ 14 jours)."
+        }
+      ],
+      "sources": [
+        "t5-hs-pay",
+        "t5-consist"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "t5-hs-pay"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucun buffer mentionné."
+    },
+    "daily_loss_behavior": {
+      "status": "confirmed",
+      "value": "breach",
+      "sources": [
+        "t5-compare"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Aucun retrait pendant les deux étapes ; une fois financé : retrait toutes les 2 semaines, minimum 150 $ après partage, plafond par retrait selon la taille, retrait crypto limité à 1 500 $ par transaction ; consistance 50 % en compte financé.",
+      "sources": [
+        "t5-hs-pay",
+        "t5-consist"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "t5-hs-news",
+          "t5-hs-rules"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucun ordre (marché ou en attente) 2 minutes avant et après les annonces à fort impact de la devise ou de l'indice concerné ; garder une position ouverte pendant l'annonce est permis. Un trade ouvert dans la fenêtre est une violation « douce » : le profit est retiré."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "t5-hs-news",
+          "t5-hs-rules"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucun ordre (marché ou en attente) 2 minutes avant et après les annonces à fort impact de la devise ou de l'indice concerné ; garder une position ouverte pendant l'annonce est permis. Un trade ouvert dans la fenêtre est une violation « douce » : le profit est retiré."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-high",
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-high",
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions overnight permises."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-high",
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises ; les indices ont des frais de swap élevés."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "t5-high",
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions de fin de semaine permises ; les indices ont des frais de swap élevés."
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "EA permis, mais pas d'arbitrage de latence, de scalping de ticks ni de scalping de rollover."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "t5-compare"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "EA permis, mais pas d'arbitrage de latence, de scalping de ticks ni de scalping de rollover."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "dynamic_observations": [
+    {
+      "label": "Frais affichés sur la page communautaire ancienne",
+      "source": "t5-price",
+      "parameters": {
+        "page": "btw.the5ers.com"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/lot2b-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "prix_usd_1": 39,
+        "prix_usd_2": 78,
+        "prix_usd_3": 165,
+        "prix_usd_4": 329,
+        "prix_usd_5": 545
+      },
+      "note": "Tailles non nommées dans l'extrait ; page de 374 jours. Valeur observée, NON confirmée comme prix : tarif dynamique (promotion, devise, date)."
+    }
+  ],
+  "variants": [
+    {
+      "id": "5k",
+      "account_size_usd": 5000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : la page communautaire ancienne affiche 39 à 545 $ (voir observations) ; aucune correspondance sûre par taille."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Objectif de l'étape 1 : 8 % (tableau comparatif, FAQ éditoriale) ou 10 % (texte de la même page de blog) : CONTRADICTION, non confirmé."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 250,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 5 000 $ (calcul à partir du pourcentage officiel). Étape 2 : 5 % (cohérent entre les pages)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 5 000 $ (calcul à partir du pourcentage officiel). Perte maximale fixe de 10 % depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 250,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 5 000 $ (calcul à partir du pourcentage officiel). Dépassement : le compte est résilié."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours profitables minimum par étape (jour ≥ 0,5 % du solde initial)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 250,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 5 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond de cette taille non lu (seulement 50K et 100K)."
+        }
+      }
+    },
+    {
+      "id": "10k",
+      "account_size_usd": 10000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : la page communautaire ancienne affiche 39 à 545 $ (voir observations) ; aucune correspondance sûre par taille."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Objectif de l'étape 1 : 8 % (tableau comparatif, FAQ éditoriale) ou 10 % (texte de la même page de blog) : CONTRADICTION, non confirmé."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 10 000 $ (calcul à partir du pourcentage officiel). Étape 2 : 5 % (cohérent entre les pages)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 10 000 $ (calcul à partir du pourcentage officiel). Perte maximale fixe de 10 % depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 10 000 $ (calcul à partir du pourcentage officiel). Dépassement : le compte est résilié."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours profitables minimum par étape (jour ≥ 0,5 % du solde initial)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 10 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond de cette taille non lu (seulement 50K et 100K)."
+        }
+      }
+    },
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : la page communautaire ancienne affiche 39 à 545 $ (voir observations) ; aucune correspondance sûre par taille."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Objectif de l'étape 1 : 8 % (tableau comparatif, FAQ éditoriale) ou 10 % (texte de la même page de blog) : CONTRADICTION, non confirmé."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 25 000 $ (calcul à partir du pourcentage officiel). Étape 2 : 5 % (cohérent entre les pages)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 25 000 $ (calcul à partir du pourcentage officiel). Perte maximale fixe de 10 % depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 25 000 $ (calcul à partir du pourcentage officiel). Dépassement : le compte est résilié."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours profitables minimum par étape (jour ≥ 0,5 % du solde initial)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 1250,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 25 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Plafond de cette taille non lu (seulement 50K et 100K)."
+        }
+      }
+    },
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : la page communautaire ancienne affiche 39 à 545 $ (voir observations) ; aucune correspondance sûre par taille."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Objectif de l'étape 1 : 8 % (tableau comparatif, FAQ éditoriale) ou 10 % (texte de la même page de blog) : CONTRADICTION, non confirmé."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 50 000 $ (calcul à partir du pourcentage officiel). Étape 2 : 5 % (cohérent entre les pages)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 50 000 $ (calcul à partir du pourcentage officiel). Perte maximale fixe de 10 % depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 50 000 $ (calcul à partir du pourcentage officiel). Dépassement : le compte est résilié."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours profitables minimum par étape (jour ≥ 0,5 % du solde initial)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 2500,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 50 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "t5-hs-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Plafond de 3 000 $ par retrait (50K)."
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : la page communautaire ancienne affiche 39 à 545 $ (voir observations) ; aucune correspondance sûre par taille."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais de réinitialisation non lus."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Objectif de l'étape 1 : 8 % (tableau comparatif, FAQ éditoriale) ou 10 % (texte de la même page de blog) : CONTRADICTION, non confirmé."
+        },
+        "profit_target_phase2_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 100 000 $ (calcul à partir du pourcentage officiel). Étape 2 : 5 % (cohérent entre les pages)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 100 000 $ (calcul à partir du pourcentage officiel). Perte maximale fixe de 10 % depuis le solde initial."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 100 000 $ (calcul à partir du pourcentage officiel). Dépassement : le compte est résilié."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours profitables minimum par étape (jour ≥ 0,5 % du solde initial)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "10 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "confirmed",
+          "value": 5000,
+          "sources": [
+            "t5-hs-rules",
+            "t5-compare",
+            "t5-high"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "5 % × 100 000 $ (calcul à partir du pourcentage officiel)."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        },
+        "max_payout_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "t5-hs-rules"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Plafond de 4 000 $ par retrait (100K)."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "CONTRADICTION : l'objectif de l'étape 1 est de 8 % (tableau, autres articles) ou 10 % (texte du comparatif) : non confirmé.",
+      "La limite quotidienne de 5 % termine le compte : ce n'est pas une simple pause.",
+      "Aucun ordre 2 minutes avant/après les annonces à fort impact ; le profit d'un trade ouvert dans la fenêtre est retiré.",
+      "Consistance de 50 % seulement une fois financé ; les tailles 2 500 $ et les comptes « Classic / New » ne sont pas modélisés.",
+      "Prix : observation ancienne seulement."
+    ],
+    "sources": [
+      "t5-compare",
+      "t5-hs-news"
+    ],
+    "verified_at": "2026-11-15"
+  }
+}

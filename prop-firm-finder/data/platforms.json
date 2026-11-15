@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tradingview",
+    "label": "TradingView"
+  },
+  {
+    "id": "ninjatrader",
+    "label": "NinjaTrader"
+  },
+  {
+    "id": "rithmic",
+    "label": "Rithmic (via plateformes compatibles)"
+  },
+  {
+    "id": "tradovate",
+    "label": "Tradovate"
+  },
+  {
+    "id": "metatrader4",
+    "label": "MetaTrader 4"
+  },
+  {
+    "id": "metatrader5",
+    "label": "MetaTrader 5"
+  },
+  {
+    "id": "ctrader",
+    "label": "cTrader"
+  },
+  {
+    "id": "proprietary",
+    "label": "Plateforme web propre à la firme"
+  },
+  {
+    "id": "wealthcharts",
+    "label": "WealthCharts"
+  },
+  {
+    "id": "matchtrader",
+    "label": "Match-Trader"
+  }
+]

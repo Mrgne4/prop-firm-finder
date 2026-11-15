@@ -1,0 +1,1010 @@
+{
+  "id": "apex-intraday-trail",
+  "firm_id": "apex-trader-funding",
+  "name": "Apex Intraday Trail",
+  "demo": false,
+  "official_url": "https://apextraderfunding.com/",
+  "summary": "Évaluation à paiement unique dont le drawdown suit le solde en temps réel (Intraday) ; pas de limite quotidienne en évaluation. Aucune règle de consistance en évaluation (30 jours pour réussir). Compte Performance Account avec 100 % des retraits approuvés, 6 retraits maximum. Futures seulement ; positions fermées avant 16 h 59 (heure de l'Est) ; automatisation interdite.",
+  "instruments": {
+    "status": "confirmed",
+    "value": [
+      "RTY",
+      "6E"
+    ],
+    "sources": [
+      "ax-times"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Seuls les produits lus sur la page officielle des heures de trading sont confirmés (extrait : RTY et devises à terme dont 6E). La page est plus longue que l'extrait obtenu ; les autres contrats sont « à vérifier »."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Liste officielle des produits non lue en entier : aucun instrument ne peut être déclaré « absent » ; seuls les types de contrats exclus (CFD, comptant, perpétuels) sont écartés."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "futures"
+    ],
+    "sources": [
+      "ax-home"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Page officielle : seuls des futures des bourses CME, COMEX, NYMEX et CBOT sont permis ; devises au comptant, CFD, actions, options et cryptomonnaies ne le sont pas."
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Une source tierce affirme que l'or, l'argent et le cuivre (GC, MGC, SI, HG…) sont suspendus depuis mars 2026 sans date de retour ; aucune page officielle consultée ne le confirme : à vérifier avant d'acheter pour trader l'or."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "tradovate",
+      "rithmic",
+      "wealthcharts"
+    ],
+    "sources": [
+      "ax-home"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Choix de plateforme affiché sur les cartes de comptes du site officiel (Tradovate, Rithmic, WealthCharts). Le prix peut différer selon la plateforme."
+  },
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 1,
+      "sources": [
+        "ax-home"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "« ONE DAY TO PASS » : évaluation en une étape."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "intraday_trailing",
+      "sources": [
+        "ax-intraday-pa"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Le type de drawdown de l'évaluation se prolonge sur le Performance Account."
+    },
+    "time_limit_days": {
+      "status": "confirmed",
+      "value": 30,
+      "sources": [
+        "ax-home"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "« Eval Active for 30 Days »."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Atteindre l'objectif de profit sans toucher le drawdown maximal. Aucune règle de consistance en évaluation. L'évaluation est active 30 jours ; le Performance Account doit être activé dans les 7 jours suivant la réussite.",
+      "sources": [
+        "ax-home"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": false,
+        "detail": null
+      },
+      "sources": [
+        "ax-home"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "« NO Eval consistency rules » (en revanche une règle de consistance de 50 % s'applique aux retraits du PA)."
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "ax-intraday-pa"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Le Performance Account est un compte « Simulated Funded »."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "intraday_trailing",
+      "sources": [
+        "ax-intraday-pa"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 100,
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "100 % des retraits approuvés (régime Apex 4.0, produits achetés depuis le 1er mars 2026)."
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 500,
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_cap": {
+      "status": "confirmed",
+      "value": {
+        "has_cap": true,
+        "amount_usd": null
+      },
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Plafond par retrait selon la taille ET le numéro du retrait (de 1 000 $ à 4 000 $ ; voir les comptes) ; 6 retraits maximum par Performance Account."
+    },
+    "max_payouts": {
+      "status": "confirmed",
+      "value": 6,
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Après le 6e retrait, le Performance Account est fermé ; un nouveau PA exige une nouvelle évaluation."
+    },
+    "drawdown_effect_of_payout": {
+      "status": "confirmed",
+      "value": "Aucune réduction du drawdown décrite par retrait ; le « Safety Net » (drawdown + 100 $ au-dessus du solde de départ) doit être respecté pendant toute la vie du compte et le solde minimal pour demander un retrait en tient compte.",
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "standard",
+          "label": "Retrait Apex (un seul chemin)",
+          "min_days": 5,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": 50,
+          "request_limit_pct_of_balance": null,
+          "note": "5 jours de trading atteignant le profit quotidien minimal de la taille (EOD : 100 $ / 250 $ / 300 $ / 350 $ pour 25K / 50K / 100K / 150K ; Intraday : tableau non lu), non consécutifs ; règle de consistance 50 % ; minimum 500 $ par demande ; jusqu'à une demande par semaine."
+        }
+      ],
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Valeurs par taille : voir la page officielle des retraits."
+    },
+    "safety_net": {
+      "status": "confirmed",
+      "value": {
+        "exists": true,
+        "detail": "Safety Net = drawdown de la taille + 100 $ ; le tableau des soldes minimaux de l'Intraday n'a pas été lu en entier."
+      },
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Retraits jusqu'à une fois par semaine : au moins 5 jours de trading atteignant le profit quotidien minimal de la taille du compte, solde au-dessus du seuil de demande, règle de consistance de 50 % (aucun jour gagnant ne peut représenter 50 % ou plus du profit depuis le dernier retrait), 6 retraits maximum puis le compte est fermé.",
+      "sources": [
+        "ax-intraday-payouts"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Le trading pendant les nouvelles est permis pour ta stratégie habituelle ; les stratégies qui « chassent le marché » ou placent des ordres des deux côtés pour parier sur l'annonce sont interdites."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Même règle qu'en évaluation."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ax-times",
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Toutes les positions doivent être fermées et les ordres annulés avant 16 h 59 (heure de l'Est)."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ax-times",
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Toutes les positions doivent être fermées et les ordres annulés avant 16 h 59 (heure de l'Est)."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ax-times",
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune position conservée après la fermeture."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ax-times",
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune position conservée après la fermeture."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "ax-times"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Trading de 18 h (ET) à 16 h 59 le lendemain : la session asiatique est incluse."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "ax-times"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Trading de 18 h (ET) à 16 h 59 le lendemain : la session asiatique est incluse."
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ax-pa-compliance",
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "L'automatisation (robots, algorithmes, trading « set and forget ») est interdite sur tous les types de comptes ; fermeture du compte et perte des fonds en cas de violation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "ax-pa-compliance",
+          "ax-prohibited"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "L'automatisation (robots, algorithmes, trading « set and forget ») est interdite sur tous les types de comptes ; fermeture du compte et perte des fonds en cas de violation."
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    }
+  },
+  "eligibility": {
+    "status": "confirmed",
+    "value": {
+      "eligible": [
+        "CA"
+      ],
+      "excluded": [],
+      "unconfirmed": [],
+      "unlisted": "unconfirmed"
+    },
+    "sources": [
+      "ax-restricted"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Page officielle « Restricted Countries » : « Canadian traders can fully utilize our services » ; les comptes Évaluation et Performance Account sont simulés. Le Canada ne figure pas dans la liste des pays restreints. La liste des pays restreints n'est pas encodée ici (autres pays : non confirmés). Les programmes Live (courtier partenaire) sont un autre produit : ils excluent le Canada sauf l'Ontario."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "canada_general",
+      "note": "Déclaration officielle GÉNÉRALE pour le Canada (« Canadian traders can fully utilize our services ») : la province du Québec n'est pas explicitement confirmée. L'accès au programme ne garantit pas l'admissibilité aux paiements (politique de paiement, vérification d'identité et pays de paiement non confirmés pour le Québec).",
+      "sources": [
+        "ax-restricted"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "canada_general",
+      "note": "Performance Account (simulé) : même déclaration générale pour le Canada ; la province du Québec n'est pas explicitement confirmée. L'accès au compte ne garantit pas l'admissibilité aux paiements : les conditions de versement au Québec ne sont pas confirmées.",
+      "sources": [
+        "ax-restricted"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "restreint",
+      "note": "Le programme Apex Live liste « Canada (all provinces and territories except Ontario) » parmi les pays non disponibles : le Québec est donc restreint pour le Live. Ne s'applique pas à l'évaluation ni au PA simulé. Le Québec est explicitement visé (Canada hors Ontario).",
+      "sources": [
+        "ax-live-faq"
+      ]
+    }
+  ],
+  "dynamic_observations": [
+    {
+      "label": "Sélecteur officiel — 25K Intraday (option Standard)",
+      "source": "ax-picker",
+      "parameters": {
+        "picker_balance": "25k",
+        "picker_fee": "standard",
+        "picker_type": "trail-intraday"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/apex-picker-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "prix_affiche_usd": 167,
+        "prix_avec_code_promo_usd": 16.7,
+        "contrats_max": "4 mini / 40 micro",
+        "objectif_usd": 1500,
+        "drawdown_usd": 1000,
+        "limite_quotidienne_usd": null
+      },
+      "note": "Valeur observée, NON confirmée comme prix : tarif dynamique (date, promotion, code). À relire sur le site au moment de l'achat."
+    }
+  ],
+  "variants": [
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Prix affiché observé le 2026-11-15 sur le sélecteur officiel : 167 $ (prix affiché), 16.7 $ avec un code promo (non confirmé, voir « observations dynamiques »). Tarif DYNAMIQUE : le sélecteur du site officiel dépend de paramètres d'URL (taille, option « sans frais d'activation », type) et de codes promo (prix barré / prix avec code, ex. 167 $ barré → 16,70 $ observé pour un 25K Intraday). Aucun prix de référence stable : à lire au moment de l'achat. Les sites tiers ne sont pas utilisés."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique, sans abonnement (« ONE-TIME Fee. No Rebill »)."
+        },
+        "activation_fee": {
+          "status": "confirmed",
+          "value": 79,
+          "sources": [
+            "ax-home"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Frais affichés pour le compte 25K Intraday Trail (page officielle). Montants des autres tailles non lus."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "La page officielle indique « Reset Fee N/A » pour le 25K Intraday : l'évaluation expire après 30 jours sans réinitialisation ; autres tailles non lues."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif de profit du compte d'évaluation (cartes de comptes du site officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal de l'ÉVALUATION (cartes de comptes du site officiel) ; identique à celui du compte funded pour cette taille."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne en évaluation Intraday."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "ax-home"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« ONE DAY TO PASS » : minimum d'un jour de trading (carte 25K Intraday : « Min. Days To Pass 1 »)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats maximum de l'ÉVALUATION (mini ; micros ×10). Ne pas confondre avec le Performance Account (2 / 4 / 6 / 10)."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal en temps réel ; la limite cesse de monter quand elle atteint le solde de départ + 100 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Une limite quotidienne par paliers (« tier based ») existe sur le PA ; montants non lus."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 2,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Nombre maximal de contrats de départ (paliers de montée en charge ensuite)."
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Le plafond varie selon le numéro du retrait (voir « plafonds par numéro ») ; le plafond du 6e retrait n'a pas été lu."
+        },
+        "payout_caps_by_number": {
+          "status": "confirmed",
+          "value": [
+            1000,
+            1000,
+            1000,
+            1000,
+            1000,
+            null
+          ],
+          "sources": [
+            "ax-intraday-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Plafonds des retraits 1 à 5 lus sur la page officielle ; le 6e retrait est « non lu » (null). Maximum de 6 retraits."
+        }
+      }
+    },
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Prix non relevé pour cette combinaison. Tarif DYNAMIQUE : le sélecteur du site officiel dépend de paramètres d'URL (taille, option « sans frais d'activation », type) et de codes promo (prix barré / prix avec code, ex. 167 $ barré → 16,70 $ observé pour un 25K Intraday). Aucun prix de référence stable : à lire au moment de l'achat. Les sites tiers ne sont pas utilisés."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique, sans abonnement (« ONE-TIME Fee. No Rebill »)."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation du Performance Account (7 jours après la réussite) : montants non lus sur une page officielle ; des sites tiers se contredisent."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "La page officielle indique « Reset Fee N/A » pour le 25K Intraday : l'évaluation expire après 30 jours sans réinitialisation ; autres tailles non lues."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif de profit du compte d'évaluation (cartes de comptes du site officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal de l'ÉVALUATION (cartes de comptes du site officiel) ; identique à celui du compte funded pour cette taille."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne en évaluation Intraday."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "ax-home"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« ONE DAY TO PASS » : minimum d'un jour de trading (carte 25K Intraday : « Min. Days To Pass 1 »)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 6,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats maximum de l'ÉVALUATION (mini ; micros ×10). Ne pas confondre avec le Performance Account (2 / 4 / 6 / 10)."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal en temps réel ; la limite cesse de monter quand elle atteint le solde de départ + 100 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Une limite quotidienne par paliers (« tier based ») existe sur le PA ; montants non lus."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 4,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Nombre maximal de contrats de départ (paliers de montée en charge ensuite)."
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Le plafond varie selon le numéro du retrait (voir « plafonds par numéro ») ; le plafond du 6e retrait n'a pas été lu."
+        },
+        "payout_caps_by_number": {
+          "status": "confirmed",
+          "value": [
+            1500,
+            2000,
+            2500,
+            2500,
+            3000,
+            null
+          ],
+          "sources": [
+            "ax-intraday-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Plafonds des retraits 1 à 5 lus sur la page officielle ; le 6e retrait est « non lu » (null). Maximum de 6 retraits."
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Prix non relevé pour cette combinaison. Tarif DYNAMIQUE : le sélecteur du site officiel dépend de paramètres d'URL (taille, option « sans frais d'activation », type) et de codes promo (prix barré / prix avec code, ex. 167 $ barré → 16,70 $ observé pour un 25K Intraday). Aucun prix de référence stable : à lire au moment de l'achat. Les sites tiers ne sont pas utilisés."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique, sans abonnement (« ONE-TIME Fee. No Rebill »)."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation du Performance Account (7 jours après la réussite) : montants non lus sur une page officielle ; des sites tiers se contredisent."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "La page officielle indique « Reset Fee N/A » pour le 25K Intraday : l'évaluation expire après 30 jours sans réinitialisation ; autres tailles non lues."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif de profit du compte d'évaluation (cartes de comptes du site officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal de l'ÉVALUATION (cartes de comptes du site officiel) ; identique à celui du compte funded pour cette taille."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne en évaluation Intraday."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "ax-home"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« ONE DAY TO PASS » : minimum d'un jour de trading (carte 25K Intraday : « Min. Days To Pass 1 »)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 8,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats maximum de l'ÉVALUATION (mini ; micros ×10). Ne pas confondre avec le Performance Account (2 / 4 / 6 / 10)."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal en temps réel ; la limite cesse de monter quand elle atteint le solde de départ + 100 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Une limite quotidienne par paliers (« tier based ») existe sur le PA ; montants non lus."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 6,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Nombre maximal de contrats de départ (paliers de montée en charge ensuite)."
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Le plafond varie selon le numéro du retrait (voir « plafonds par numéro ») ; le plafond du 6e retrait n'a pas été lu."
+        },
+        "payout_caps_by_number": {
+          "status": "confirmed",
+          "value": [
+            2000,
+            2500,
+            3000,
+            3000,
+            4000,
+            null
+          ],
+          "sources": [
+            "ax-intraday-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Plafonds des retraits 1 à 5 lus sur la page officielle ; le 6e retrait est « non lu » (null). Maximum de 6 retraits."
+        }
+      }
+    },
+    {
+      "id": "150k",
+      "account_size_usd": 150000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Prix non relevé pour cette combinaison. Tarif DYNAMIQUE : le sélecteur du site officiel dépend de paramètres d'URL (taille, option « sans frais d'activation », type) et de codes promo (prix barré / prix avec code, ex. 167 $ barré → 16,70 $ observé pour un 25K Intraday). Aucun prix de référence stable : à lire au moment de l'achat. Les sites tiers ne sont pas utilisés."
+        },
+        "monthly": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Paiement unique, sans abonnement (« ONE-TIME Fee. No Rebill »)."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Frais d'activation du Performance Account (7 jours après la réussite) : montants non lus sur une page officielle ; des sites tiers se contredisent."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "La page officielle indique « Reset Fee N/A » pour le 25K Intraday : l'évaluation expire après 30 jours sans réinitialisation ; autres tailles non lues."
+        },
+        "conditional_fees": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 9000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif de profit du compte d'évaluation (cartes de comptes du site officiel)."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal de l'ÉVALUATION (cartes de comptes du site officiel) ; identique à celui du compte funded pour cette taille."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne en évaluation Intraday."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 1,
+          "sources": [
+            "ax-home"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "« ONE DAY TO PASS » : minimum d'un jour de trading (carte 25K Intraday : « Min. Days To Pass 1 »)."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 12,
+          "sources": [
+            "ax-home",
+            "ax-picker"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats maximum de l'ÉVALUATION (mini ; micros ×10). Ne pas confondre avec le Performance Account (2 / 4 / 6 / 10)."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown maximal en temps réel ; la limite cesse de monter quand elle atteint le solde de départ + 100 $."
+        },
+        "daily_loss_limit_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Une limite quotidienne par paliers (« tier based ») existe sur le PA ; montants non lus."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 10,
+          "sources": [
+            "ax-intraday-pa"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Nombre maximal de contrats de départ (paliers de montée en charge ensuite)."
+        },
+        "max_payout_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Le plafond varie selon le numéro du retrait (voir « plafonds par numéro ») ; le plafond du 6e retrait n'a pas été lu."
+        },
+        "payout_caps_by_number": {
+          "status": "confirmed",
+          "value": [
+            2500,
+            3000,
+            3000,
+            4000,
+            4000,
+            null
+          ],
+          "sources": [
+            "ax-intraday-payouts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Plafonds des retraits 1 à 5 lus sur la page officielle ; le 6e retrait est « non lu » (null). Maximum de 6 retraits."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Futures seulement (CME, COMEX, NYMEX, CBOT) : pas de CFD, de devises au comptant, d'actions ni de cryptos au comptant.",
+      "Positions fermées avant 16 h 59 (heure de l'Est) ; aucune automatisation (robots).",
+      "Des sources tierces signalent une suspension des métaux (or, argent, cuivre) depuis mars 2026 : non confirmée officiellement.",
+      "Les prix et frais d'activation changent souvent (régime Apex 4.0 depuis le 1er mars 2026) : à vérifier sur le site avant l'achat.",
+      "Programme Live d'Apex : le Canada (sauf l'Ontario) n'est pas disponible ; l'évaluation et le PA simulé sont ouverts aux Canadiens selon la page officielle."
+    ],
+    "sources": [
+      "ax-times",
+      "ax-live-faq"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "observed_prices": [
+    {
+      "variant_id": "25k",
+      "label": "Sélecteur officiel — 25K Intraday (option Standard)",
+      "amount": 167,
+      "currency": "USD",
+      "kind": "affiche",
+      "observed_on": "2026-11-15",
+      "source": "ax-picker",
+      "note": null
+    },
+    {
+      "variant_id": "25k",
+      "label": "Sélecteur officiel — 25K Intraday (option Standard) — avec code promo",
+      "amount": 16.7,
+      "currency": "USD",
+      "kind": "promo",
+      "observed_on": "2026-11-15",
+      "source": "ax-picker",
+      "note": "Code promotionnel : jamais inclus dans le coût de départ."
+    }
+  ]
+}

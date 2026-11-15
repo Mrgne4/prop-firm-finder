@@ -1,0 +1,60 @@
+{
+  "consulted_at": "2026-11-15",
+  "note": "Observations de prix, de devises et de promotions lues sur les pages officielles le 2026-11-15 : valeurs DYNAMIQUES, jamais confirmées comme prix. Extraits paraphrasés.",
+  "observations": [
+    {
+      "firm": "ftmo",
+      "source": "ft-price-2",
+      "observed": "2-Step (devise : EUR) : 10K 89 €, 25K 250 €, 50K 345 €, 100K 540 € (439 € barré), 200K 1 080 € ; frais remboursés à 100 % au premier retrait.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "ftmo",
+      "source": "ft-price-1",
+      "observed": "1-Step (devise : EUR, frais non remboursables) : 10K 79 €, 25K 199 €, 50K 319 €, 100K 499 €, 200K 999 €.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "ftmo",
+      "source": "ft-price-inst",
+      "observed": "Instant Account (devise : USD, frais non remboursables) : 5K 189 $, 10K 379 $, 25K 849 $, 50K 1 699 $, 100K 3 399 $.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "the5ers",
+      "source": "t5-price",
+      "observed": "Page communautaire ancienne (374 jours) : High Stakes 39 $, 78 $, 165 $, 329 $, 545 $ (tailles non nommées sur l'extrait ; 545 $ pour 100K selon la FAQ) ; Bootcamp 95 $ et 225 $ pour l'étape 1 (20K / 100K) puis 205 $ / 350 $ à la réussite.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "fundednext",
+      "source": "fn-price-1",
+      "observed": "Stellar 1-Step : 6K 65,99 $, 15K 129,99 $, 25K 219,99 $, 50K 329,99 $, 100K 569,99 $, 200K 1 099,99 $ (la page affiche aussi « à partir de 44,99 $ » : promotions).",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "fundednext",
+      "source": "fn-price-2",
+      "observed": "Stellar 2-Step : 6K 59,99 $, 15K 119,99 $, 25K 199,99 $, 50K 299,99 $, 100K 549,99 $, 200K 1 099,99 $ (prix barré 59,99 / 34,99 $ pour le 6K).",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "fundednext",
+      "source": "fn-price-lite",
+      "observed": "Stellar Lite : 5K 32,99 $, 10K 59,99 $, 25K 139,99 $, 50K 229,99 $, 100K 399,99 $, 200K 798,99 $ (29,99 $ affiché pour le 5K).",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "fundednext",
+      "source": "fn-price-inst",
+      "observed": "Stellar Instant : 2K 59,99 $, 5K 149,99 $, 10K 299,99 $, 20K 599,99 $.",
+      "excerpt_policy": "paraphrase"
+    },
+    {
+      "firm": "fundingpips",
+      "source": "fp-price",
+      "observed": "Prix d'entrée selon la revue du site : 1-Step Flex dès 66 $, Zero dès 60 $ (50K : 244 $ sur la page Zero), 2-Step Standard dès 34 $, 2-Step Flex dès 32 $, 2-Step Pro dès 29 $. Une ancienne page indique 499 $ pour Zero 100K.",
+      "excerpt_policy": "paraphrase"
+    }
+  ]
+}

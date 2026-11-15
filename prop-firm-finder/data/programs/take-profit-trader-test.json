@@ -1,0 +1,1052 @@
+{
+  "id": "take-profit-trader-test",
+  "firm_id": "take-profit-trader",
+  "name": "Test → PRO → PRO+ (Take Profit Trader)",
+  "demo": false,
+  "official_url": "https://takeprofittrader.com/",
+  "summary": "Évaluation en une étape par abonnement mensuel (sans limite de temps), drawdown de fin de journée et consistance de 50 % en évaluation seulement. Après réussite : compte PRO simulé (drawdown intraday, retraits dès le jour 1 à 80 % au-dessus d'un buffer), puis invitation possible vers PRO+ (marché réel, 90 %). Futures CME seulement ; pas de nouvelles majeures en PRO / PRO+.",
+  "instruments": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "La page officielle indique les bourses permises (CME, COMEX, NYMEX, CBOT) mais renvoie à une liste de produits par symbole qui n'a pas pu être lue (centre d'aide inaccessible lors de la consultation) : aucun instrument n'est confirmé."
+  },
+  "instruments_scope": "partial",
+  "instruments_excluded": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Liste par symbole non lue : aucun instrument ne peut être déclaré absent."
+  },
+  "contract_types": {
+    "status": "confirmed",
+    "value": [
+      "futures"
+    ],
+    "sources": [
+      "tp-site",
+      "tp-faq"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "Futures listés sur CME, COMEX, NYMEX et CBOT seulement ; actions, options, forex, cryptomonnaies et CFD ne sont ni supportés ni facilités."
+  },
+  "instrument_limits": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Restrictions de nouvelles propres à certains produits (pétrole brut, obligations) mentionnées sur une page éditoriale ; limites par produit non lues."
+  },
+  "platforms": {
+    "status": "confirmed",
+    "value": [
+      "tradingview",
+      "ninjatrader",
+      "tradovate",
+      "rithmic"
+    ],
+    "sources": [
+      "tp-vs-topstep"
+    ],
+    "verified_at": "2026-11-15",
+    "note": "TradingView, NinjaTrader, Tradovate et plus de 15 plateformes via les flux CQG et Rithmic (page éditoriale officielle) ; liste complète non lue."
+  },
+  "evaluation": {
+    "steps": {
+      "status": "confirmed",
+      "value": 1,
+      "sources": [
+        "tp-vs-topstep"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "« Single-step evaluation »."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "eod_trailing",
+      "sources": [
+        "tp-lp",
+        "tp-vs-topstep"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Drawdown de fin de journée dans le test (se verrouille au solde de départ)."
+    },
+    "time_limit_days": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune limite de temps : abonnement mensuel jusqu'à la réussite."
+    },
+    "description": {
+      "status": "confirmed",
+      "value": "Atteindre l'objectif de profit (6 % du compte) en au moins 3 jours de trading, sans toucher le drawdown de fin de journée, en gardant le meilleur jour sous 50 % du profit net.",
+      "sources": [
+        "tp-lp",
+        "tp-vs-topstep"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "consistency_rule": {
+      "status": "confirmed",
+      "value": {
+        "exists": true,
+        "detail": "Le meilleur jour doit rester sous 50 % du profit net ; règle valable en évaluation seulement (aucune consistance en PRO / PRO+)."
+      },
+      "sources": [
+        "tp-vs-topstep",
+        "tp-lp"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "funded": {
+    "account_nature": {
+      "status": "confirmed",
+      "value": "simulated",
+      "sources": [
+        "tp-faq",
+        "tp-vs-topstep"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "PRO : environnement simulé, retraits réels. PRO+ : marché réel (sur invitation) — non modélisé séparément ici."
+    },
+    "drawdown_type": {
+      "status": "confirmed",
+      "value": "intraday_trailing",
+      "sources": [
+        "tp-faq",
+        "tp-vs-topstep"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "PRO : drawdown intraday. PRO+ : drawdown de fin de journée pour les nouveaux comptes depuis le 30 juin (selon la FAQ)."
+    },
+    "profit_split_pct": {
+      "status": "confirmed",
+      "value": 80,
+      "sources": [
+        "tp-vs-topstep",
+        "tp-vs-apex"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "80 % en PRO sur les profits au-dessus du buffer ; 90 % en PRO+ sans buffer."
+    },
+    "min_withdrawal_usd": {
+      "status": "confirmed",
+      "value": 0,
+      "sources": [
+        "tp-vs-topstep"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucun minimum ; des frais de 50 $ s'appliquent aux retraits de moins de 250 $."
+    },
+    "payout_cap": {
+      "status": "confirmed",
+      "value": {
+        "has_cap": false,
+        "amount_usd": null
+      },
+      "sources": [
+        "tp-faq",
+        "tp-vs-apex"
+      ],
+      "verified_at": "2026-11-15",
+      "note": "Aucun maximum par retrait ni plafond mensuel."
+    },
+    "max_payouts": {
+      "status": "not_applicable",
+      "value": null,
+      "sources": [],
+      "verified_at": null,
+      "note": "Aucune limite du nombre de retraits (« no lifetime payout count »)."
+    },
+    "drawdown_effect_of_payout": {
+      "status": "confirmed",
+      "value": "Retirer sous le buffer verse 50 % et ferme le compte PRO ; au-dessus du buffer, 80 % du profit est versé (selon une page éditoriale officielle).",
+      "sources": [
+        "tp-vs-apex"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "payout_paths": {
+      "status": "confirmed",
+      "value": [
+        {
+          "id": "pro-daily",
+          "label": "PRO : retrait dès le jour 1 et quotidien",
+          "min_days": 0,
+          "min_day_profit_usd": null,
+          "consistency_max_day_pct": null,
+          "request_limit_pct_of_balance": null,
+          "note": "Aucun minimum de jours, aucune consistance, aucun plafond ; seul le buffer (égal au drawdown, 2 000 $ pour le 50K) doit être dépassé. Traitement annoncé en quelques secondes."
+        }
+      ],
+      "sources": [
+        "tp-faq",
+        "tp-vs-apex"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "safety_net": {
+      "status": "confirmed",
+      "value": {
+        "exists": true,
+        "detail": "Buffer PRO égal au drawdown de la taille (2 000 $ sur 50K) ; aucun buffer en PRO+."
+      },
+      "sources": [
+        "tp-vs-apex"
+      ],
+      "verified_at": "2026-11-15"
+    },
+    "withdrawal_conditions": {
+      "status": "confirmed",
+      "value": "Retrait possible dès le jour 1 puis chaque jour, sur les profits au-dessus du buffer ; 80 % au partage en PRO ; aucun minimum de jours, aucune consistance, aucun maximum ; frais de 50 $ sous 250 $ ; jusqu'à 5 comptes PRO / PRO+ simultanés.",
+      "sources": [
+        "tp-faq",
+        "tp-lp",
+        "tp-vs-apex"
+      ],
+      "verified_at": "2026-11-15"
+    }
+  },
+  "restrictions": {
+    "news": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "tp-news"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune restriction de nouvelles pendant l'évaluation."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "conditional",
+        "sources": [
+          "tp-news"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "PRO et PRO+ : aucune position ni ordre ouvert une minute avant, pendant et une minute après les événements interdits (FOMC, NFP, CPI, événements propres au pétrole et aux obligations) ; calendrier officiel dans le tableau de bord. En PRO, la violation fait échouer le compte."
+      }
+    },
+    "overnight": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "tp-lp",
+          "tp-5pm"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions fermées avant 17 h (ET). Depuis une mise à jour, la position est fermée automatiquement à 16 h 55 ET sans échec du compte ; exceptions : produits fermant plus tôt et jours fériés (liquidation)."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "tp-lp",
+          "tp-5pm"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Positions fermées avant 17 h (ET). Depuis une mise à jour, la position est fermée automatiquement à 16 h 55 ET sans échec du compte ; exceptions : produits fermant plus tôt et jours fériés (liquidation)."
+      }
+    },
+    "weekend": {
+      "evaluation": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "tp-lp",
+          "tp-5pm"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune position conservée après la fermeture quotidienne : pas de position de fin de semaine."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "forbidden",
+        "sources": [
+          "tp-lp",
+          "tp-5pm"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Aucune position conservée après la fermeture quotidienne : pas de position de fin de semaine."
+      }
+    },
+    "asian_session": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "scalping": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "automated": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      },
+      "funded": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null
+      }
+    },
+    "copy_trading": {
+      "evaluation": {
+        "status": "unconfirmed",
+        "value": null,
+        "sources": [],
+        "verified_at": null,
+        "note": "En évaluation, plusieurs comptes sont permis ; copy trading non énoncé."
+      },
+      "funded": {
+        "status": "confirmed",
+        "value": "allowed",
+        "sources": [
+          "tp-faq"
+        ],
+        "verified_at": "2026-11-15",
+        "note": "Copy trading permis jusqu'à 5 comptes PRO (ou PRO+)."
+      }
+    }
+  },
+  "eligibility": {
+    "status": "unconfirmed",
+    "value": null,
+    "sources": [],
+    "verified_at": null,
+    "note": "Page officielle de pays admissibles non trouvée (centre d'aide inaccessible lors de la consultation) : aucune liste de pays confirmée."
+  },
+  "quebec_by_stage": [
+    {
+      "stage": "evaluation",
+      "state": "a_verifier",
+      "note": "Aucune page officielle d'admissibilité par pays n'a pu être lue pour Take Profit Trader : le Québec n'est pas confirmé. L'accès ne garantit pas l'admissibilité aux paiements.",
+      "sources": [
+        "tp-site"
+      ]
+    },
+    {
+      "stage": "funded_sim",
+      "state": "a_verifier",
+      "note": "Compte PRO (simulé) : admissibilité du Québec non confirmée ; aucune liste de pays lue. L'accès au compte ne garantit pas l'admissibilité aux paiements.",
+      "sources": [
+        "tp-site"
+      ]
+    },
+    {
+      "stage": "live",
+      "state": "a_verifier",
+      "note": "PRO+ (marché réel, sur invitation, routé via Tradovate) : conditions géographiques non lues ; le Québec n'est pas confirmé.",
+      "sources": [
+        "tp-faq"
+      ]
+    }
+  ],
+  "dynamic_observations": [
+    {
+      "label": "Mensualités promotionnelles 25K–150K (code NOFEE40)",
+      "source": "tp-promo",
+      "parameters": {
+        "code_promo": "NOFEE40"
+      },
+      "consulted_at": "2026-11-15",
+      "evidence_file": "data/evidence/lot2a-2026-11-15.json",
+      "durable": false,
+      "observed": {
+        "mensualite_usd_min": 90,
+        "mensualite_usd_max": 216,
+        "activation_usd_avec_code": 0,
+        "reset_pro_50k_usd_approx": 649
+      },
+      "note": "Page comparative du site officiel. Valeur observée, NON confirmée comme prix : tarif dynamique (promotion, code, date)."
+    }
+  ],
+  "variants": [
+    {
+      "id": "25k",
+      "account_size_usd": 25000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel pendant l'évaluation (la facturation s'arrête à la réussite)."
+        },
+        "monthly": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : le site affiche des mensualités promotionnelles (voir « observations dynamiques ») ; aucun prix durable confirmé."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« 0 $ avec le code NOFEE40 » selon une page éditoriale ; le tarif sans code n'est pas confirmé sur une page officielle lue."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Réinitialisation de l'évaluation non lue ; la réinitialisation PRO (environ 649 $ pour 50K) est une observation promotionnelle."
+        },
+        "conditional_fees": {
+          "status": "confirmed",
+          "value": [
+            {
+              "label": "Frais de retrait inférieur à 250 $",
+              "amount_usd": 50,
+              "condition": "Un retrait de moins de 250 $ entraîne des frais de 50 $."
+            }
+          ],
+          "sources": [
+            "tp-vs-apex"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Page éditoriale officielle ; frais conditionnels, non additionnés au coût certain."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif annoncé : 6 % du compte (calcul : 6 % × taille). Montant en dollars non lu sur une page de règles par taille."
+        },
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown de cette taille non lu (seul le 50K : 2 000 $)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne à aucun stade (Test, PRO, PRO+)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "tp-lp",
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours de trading minimum (FAQ officielle et comparatif récents). Un ancien article parle de cinq jours : non retenu."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Contrats maximum de cette taille non lus."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown PRO de cette taille non lu."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« Maximum contract allotment per account size » : valeur par taille du compte PRO non lue."
+        },
+        "max_payout_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun maximum par retrait (« no maximum withdrawal amount »)."
+        }
+      }
+    },
+    {
+      "id": "50k",
+      "account_size_usd": 50000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel pendant l'évaluation (la facturation s'arrête à la réussite)."
+        },
+        "monthly": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : le site affiche des mensualités promotionnelles (voir « observations dynamiques ») ; aucun prix durable confirmé."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« 0 $ avec le code NOFEE40 » selon une page éditoriale ; le tarif sans code n'est pas confirmé sur une page officielle lue."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Réinitialisation de l'évaluation non lue ; la réinitialisation PRO (environ 649 $ pour 50K) est une observation promotionnelle."
+        },
+        "conditional_fees": {
+          "status": "confirmed",
+          "value": [
+            {
+              "label": "Frais de retrait inférieur à 250 $",
+              "amount_usd": 50,
+              "condition": "Un retrait de moins de 250 $ entraîne des frais de 50 $."
+            }
+          ],
+          "sources": [
+            "tp-vs-apex"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Page éditoriale officielle ; frais conditionnels, non additionnés au coût certain."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 3000,
+          "sources": [
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif annoncé : 6 % du compte (calcul : 6 % × taille). Montant en dollars non lu sur une page de règles par taille."
+        },
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "tp-vs-topstep",
+            "tp-contracts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown de fin de journée (EOD) de 2 000 $ sur le compte 50K, selon les pages éditoriales du site."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne à aucun stade (Test, PRO, PRO+)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "tp-lp",
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours de trading minimum (FAQ officielle et comparatif récents). Un ancien article parle de cinq jours : non retenu."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 6,
+          "sources": [
+            "tp-contracts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats maximum du test 50K (page éditoriale datée ; mini ; micros ×10)."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "tp-vs-topstep",
+            "tp-vs-apex"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Drawdown PRO d'environ 2 000 $ (50K), intraday ; buffer de retrait égal au drawdown."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« Maximum contract allotment per account size » : valeur par taille du compte PRO non lue."
+        },
+        "max_payout_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun maximum par retrait (« no maximum withdrawal amount »)."
+        }
+      }
+    },
+    {
+      "id": "75k",
+      "account_size_usd": 75000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel pendant l'évaluation (la facturation s'arrête à la réussite)."
+        },
+        "monthly": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : le site affiche des mensualités promotionnelles (voir « observations dynamiques ») ; aucun prix durable confirmé."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« 0 $ avec le code NOFEE40 » selon une page éditoriale ; le tarif sans code n'est pas confirmé sur une page officielle lue."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Réinitialisation de l'évaluation non lue ; la réinitialisation PRO (environ 649 $ pour 50K) est une observation promotionnelle."
+        },
+        "conditional_fees": {
+          "status": "confirmed",
+          "value": [
+            {
+              "label": "Frais de retrait inférieur à 250 $",
+              "amount_usd": 50,
+              "condition": "Un retrait de moins de 250 $ entraîne des frais de 50 $."
+            }
+          ],
+          "sources": [
+            "tp-vs-apex"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Page éditoriale officielle ; frais conditionnels, non additionnés au coût certain."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 4500,
+          "sources": [
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif annoncé : 6 % du compte (calcul : 6 % × taille). Montant en dollars non lu sur une page de règles par taille."
+        },
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown de cette taille non lu (seul le 50K : 2 000 $)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne à aucun stade (Test, PRO, PRO+)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "tp-lp",
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours de trading minimum (FAQ officielle et comparatif récents). Un ancien article parle de cinq jours : non retenu."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Contrats maximum de cette taille non lus."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown PRO de cette taille non lu."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« Maximum contract allotment per account size » : valeur par taille du compte PRO non lue."
+        },
+        "max_payout_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun maximum par retrait (« no maximum withdrawal amount »)."
+        }
+      }
+    },
+    {
+      "id": "100k",
+      "account_size_usd": 100000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel pendant l'évaluation (la facturation s'arrête à la réussite)."
+        },
+        "monthly": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : le site affiche des mensualités promotionnelles (voir « observations dynamiques ») ; aucun prix durable confirmé."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« 0 $ avec le code NOFEE40 » selon une page éditoriale ; le tarif sans code n'est pas confirmé sur une page officielle lue."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Réinitialisation de l'évaluation non lue ; la réinitialisation PRO (environ 649 $ pour 50K) est une observation promotionnelle."
+        },
+        "conditional_fees": {
+          "status": "confirmed",
+          "value": [
+            {
+              "label": "Frais de retrait inférieur à 250 $",
+              "amount_usd": 50,
+              "condition": "Un retrait de moins de 250 $ entraîne des frais de 50 $."
+            }
+          ],
+          "sources": [
+            "tp-vs-apex"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Page éditoriale officielle ; frais conditionnels, non additionnés au coût certain."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif annoncé : 6 % du compte (calcul : 6 % × taille). Montant en dollars non lu sur une page de règles par taille."
+        },
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown de cette taille non lu (seul le 50K : 2 000 $)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne à aucun stade (Test, PRO, PRO+)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "tp-lp",
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours de trading minimum (FAQ officielle et comparatif récents). Un ancien article parle de cinq jours : non retenu."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Contrats maximum de cette taille non lus."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown PRO de cette taille non lu."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« Maximum contract allotment per account size » : valeur par taille du compte PRO non lue."
+        },
+        "max_payout_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun maximum par retrait (« no maximum withdrawal amount »)."
+        }
+      }
+    },
+    {
+      "id": "150k",
+      "account_size_usd": 150000,
+      "option": null,
+      "pricing": {
+        "one_time": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Abonnement mensuel pendant l'évaluation (la facturation s'arrête à la réussite)."
+        },
+        "monthly": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Tarif DYNAMIQUE : le site affiche des mensualités promotionnelles (voir « observations dynamiques ») ; aucun prix durable confirmé."
+        },
+        "activation_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« 0 $ avec le code NOFEE40 » selon une page éditoriale ; le tarif sans code n'est pas confirmé sur une page officielle lue."
+        },
+        "reset_fee": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Réinitialisation de l'évaluation non lue ; la réinitialisation PRO (environ 649 $ pour 50K) est une observation promotionnelle."
+        },
+        "conditional_fees": {
+          "status": "confirmed",
+          "value": [
+            {
+              "label": "Frais de retrait inférieur à 250 $",
+              "amount_usd": 50,
+              "condition": "Un retrait de moins de 250 $ entraîne des frais de 50 $."
+            }
+          ],
+          "sources": [
+            "tp-vs-apex"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Page éditoriale officielle ; frais conditionnels, non additionnés au coût certain."
+        }
+      },
+      "evaluation": {
+        "profit_target_usd": {
+          "status": "confirmed",
+          "value": 9000,
+          "sources": [
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Objectif annoncé : 6 % du compte (calcul : 6 % × taille). Montant en dollars non lu sur une page de règles par taille."
+        },
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown de cette taille non lu (seul le 50K : 2 000 $)."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne à aucun stade (Test, PRO, PRO+)."
+        },
+        "min_trading_days": {
+          "status": "confirmed",
+          "value": 3,
+          "sources": [
+            "tp-lp",
+            "tp-vs-topstep"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "3 jours de trading minimum (FAQ officielle et comparatif récents). Un ancien article parle de cinq jours : non retenu."
+        },
+        "max_contracts": {
+          "status": "confirmed",
+          "value": 15,
+          "sources": [
+            "tp-contracts"
+          ],
+          "verified_at": "2026-11-15",
+          "note": "Contrats maximum du test 150K (page éditoriale datée)."
+        }
+      },
+      "funded": {
+        "max_drawdown_usd": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Drawdown PRO de cette taille non lu."
+        },
+        "daily_loss_limit_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucune limite quotidienne."
+        },
+        "max_contracts": {
+          "status": "unconfirmed",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "« Maximum contract allotment per account size » : valeur par taille du compte PRO non lue."
+        },
+        "max_payout_usd": {
+          "status": "not_applicable",
+          "value": null,
+          "sources": [],
+          "verified_at": null,
+          "note": "Aucun maximum par retrait (« no maximum withdrawal amount »)."
+        }
+      }
+    }
+  ],
+  "promos": [],
+  "watch_points": {
+    "status": "confirmed",
+    "value": [
+      "Drawdown : fin de journée en évaluation, INTRADAY en PRO, fin de journée en PRO+ (nouveaux comptes depuis le 30 juin).",
+      "Pas de nouvelles majeures (FOMC, NFP, CPI…) en PRO et PRO+ : positions et ordres à fermer 1 minute avant et après.",
+      "Les montants par taille (objectifs, drawdowns, contrats) viennent de pages éditoriales du site ; la liste des produits par symbole et les pages de pays n'ont pas pu être lues : à vérifier avant l'achat.",
+      "Les tarifs mensuels changent selon les codes : voir « observations dynamiques », aucun prix durable confirmé.",
+      "Le Québec n'est pas confirmé ; l'accès ne garantit pas l'admissibilité aux paiements."
+    ],
+    "sources": [
+      "tp-news",
+      "tp-faq"
+    ],
+    "verified_at": "2026-11-15"
+  },
+  "observed_prices": [
+    {
+      "variant_id": null,
+      "label": "Mensualités promotionnelles 25K–150K (code NOFEE40) — plus bas observé",
+      "amount": 90,
+      "currency": "USD",
+      "kind": "mensuel",
+      "observed_on": "2026-11-15",
+      "source": "tp-promo",
+      "note": "Mensualité promotionnelle avec code ; varie selon la taille du compte (non rattachée ici)."
+    },
+    {
+      "variant_id": null,
+      "label": "Mensualités promotionnelles 25K–150K (code NOFEE40) — plus haut observé",
+      "amount": 216,
+      "currency": "USD",
+      "kind": "mensuel",
+      "observed_on": "2026-11-15",
+      "source": "tp-promo",
+      "note": "Mensualité promotionnelle avec code ; varie selon la taille du compte (non rattachée ici)."
+    }
+  ]
+}

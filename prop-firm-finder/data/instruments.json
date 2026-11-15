@@ -1,0 +1,233 @@
+[
+  {
+    "id": "NQ",
+    "label": "NQ (Nasdaq 100 e-mini)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "Nasdaq 100"
+  },
+  {
+    "id": "MNQ",
+    "label": "MNQ (Micro Nasdaq 100)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "Nasdaq 100"
+  },
+  {
+    "id": "ES",
+    "label": "ES (S&P 500 e-mini)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "S&P 500"
+  },
+  {
+    "id": "MES",
+    "label": "MES (Micro S&P 500)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "S&P 500"
+  },
+  {
+    "id": "YM",
+    "label": "YM (Dow Jones e-mini)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "Dow Jones"
+  },
+  {
+    "id": "MYM",
+    "label": "MYM (Micro Dow Jones)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "Dow Jones"
+  },
+  {
+    "id": "RTY",
+    "label": "RTY (Russell 2000 e-mini)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "Russell 2000"
+  },
+  {
+    "id": "M2K",
+    "label": "M2K (Micro Russell 2000)",
+    "market": "futures_index",
+    "contract": "futures",
+    "underlying": "Russell 2000"
+  },
+  {
+    "id": "NAS100",
+    "label": "NAS100 (CFD Nasdaq 100)",
+    "market": "cfd_index",
+    "contract": "cfd",
+    "underlying": "Nasdaq 100"
+  },
+  {
+    "id": "US30",
+    "label": "US30 (CFD Dow Jones)",
+    "market": "cfd_index",
+    "contract": "cfd",
+    "underlying": "Dow Jones"
+  },
+  {
+    "id": "SPX500",
+    "label": "SPX500 (CFD S&P 500)",
+    "market": "cfd_index",
+    "contract": "cfd",
+    "underlying": "S&P 500"
+  },
+  {
+    "id": "FOREX",
+    "label": "Paires de devises (forex)",
+    "market": "forex",
+    "contract": "spot",
+    "underlying": "Devises"
+  },
+  {
+    "id": "EURUSD",
+    "label": "EUR/USD (paire de devises, marché au comptant)",
+    "market": "forex",
+    "contract": "spot",
+    "underlying": "EUR/USD"
+  },
+  {
+    "id": "6E",
+    "label": "6E (Euro FX, futures)",
+    "market": "forex",
+    "contract": "futures",
+    "underlying": "EUR/USD"
+  },
+  {
+    "id": "M6E",
+    "label": "M6E (Micro Euro FX, futures)",
+    "market": "forex",
+    "contract": "futures",
+    "underlying": "EUR/USD"
+  },
+  {
+    "id": "GC",
+    "label": "GC (Or, futures)",
+    "market": "metals",
+    "contract": "futures",
+    "underlying": "Or"
+  },
+  {
+    "id": "MGC",
+    "label": "MGC (Micro or, futures)",
+    "market": "metals",
+    "contract": "futures",
+    "underlying": "Or"
+  },
+  {
+    "id": "XAUUSD",
+    "label": "XAUUSD (Or, CFD)",
+    "market": "metals",
+    "contract": "cfd",
+    "underlying": "Or"
+  },
+  {
+    "id": "XAGUSD",
+    "label": "XAGUSD (Argent, CFD)",
+    "market": "metals",
+    "contract": "cfd",
+    "underlying": "Argent"
+  },
+  {
+    "id": "CL",
+    "label": "CL (Pétrole brut WTI, futures)",
+    "market": "energy",
+    "contract": "futures",
+    "underlying": "Pétrole WTI"
+  },
+  {
+    "id": "MCL",
+    "label": "MCL (Micro pétrole brut, futures)",
+    "market": "energy",
+    "contract": "futures",
+    "underlying": "Pétrole WTI"
+  },
+  {
+    "id": "USOIL",
+    "label": "USOIL (Pétrole WTI, CFD)",
+    "market": "energy",
+    "contract": "cfd",
+    "underlying": "Pétrole WTI"
+  },
+  {
+    "id": "UKOIL",
+    "label": "UKOIL (Pétrole Brent, CFD)",
+    "market": "energy",
+    "contract": "cfd",
+    "underlying": "Pétrole Brent"
+  },
+  {
+    "id": "MBT",
+    "label": "MBT (Micro Bitcoin, futures)",
+    "market": "crypto_major",
+    "contract": "futures",
+    "underlying": "Bitcoin"
+  },
+  {
+    "id": "MET",
+    "label": "MET (Micro Ether, futures)",
+    "market": "crypto_major",
+    "contract": "futures",
+    "underlying": "Ether"
+  },
+  {
+    "id": "BTCUSD_CFD",
+    "label": "BTC/USD (CFD)",
+    "market": "crypto_major",
+    "contract": "cfd",
+    "underlying": "Bitcoin"
+  },
+  {
+    "id": "ETHUSD_CFD",
+    "label": "ETH/USD (CFD)",
+    "market": "crypto_major",
+    "contract": "cfd",
+    "underlying": "Ether"
+  },
+  {
+    "id": "BTC_PERP",
+    "label": "BTC (contrat perpétuel)",
+    "market": "crypto_major",
+    "contract": "perpetual",
+    "underlying": "Bitcoin"
+  },
+  {
+    "id": "ETH_PERP",
+    "label": "ETH (contrat perpétuel)",
+    "market": "crypto_major",
+    "contract": "perpetual",
+    "underlying": "Ether"
+  },
+  {
+    "id": "ALT_CFD",
+    "label": "Autres cryptos (CFD)",
+    "market": "crypto_other",
+    "contract": "cfd",
+    "underlying": "Autres cryptos"
+  },
+  {
+    "id": "ALT_PERP",
+    "label": "Autres cryptos (contrats perpétuels)",
+    "market": "crypto_other",
+    "contract": "perpetual",
+    "underlying": "Autres cryptos"
+  },
+  {
+    "id": "STOCK_CFD",
+    "label": "Actions (CFD)",
+    "market": "stocks",
+    "contract": "cfd",
+    "underlying": "Actions"
+  },
+  {
+    "id": "STOCK_SPOT",
+    "label": "Actions (titres réels)",
+    "market": "stocks",
+    "contract": "spot",
+    "underlying": "Actions"
+  }
+]
